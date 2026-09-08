@@ -4,11 +4,12 @@
 
 ## 主分支与历史
 
-- 日常开发和 GitHub 同步统一使用本地 `main`，对应 `origin/main`。
+- 日常开发和 GitHub 同步统一使用本地 `main`，对应 `origin/main`；本地和远端仅保留 `main` 分支。
 - `typography-refine`、`typography-harmony` 和 `workbuddy/main-65d8524d` 的全部已提交改动已合并；两个排版分支呈线性继承关系，没有舍弃独有改动。
-- 旧历史包含原始内容文件。GitHub 的 `main` 从包含完整合并结果的安全快照开始，原提交与其他原分支留在本地，并另存完整备份 `local/git-backups/before-main-sync-20260908.bundle`。
-- 本地 `refs/local-backups/merged-before-github-20260908` 保留建立快照前已合并的历史。备份和原分支不上传；原始文件也没有删除。
-- 原分支仅作为本地历史保留。不要再次把它们的完整历史合并到当前 `main`；后续新开发从当前 `main` 开始。
+- 旧历史包含原始内容文件。GitHub 的 `main` 从包含完整合并结果的安全快照开始，原提交保存在本地 `refs/local-backups/merged-before-github-20260908` 和完整备份 `local/git-backups/before-main-sync-20260908.bundle` 中；这些历史与原始文件不上传。
+- 新版网站分支 `codex/celestial-redesign` 的提交 `942bc43` 已完整合入 `main`。
+- 2026-09-08 清理全部四个非 `main` 分支前，另存并验证了完整备份 `local/git-backups/before-branch-cleanup-20260908-224533.bundle`。原 WorkBuddy 工作区保留在原提交的 detached HEAD 状态，已有文件未删除。
+- 后续新开发从当前 `main` 开始。需要恢复旧历史时使用本地备份，不要将包含原始资料的完整旧历史合入或推送到 GitHub。
 
 ## 内容边界
 
