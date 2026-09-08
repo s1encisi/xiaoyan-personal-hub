@@ -37,7 +37,11 @@ The site connects a specific industrial context, copper electrowinning and elect
 - The header's keyboard, focus-restoration, mobile-dialog, body-scroll-lock, and responsive state behavior must be preserved.
 - Existing route slugs, primary navigation labels, metadata model, and sitemap are stable contracts.
 - Content is static and does not currently require D1 or R2.
-- Unknown school, adviser, dates, publication details, DOI, award evidence, project metrics, contact methods, portrait, and external links remain explicitly marked as unverified or pending.
+- Public name, affiliation, city and three platform links are verified in `app/_data/profiles.ts`. Formal education dates, department, adviser, publication details, DOI, award evidence, project metrics, email and a verified portrait remain pending.
+
+## Current visual direction
+
+The Celestial Atlas redesign uses an astronomical homepage, a cinematic animation section and daylight-led life pages, with a shared accessible navigation and motion controls. `docs/CELESTIAL_REDESIGN.md` supersedes older visual restrictions while preserving evidence and navigation contracts.
 
 ## Brand Commitments
 

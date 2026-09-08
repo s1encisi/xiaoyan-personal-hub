@@ -9,6 +9,7 @@
 | [`CONTENT_GAPS.md`](CONTENT_GAPS.md) | 待补充资料、占位内容和已核实数据口径 |
 | [`design-qa.md`](design-qa.md) | 已执行的设计检查、问题与修正记录 |
 | [`GITHUB_SYNC.md`](GITHUB_SYNC.md) | GitHub 同步范围、本地资料保护与推送检查 |
+| [`CELESTIAL_REDESIGN.md`](CELESTIAL_REDESIGN.md) | 当前个人星图视觉、公开资料来源及外部评审依据 |
 | [`animation/design-reference.png`](animation/design-reference.png) | 动画分站最终选用的视觉方向参考 |
 | [`animation/poster-sources.json`](animation/poster-sources.json) | 动画海报的匹配记录、公开来源与版权说明 |
 

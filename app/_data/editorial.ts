@@ -448,7 +448,7 @@ export const knowledgeEditorialDetails: Record<string, KnowledgeEditorialDetail>
 export const profileRequirements: RequirementGroup[] = [
   {
     title: "身份与教育",
-    items: ["希望公开的姓名与英文名", "学校、学院、专业、年级、导师与实验室", "入学时间、预计毕业时间、所在城市与公开范围"],
+    items: ["中文姓名的公开写法", "学院、专业、年级、导师与实验室", "入学时间、预计毕业时间与教育记录的公开范围"],
     preferredFormat: "简历 PDF、Markdown 或 Word",
   },
   {

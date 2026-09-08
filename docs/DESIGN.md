@@ -1,4 +1,6 @@
-# 小闫个人官网设计系统
+# 小闫个人官网设计系统（历史基线）
+
+> 当前升级采用 [Celestial Atlas / 个人星图](CELESTIAL_REDESIGN.md)，实现入口为 `app/universe-system.css`。下文保留原工业现场手册的设计背景；其中关于禁止星海、持续动效等旧约束已由本次明确的天文科技、动画与生活主题需求替代。内容真实性、原生导航、响应式和可访问性约束继续适用。
 
 > 设计主题：**Industrial Field Manual / 工业研究现场手册**  
 > 当前实现基准：`app/design-system.css`。本文说明如何延续现有视觉与交互，若文档与代码不一致，以已验证的 CSS token 和组件行为为准。

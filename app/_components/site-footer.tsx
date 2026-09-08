@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext production requires native document navigation. */
 import { navigationGroups, siteInfo } from "../_data/site";
+import { SocialLinks } from "./social-links";
 
 export function SiteFooter() {
   return (
@@ -7,9 +8,10 @@ export function SiteFooter() {
       <div className="footer-primary">
         <div className="footer-brand-block">
           <a className="footer-wordmark" href="/">小闫 <span>研究与生活</span></a>
-          <h2>把复杂问题讲清楚，<br />把可靠方法做扎实。</h2>
+          <h2>认真研究，<br />也认真生活。</h2>
           <p>{siteInfo.description}</p>
           <a className="footer-contact-link" href="/contact">联系与合作 <span aria-hidden="true">↗</span></a>
+          <div className="footer-social"><SocialLinks /></div>
         </div>
         <nav className="footer-sitemap" aria-label="网站地图">
           {navigationGroups.map((group) => (

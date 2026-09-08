@@ -3,6 +3,7 @@ import { SiteFooter } from "./_components/site-footer";
 import { SiteHeader } from "./_components/site-header";
 import { createFixedPageMetadata, SITE_ORIGIN } from "./_data/metadata";
 import "./design-system.css";
+import "./universe-system.css";
 
 export const viewport: Viewport = {
   colorScheme: "light",
@@ -51,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" data-motion="off">
       <body id="top">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
         <a className="skip-link" href="#main-content">跳到主要内容</a>

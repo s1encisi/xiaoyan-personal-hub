@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-08",
+  "images": [
+    {
+      "file": "public/images/celestial/celestial-planet.webp",
+      "mobileFile": "public/images/celestial/celestial-planet-768.webp",
+      "kind": "AI-generated scene; not a documentary photograph or scientific observation",
+      "mode": "built-in ImageGen",
+      "width": 1586,
+      "height": 992,
+      "bytes": 33616,
+      "prompt": "Use case: stylized-concept\nAsset type: final bitmap background for a personal research website hero, landscape approximately 1920 x 1200.\nPrimary request: Photographic-quality celestial visual concept, not a NASA observation. A huge dark planet occupies the right side, its circular limb partly outside the right edge, with a delicate luminous cyan-blue crescent rim and very subtle warm golden edge light. Sparse distant stars and a faint deep-space nebula create immense quiet depth.\nComposition/framing: Wide landscape, entire left half intentionally near-empty clean deep black-blue #070b18 negative space for overlaid website heading. Main planet roughly centered x=76%, y=48%, diameter about 75% of image height; visibly dark round volume, mostly shadow. The light is restrained and physically beautiful. Lower left remains dark.\nStyle/medium: refined cinematic astronomical concept image, realistic atmospheric scattering and rich shadow, no cartoon outlines, no flat vector art, no lens-flare spectacle.\nColor palette: deep ink blue, nearly black shadows, icy cyan-blue and a tiny warm gold illumination, ice-white sparse points of stars.\nConstraints: No text, no UI, no watermark, no logos, no spacecraft, no labels, no measurable science claims, no people. Do not fill the left negative space with bright stars or nebulas. One final image only."
+    },
+    {
+      "file": "public/images/celestial/anime-coast.webp",
+      "mobileFile": "public/images/celestial/anime-coast-768.webp",
+      "kind": "AI-generated scene; not a documentary photograph or scientific observation",
+      "mode": "built-in ImageGen",
+      "width": 1600,
+      "height": 916,
+      "bytes": 160524,
+      "prompt": "Use case: stylized-concept\nAsset type: final bitmap background for anime section hero, wide landscape approximately 1920 x 1100.\nPrimary request: An ORIGINAL high-quality hand-painted animated-film landscape, a beautiful blue coast at twilight, calm deep blue water and layered lavender to rose-tinted luminous clouds. Far in the background toward the right a train viaduct curves along the coast with a few tiny warm lights. Subtle foreground greenery only along the bottom-right edge. The landscape feels alive, clear and hopeful, painterly atmospheric detail and clean cinematic lighting.\nComposition/framing: Wide landscape. Left half is intentionally airy open blue sky and quiet sea with fewer details and good dark-midblue contrast, reserved for a website title added later. Visual richness is mainly middle-right and right, with horizon low enough to give left title room. No people required.\nColor palette: midnight blue and twilight cobalt, soft violet dusk clouds, a touch of translucent blush pink, tiny warm golden train lights, natural green edges.\nConstraints: Entirely original scene; no existing IP characters, no recognizable copyrighted compositions, no text of any kind, no interface, no writing, no watermark, no poster typography, no logos, no visible signs. One final image only."
+    },
+    {
+      "file": "public/images/celestial/life-window.webp",
+      "mobileFile": "public/images/celestial/life-window-768.webp",
+      "kind": "AI-generated scene; not a documentary photograph or scientific observation",
+      "mode": "built-in ImageGen",
+      "width": 1513,
+      "height": 1040,
+      "bytes": 147974,
+      "prompt": "Use case: photorealistic-natural\nAsset type: final wide editorial lifestyle bitmap, approximately 1600 x 1100.\nPrimary request: Beautiful natural photography-style quiet everyday scene beside a window: a wooden table with a blue glazed ceramic coffee cup and an open blank notebook, soft branch and leaf shadows fall across the tabletop. Nearby greenery may be blurred outside the window. Warm neutral natural daylight, airy and peaceful, true-to-life wood grain, blue ceramic glaze, subtle fabric and paper textures.\nComposition/framing: Wide landscape close-to-medium table view, window along left or upper-left, cup near the right-middle and notebook lower-middle. Balanced spacious composition with negative space, no clutter; a realistic photographed still life, not a flat lay. Photograph is a generated scene, not a claimed photograph taken by the user.\nLighting/mood: Gentle daylight with soft shadow edges, warm but not yellow, bright whites and natural forest greens with amber highlights.\nConstraints: Absolutely no text, no notebook writing, no UI, no watermark, no brand logos, no faces or human identity, no recognizable landmark or location. No extra decorative objects beyond the simple everyday tabletop scene. One final image only."
+    }
+  ],
+  "avatar": {
+    "file": "public/images/celestial/github-avatar.webp",
+    "source": "https://github.com/s1encisi",
+    "kind": "Public profile avatar, not a verified portrait"
+  },
+  "posters": {
+    "sourceManifest": "docs/animation/poster-sources.json",
+    "kind": "Existing authentic local poster assets"
+  },
+  "githubMark": {
+    "implementation": "app/_components/social-links.tsx",
+    "source": "https://api.github.com/repos/simple-icons/simple-icons/contents/icons/github.svg"
+  }
+}

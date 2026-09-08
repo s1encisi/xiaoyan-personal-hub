@@ -75,7 +75,7 @@ const moduleRoutes = [
   ["/", /从复杂过程/],
   ["/about", /我关注工业问题与/],
   ["/about/profile", /把模型放回工艺/],
-  ["/contact", /让联系入口真正可用/],
+  ["/contact", /在这里，/],
   ["/research", /选择阅读路径/],
   ["/projects", /4(?:<!-- -->)? 个相互连接的方向/],
   ["/outputs", /一条完整证据链/],
@@ -90,7 +90,7 @@ const moduleRoutes = [
   ["/notes", /4(?:<!-- -->)? 组持续更新的主题/],
   ["/thoughts", /缓慢生长的想法/],
   ["/life", /研究之外，保持具体/],
-  ["/life/animation", /看动画，/],
+  ["/life/animation", /让故事，/],
   ...animationModuleRoutes,
 ];
 
@@ -168,13 +168,52 @@ test("home server-renders the official-site navigation hierarchy", async () => {
   assert.match(html, /copper-electrowinning-hero\.webp/);
   assert.match(html, /copper-electrowinning-hero-768\.webp 768w/);
   assert.match(html, /copper-electrowinning-hero-1200\.webp 1200w/);
-  assert.match(html, /研究路径/);
+  assert.match(html, /研究议程/);
   assert.equal(
     readAttribute(findTag(html, "link", "rel", "canonical"), "href"),
     "https://xiaoyan-personal-hub.s1encisi.chatgpt.site",
   );
   assert.doesNotMatch(html, /data-design-contract/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Starter Project/i);
+});
+
+test("public profiles are usable links and omit unnecessary personal details", async () => {
+  for (const path of ["/", "/about/profile", "/contact"]) {
+    const html = await (await render(path)).text();
+    for (const url of ["https://space.bilibili.com/103442064", "https://github.com/s1encisi", "https://bgm.tv/user/s1encisi"]) {
+      const link = findTag(html, "a", "href", url);
+      assert.ok(link, `${path}: ${url}`);
+      assert.equal(readAttribute(link, "target"), "_blank");
+      assert.match(readAttribute(link, "rel") ?? "", /noopener/);
+    }
+    assert.doesNotMatch(html, /Siping Road|Shanghai 200092|github_pat_/);
+  }
+  const profile = await (await render("/about/profile")).text();
+  assert.match(profile, /Zhezhen Yan/);
+  assert.match(profile, /Tongji University/);
+  assert.match(profile, /https:\/\/github\.com\/langchain-ai\/langchain\/issues\/37713/);
+  assert.match(profile, /不代表补丁已被合并/);
+});
+
+test("motion controls have a static server fallback on all themed entry pages", async () => {
+  for (const path of ["/", "/life", "/life/animation", "/research"]) {
+    const html = await (await render(path)).text();
+    assert.match(html, /data-motion="off"/);
+    const toggle = findTag(html, "button", "aria-label", "开启动态效果");
+    assert.ok(toggle, path);
+    assert.equal(readAttribute(toggle, "aria-pressed"), "false");
+    assert.match(html, /<h1\b/);
+  }
+});
+
+test("animation external sources remain distinct from the local archive", async () => {
+  const html = await (await render("/life/animation")).text();
+  assert.match(html, /2,502/);
+  assert.match(html, /2026-09-08/);
+  assert.match(html, /平台计数与站内番剧总表分别统计，不相加/);
+  for (const id of ["cv44645807", "cv20716673", "cv9912879", "cv6770928"]) {
+    assert.ok(findTag(html, "a", "href", `https://www.bilibili.com/read/${id}`));
+  }
 });
 
 test("all module and portal routes render distinct content", async () => {
@@ -283,8 +322,8 @@ test("fixed pages emit route-specific canonical and social metadata", async () =
   for (const [path, title, description] of [
     ["/about", "关于我｜小闫", "了解小闫的研究命题、工作准则与当前关注方向。"],
     ["/outputs/project-results", "项目成果｜小闫", "小闫研究主题的成果索引；性能、论文、代码与工业验证仅在核实后公开。"],
-    ["/life", "生活记录｜小闫", "小闫关于动画与影评、味道、咖啡、旅行和日常好物的生活记录。"],
-    ["/life/animation", "动画观测站｜动画与影评｜小闫", "小闫从 2017 年开始积累的动画档案、年度推荐、影评文章与番剧总表。"],
+    ["/life", "生活记录｜小闫", "关于动画、味道、咖啡、散步与日常好物，慢慢收集具体的喜欢。"],
+    ["/life/animation", "动画观测站｜动画与影评｜小闫", "从 2017 年开始的动画档案：年度推荐、影评原文、番剧总表，以及 Bilibili 与 Bangumi 的公开记录。"],
   ]) {
     const response = await render(path);
     assert.equal(response.status, 200, path);
@@ -438,7 +477,7 @@ test("research and insight pages expose their parent hierarchy and draft status"
 
 test("incomplete sections state the exact information required without internal user-facing copy", async () => {
   const requirements = [
-    ["/contact", /常用邮箱[\s\S]*GitHub、ORCID、Google Scholar/],
+    ["/contact", /常用邮箱、ORCID、Google Scholar/],
     ["/education/masters-stage", /学校、学院、专业、学位层次/],
     ["/experience/masters-research", /机构、团队、角色、地点和准确起止时间/],
     ["/honors/academic-research", /证书、官方获奖名单或可公开查询的链接/],

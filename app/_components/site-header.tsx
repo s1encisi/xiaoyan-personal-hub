@@ -4,6 +4,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navigationGroups } from "../_data/site";
+import { MotionSettings } from "./motion-settings";
 
 function pathMatches(pathname: string, href: string) {
   return pathCurrentState(pathname, href) !== undefined;
@@ -205,7 +206,7 @@ export function SiteHeader() {
   };
 
   return (
-    <header ref={headerRef} className="global-header" onBlur={handleHeaderBlur}>
+    <header ref={headerRef} className={`global-header ${pathname === "/" ? "header-cosmic" : pathname.startsWith("/life/animation") ? "header-anime" : pathname === "/life" ? "header-life" : "header-light"}`} onBlur={handleHeaderBlur}>
       <div ref={headerInnerRef} className="header-inner">
         <a
           className="site-brand"
@@ -220,7 +221,7 @@ export function SiteHeader() {
           <span className="brand-symbol" aria-hidden="true"><i />Y</span>
           <span className="brand-copy">
             <strong>小闫</strong>
-            <small>RESEARCH × LIFE</small>
+            <small>Zhezhen Yan</small>
           </span>
         </a>
 
@@ -284,6 +285,7 @@ export function SiteHeader() {
           <span>联系</span><b aria-hidden="true">↗</b>
         </a>
 
+        <MotionSettings />
         <button
           ref={menuButtonRef}
           className="menu-toggle"

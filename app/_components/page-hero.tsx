@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "./breadcrumbs";
+import { AmbientScene } from "./ambient-scene";
 
 type PageHeroProps = {
   code: string;
@@ -13,7 +14,8 @@ type PageHeroProps = {
 
 export function PageHero({ code, eyebrow, title, description, breadcrumbs, aside, tone = "light" }: PageHeroProps) {
   return (
-    <section className={`page-hero page-hero-${tone}`}>
+    <section className={`page-hero page-hero-${tone}`} data-module={code.charAt(0)}>
+      <div className="module-atmosphere" aria-hidden="true"><AmbientScene kind="research" /><span /><span /><span /></div>
       <span className="page-chapter-code" aria-hidden="true">{code}</span>
       <div className="page-hero-main">
         <Breadcrumbs items={breadcrumbs} />

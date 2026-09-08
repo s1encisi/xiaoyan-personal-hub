@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production requires native document navigation. */
+/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- Native navigation and optimized profile imagery. */
+import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "../../_components/page-hero";
 import { RequirementNotice } from "../../_components/requirement-notice";
 import { SectionHeading } from "../../_components/section-heading";
@@ -7,6 +8,8 @@ import { animationReviews } from "../../_data/animation/reviews";
 import { profileRequirements } from "../../_data/editorial";
 import { createFixedPageMetadata } from "../../_data/metadata";
 import { focusAreas, siteInfo } from "../../_data/site";
+import { publicIdentity, publicContributions } from "../../_data/profiles";
+import { SocialLinks } from "../../_components/social-links";
 
 export const metadata = createFixedPageMetadata({
   path: "/about/profile",
@@ -60,6 +63,16 @@ export default function ProfilePage() {
           </div>
         }
       />
+
+      <section className="profile-public-section section-shell" aria-labelledby="profile-public-title">
+        <div className="public-identity">
+          <img src="/images/celestial/github-avatar.webp" width="90" height="90" alt="GitHub 公开主页使用的头像" />
+          <div><h2 id="profile-public-title">{publicIdentity.englishName} / 小闫</h2><p>{publicIdentity.affiliation} · {publicIdentity.city}</p><p>在 Bilibili，我是 {publicIdentity.bilibiliAlias}。</p></div>
+        </div>
+        <p className="public-source-note">姓名、机构与城市来自 <a href={publicIdentity.source} target="_blank" rel="noopener noreferrer">GitHub 公开资料</a>；Bilibili 个人资料同样标注同济大学。核验日期：{publicIdentity.verifiedAt}。</p>
+        <SocialLinks variant="editorial" />
+        {publicContributions.map((item) => <article className="public-contribution" key={item.href}><p>{item.kind} · {item.project} · {item.date}</p><h3><a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}<ArrowUpRight size={20} aria-hidden="true" /></a></h3><div>{item.description}</div><p>{item.note}</p></article>)}
+      </section>
 
       <section className="about-narrative section-shell" aria-labelledby="profile-position-title">
         <div className="section-kicker">
@@ -156,7 +169,7 @@ export default function ProfilePage() {
       <RequirementNotice
         groups={profileRequirements}
         title="要把研究定位补成完整个人叙事，需要这些材料"
-        intro="学校、导师和时间线只是身份信息；更重要的是补足选择当前问题的原因、真实转折、承担过的工作和未来计划。"
+        intro="公开机构信息已有来源；院系、导师、教育时间线，以及选择当前问题的原因、真实转折和未来计划，仍需完整材料。"
       />
 
       <section className="section-actions section-shell" aria-label="个人介绍相关入口">
