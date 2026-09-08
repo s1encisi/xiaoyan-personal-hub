@@ -1,0 +1,43 @@
+
+import { ArrowUpRight } from "lucide-react";
+import { AnimationModuleLinks } from "../../../_components/animation-module-links";
+import { AnimationSectionHero } from "../../../_components/animation-section-hero";
+import { animationArchiveCount, animationArchiveYears, animationSupplementalCount } from "../../../_data/animation/archive";
+import { animationArchivePeriod } from "../../../_data/animation/overview";
+import { createFixedPageMetadata } from "../../../_data/metadata";
+
+export const metadata = createFixedPageMetadata({
+  path: "/life/animation/archive",
+  title: "番剧总表｜动画观测站｜小闫",
+  description: "按年份进入小闫保存的番剧总表，浏览动画、关联作品、排期与重看备注。",
+});
+
+export default function AnimationArchivePage() {
+  return (
+    <main id="main-content" className="animation-section-page" tabIndex={-1}>
+      <AnimationSectionHero
+        code="03 / ANIME INDEX"
+        title="番剧总表"
+        description={`长期总表按年份重新建立索引。总览只负责分流，完整条目、二刷和原始备注都放在对应年份页面；另一份观看记录包含 ${animationSupplementalCount.toLocaleString("zh-CN")} 条记录，其中有重复文本，并与主表大量重合，因此单独统计、不与主表相加，目前尚未逐条公开。`}
+        breadcrumbs={[{ label: "首页", href: "/" }, { label: "生活", href: "/life" }, { label: "动画观测站", href: "/life/animation" }, { label: "番剧总表" }]}
+        stats={[{ label: "时间范围", value: animationArchivePeriod }, { label: "主表收录", value: `${animationArchiveCount.toLocaleString("zh-CN")} 条` }, { label: "另一份记录（单独统计）", value: `${animationSupplementalCount.toLocaleString("zh-CN")} 条` }]}
+      />
+
+      <section className="animation-archive-index" aria-label="番剧总表年份索引">
+        {animationArchiveYears.map((record) => (
+          <article key={record.year}>
+            <span>{record.year === "undated" ? "—" : record.year}</span>
+            <div><small>{record.label}</small><h2>{record.summary}</h2></div>
+            <ul aria-label={`${record.year === "undated" ? "未标注时间" : `${record.year} 年`}部分总表条目`}>
+              {record.entries.slice(0, 5).map((entry) => <li key={entry.id}>{entry.title}</li>)}
+            </ul>
+            <strong>{record.entries.length}<small> 条总表条目</small></strong>
+            <a href={`/life/animation/archive/${record.year}`} data-navigation="document" aria-label={`打开${record.year === "undated" ? "未标注时间" : ` ${record.year} 年`}完整番剧总表`}><span>打开年度总表</span><ArrowUpRight aria-hidden="true" /></a>
+          </article>
+        ))}
+      </section>
+
+      <AnimationModuleLinks />
+    </main>
+  );
+}

@@ -1,0 +1,1553 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-21T17:00:52.4853813+08:00",
+  "sourcePolicy": "AniList public GraphQL metadata and AniList CDN cover images; for the database-unlisted Honkai short, the official Honkai Impact 3rd YouTube thumbnail is used. Promotional artwork remains copyrighted by its respective rights holders and is stored as a low-resolution identification image for editorial/review use.",
+  "items": [
+    {
+      "title": "末日时在做什么？有没有空？可以来拯救吗？",
+      "queryName": "Shuumatsu Nani Shitemasu ka? Isogashii Desu ka? Sukutte Moratte Ii Desu ka?",
+      "slug": "sukasuka",
+      "categories": [
+        "annual-2017"
+      ],
+      "expectedYear": 2017,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 21860,
+        "romaji": "Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?",
+        "english": "WorldEnd: What are you doing at the end of the world? Are you busy? Will you save us?",
+        "native": "終末なにしてますか? 忙しいですか? 救ってもらっていいですか?",
+        "year": 2017,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/21860",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21860-lSIbYJtEbAXu.jpg",
+      "localPath": "/images/animation/posters/sukasuka.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "GOSICK",
+      "queryName": "Gosick",
+      "slug": "gosick",
+      "categories": [
+        "annual-2018"
+      ],
+      "expectedYear": 2011,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 8425,
+        "romaji": "GOSICK",
+        "english": "Gosick",
+        "native": "GOSICK",
+        "year": 2011,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/8425",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx8425-Bn14ayPjnq9o.jpg",
+      "localPath": "/images/animation/posters/gosick.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "向山进发",
+      "queryName": "Yama no Susume",
+      "slug": "yama-no-susume",
+      "categories": [
+        "annual-2019",
+        "annual-2024-rewatch"
+      ],
+      "expectedYear": 2013,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 14355,
+        "romaji": "Yama no Susume",
+        "english": "Encouragement of Climb",
+        "native": "ヤマノススメ",
+        "year": 2013,
+        "format": "TV_SHORT",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/14355",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx14355-ZsPYtTYa1b4v.jpg",
+      "localPath": "/images/animation/posters/yama-no-susume.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "高校舰队",
+      "queryName": "High School Fleet",
+      "slug": "high-school-fleet",
+      "categories": [
+        "annual-2020",
+        "review"
+      ],
+      "expectedYear": 2016,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 21316,
+        "romaji": "High School Fleet",
+        "english": "High School Fleet",
+        "native": "ハイスクール・フリート",
+        "year": 2016,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/21316",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21316-pqjWmGuDRxwL.jpg",
+      "localPath": "/images/animation/posters/high-school-fleet.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "吹响吧！上低音号",
+      "queryName": "Hibike! Euphonium",
+      "slug": "hibike-euphonium",
+      "categories": [
+        "annual-2021",
+        "review"
+      ],
+      "expectedYear": 2015,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 20912,
+        "romaji": "Hibike! Euphonium",
+        "english": "Sound! Euphonium",
+        "native": "響け！ユーフォニアム",
+        "year": 2015,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/20912",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20912-SiiG4HPrjQlX.jpg",
+      "localPath": "/images/animation/posters/hibike-euphonium.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "惊爆草莓",
+      "queryName": "Strawberry Panic",
+      "slug": "strawberry-panic",
+      "categories": [
+        "annual-2022-retro",
+        "review"
+      ],
+      "expectedYear": 2006,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 855,
+        "romaji": "Strawberry Panic",
+        "english": "Strawberry Panic",
+        "native": "ストロベリー・パニック",
+        "year": 2006,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/855",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx855-hIqnp64Sovir.png",
+      "localPath": "/images/animation/posters/strawberry-panic.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "圣母在上",
+      "queryName": "Maria-sama ga Miteru",
+      "slug": "maria-sama-ga-miteru",
+      "categories": [
+        "annual-2022-retro",
+        "annual-2024-rewatch",
+        "review"
+      ],
+      "expectedYear": 2004,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 158,
+        "romaji": "Maria-sama ga Miteru",
+        "english": "Maria Watches Over Us",
+        "native": "マリア様がみてる",
+        "year": 2004,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/158",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158-8bOVtlzJmq1r.jpg",
+      "localPath": "/images/animation/posters/maria-sama-ga-miteru.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "水星领航员",
+      "queryName": "Aria the Animation",
+      "slug": "aria-the-animation",
+      "categories": [
+        "annual-2022-retro",
+        "annual-2024-rewatch",
+        "review"
+      ],
+      "expectedYear": 2005,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 477,
+        "romaji": "ARIA The ANIMATION",
+        "english": "ARIA The ANIMATION",
+        "native": "ARIA The ANIMATION",
+        "year": 2005,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/477",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx477-CdKPHW7rGbUP.png",
+      "localPath": "/images/animation/posters/aria-the-animation.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "偶像大师",
+      "queryName": "The iDOLM@STER",
+      "slug": "the-idolmaster",
+      "categories": [
+        "annual-2023",
+        "annual-2024-rewatch",
+        "review-franchise"
+      ],
+      "expectedYear": 2011,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 10278,
+        "romaji": "THE IDOLM@STER",
+        "english": "The Idol Master",
+        "native": "アイドルマスター",
+        "year": 2011,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/10278",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx10278-FnbOihGuSpfc.jpg",
+      "localPath": "/images/animation/posters/the-idolmaster.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "Kanon",
+      "queryName": "Kanon 2006",
+      "slug": "kanon-2006",
+      "categories": [
+        "annual-2023"
+      ],
+      "expectedYear": 2006,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 1530,
+        "romaji": "Kanon (2006)",
+        "english": "Kanon (2006)",
+        "native": "カノン (2006)",
+        "year": 2006,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/1530",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1530-nkzstlVZhZNG.jpg",
+      "localPath": "/images/animation/posters/kanon-2006.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "向山进发 Next Summit",
+      "queryName": "Yama no Susume: Next Summit",
+      "slug": "yama-no-susume-next-summit",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 131182,
+        "romaji": "Yama no Susume: Next Summit",
+        "english": "Encouragement of Climb: Next Summit",
+        "native": "ヤマノススメ Next Summit",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/131182",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131182-NYATKomnS2RQ.jpg",
+      "localPath": "/images/animation/posters/yama-no-susume-next-summit.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "赛博朋克：边缘行者",
+      "queryName": "Cyberpunk: Edgerunners",
+      "slug": "cyberpunk-edgerunners",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 120377,
+        "romaji": "Cyberpunk: Edgerunners",
+        "english": "Cyberpunk: Edgerunners",
+        "native": "サイバーパンク エッジランナーズ",
+        "year": 2022,
+        "format": "ONA",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/120377",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120377-ayZPoxiWt4Li.jpg",
+      "localPath": "/images/animation/posters/cyberpunk-edgerunners.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "街角魔族 2丁目",
+      "queryName": "Machikado Mazoku: 2-Choume",
+      "slug": "machikado-mazoku-2",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 123330,
+        "romaji": "Machikado Mazoku: 2-Choume",
+        "english": "The Demon Girl Next Door Season 2",
+        "native": "まちカドまぞく 2丁目",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/123330",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx123330-AU2jllC75uSE.png",
+      "localPath": "/images/animation/posters/machikado-mazoku-2.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "银河英雄传说 Die Neue These 激突",
+      "queryName": "Ginga Eiyuu Densetsu: Die Neue These - Gekitotsu",
+      "slug": "lotgh-dnt-collision",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 124032,
+        "romaji": "Ginga Eiyuu Densetsu: Die Neue These - Gekitotsu",
+        "english": "Legend of the Galactic Heroes: Die Neue These - Collision",
+        "native": "銀河英雄伝説 Die Neue These 激突",
+        "year": 2022,
+        "format": "ONA",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/124032",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124032-li8JjJdJvDVb.png",
+      "localPath": "/images/animation/posters/lotgh-dnt-collision.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "银河英雄传说 Die Neue These 策谋",
+      "queryName": "Ginga Eiyuu Densetsu: Die Neue These - Sakubou",
+      "slug": "lotgh-dnt-intrigue",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 148970,
+        "romaji": "Ginga Eiyuu Densetsu: Die Neue These - Sakubou",
+        "english": "Legend of the Galactic Heroes: Die Neue These - Intrigue",
+        "native": "銀河英雄伝説 Die Neue These 策謀",
+        "year": 2022,
+        "format": "ONA",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/148970",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b148970-2gLwQ9Bso5r7.png",
+      "localPath": "/images/animation/posters/lotgh-dnt-intrigue.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "辉夜大小姐想让我告白－超级浪漫－",
+      "queryName": "Kaguya-sama wa Kokurasetai: Ultra Romantic",
+      "slug": "kaguya-ultra-romantic",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 125367,
+        "romaji": "Kaguya-sama wa Kokurasetai: Ultra Romantic",
+        "english": "Kaguya-sama: Love is War -Ultra Romantic-",
+        "native": "かぐや様は告らせたい-ウルトラロマンティック-",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/125367",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx125367-1yuq9NFcQuLI.png",
+      "localPath": "/images/animation/posters/kaguya-ultra-romantic.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "86－不存在的战区－",
+      "queryName": "86: Eighty-Six Part 2",
+      "slug": "eighty-six-part-2",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2021,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 131586,
+        "romaji": "86: Eighty Six Part 2",
+        "english": "86 EIGHTY-SIX Part 2",
+        "native": "86－エイティシックス－ 第2クール",
+        "year": 2021,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/131586",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131586-JhC0wcBi09EZ.jpg",
+      "localPath": "/images/animation/posters/eighty-six-part-2.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "孤独摇滚！",
+      "queryName": "Bocchi the Rock!",
+      "slug": "bocchi-the-rock",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 130003,
+        "romaji": "Bocchi the Rock!",
+        "english": "BOCCHI THE ROCK!",
+        "native": "ぼっち・ざ・ろっく！",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/130003",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130003-HTDmeL4RGeJ4.png",
+      "localPath": "/images/animation/posters/bocchi-the-rock.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "彻夜之歌",
+      "queryName": "Yofukashi no Uta",
+      "slug": "call-of-the-night",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 141391,
+        "romaji": "Yofukashi no Uta",
+        "english": "Call of the Night",
+        "native": "よふかしのうた",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/141391",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141391-M3ZgUKTPENUk.jpg",
+      "localPath": "/images/animation/posters/call-of-the-night.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "明日酱的水手服",
+      "slug": "akebi-sailor-uniform",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "queryName": "AniList ID 131548",
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 131548,
+        "romaji": "Akebi-chan no Sailor Fuku",
+        "english": "Akebi’s Sailor Uniform",
+        "native": "明日ちゃんのセーラー服",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/131548",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131548-4OXik3SWOaee.jpg",
+      "localPath": "/images/animation/posters/akebi-sailor-uniform.jpg",
+      "error": null
+    },
+    {
+      "title": "相合之物",
+      "queryName": "Deaimon",
+      "slug": "deaimon",
+      "categories": [
+        "annual-2022-top10"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 132532,
+        "romaji": "Deaimon",
+        "english": "Deaimon: Recipe for Happiness",
+        "native": "であいもん",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/132532",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx132532-DwjK9wnlSaKl.png",
+      "localPath": "/images/animation/posters/deaimon.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "更衣人偶坠入爱河",
+      "queryName": "Sono Bisque Doll wa Koi wo Suru",
+      "slug": "my-dress-up-darling",
+      "categories": [
+        "annual-2022-honorable"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 132405,
+        "romaji": "Sono Bisque Doll wa Koi wo Suru",
+        "english": "My Dress-Up Darling",
+        "native": "その着せ替え人形は恋をする",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/132405",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx132405-qP7FQYGmNI3d.jpg",
+      "localPath": "/images/animation/posters/my-dress-up-darling.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "进击的巨人 最终季 Part 2",
+      "queryName": "Shingeki no Kyojin: The Final Season Part 2",
+      "slug": "attack-on-titan-final-season-part-2",
+      "categories": [
+        "annual-2022-honorable"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 131681,
+        "romaji": "Shingeki no Kyojin: The Final Season Part 2",
+        "english": "Attack on Titan Final Season Part 2",
+        "native": "進撃の巨人 The Final Season Part 2",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/131681",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-5ooUqvqNtee1.jpg",
+      "localPath": "/images/animation/posters/attack-on-titan-final-season-part-2.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "Love Live! 虹咲学园学园偶像同好会 第二季",
+      "queryName": "Love Live! Nijigasaki Gakuen School Idol Doukoukai 2nd Season",
+      "slug": "nijigasaki-season-2",
+      "categories": [
+        "annual-2022-honorable"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 133891,
+        "romaji": "Love Live! Nijigasaki Gakuen School Idol Doukoukai 2",
+        "english": "Love Live! Nijigasaki High School Idol Club Season 2",
+        "native": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 2",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/133891",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx133891-VzjX5rquZqd0.png",
+      "localPath": "/images/animation/posters/nijigasaki-season-2.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "SHINE POST",
+      "queryName": "Shine Post",
+      "slug": "shine-post",
+      "categories": [
+        "annual-2022-honorable"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 140753,
+        "romaji": "SHINE POST",
+        "english": "SHINEPOST",
+        "native": "シャインポスト",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/140753",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140753-g1DnC6M1yiIM.jpg",
+      "localPath": "/images/animation/posters/shine-post.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "莉可丽丝",
+      "queryName": "Lycoris Recoil",
+      "slug": "lycoris-recoil",
+      "categories": [
+        "annual-2022-honorable"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 143270,
+        "romaji": "Lycoris Recoil",
+        "english": "Lycoris Recoil",
+        "native": "リコリス・リコイル",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/143270",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx143270-rfkyiYXhek5w.jpg",
+      "localPath": "/images/animation/posters/lycoris-recoil.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "Engage Kiss",
+      "queryName": "Engage Kiss",
+      "slug": "engage-kiss",
+      "categories": [
+        "annual-2022-honorable"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 146625,
+        "romaji": "Engage Kiss",
+        "english": "Engage Kiss",
+        "native": "Engage Kiss",
+        "year": 2022,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/146625",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx146625-DmXjpJ2y8fDn.jpg",
+      "localPath": "/images/animation/posters/engage-kiss.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "摇曳百合",
+      "queryName": "Yuru Yuri",
+      "slug": "yuru-yuri",
+      "categories": [
+        "annual-2022-retro",
+        "annual-2025-rewatch"
+      ],
+      "expectedYear": 2011,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 10495,
+        "romaji": "Yuru Yuri",
+        "english": "YuruYuri",
+        "native": "ゆるゆり",
+        "year": 2011,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/10495",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10495-FbK4ybSp2DNG.jpg",
+      "localPath": "/images/animation/posters/yuru-yuri.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "BanG Dream! Poppin’ Dream!",
+      "queryName": "BanG Dream! Poppin' Dream!",
+      "slug": "bang-dream-poppin-dream",
+      "categories": [
+        "annual-2022-retro",
+        "review"
+      ],
+      "expectedYear": 2022,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 117765,
+        "romaji": "BanG Dream! Poppin' Dream!",
+        "english": null,
+        "native": "BanG Dream! ぽっぴん'どりーむ!",
+        "year": 2022,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/117765",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx117765-R9vazugUMUE0.jpg",
+      "localPath": "/images/animation/posters/bang-dream-poppin-dream.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "迷糊餐厅",
+      "queryName": "Working!!",
+      "slug": "working",
+      "categories": [
+        "annual-2022-retro"
+      ],
+      "expectedYear": 2010,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 6956,
+        "romaji": "WORKING!!",
+        "english": "Wagnaria!!",
+        "native": "WORKING!!",
+        "year": 2010,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/6956",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6956-Nxs7H25yHLNS.jpg",
+      "localPath": "/images/animation/posters/working.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "NANA",
+      "queryName": "NANA",
+      "slug": "nana",
+      "categories": [
+        "annual-2022-retro",
+        "review"
+      ],
+      "expectedYear": 2006,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 877,
+        "romaji": "NANA",
+        "english": "NANA",
+        "native": "NANA-ナナ-",
+        "year": 2006,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/877",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx877-6BUYEWp8By8j.png",
+      "localPath": "/images/animation/posters/nana.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "向阳素描",
+      "queryName": "Hidamari Sketch",
+      "slug": "hidamari-sketch",
+      "categories": [
+        "annual-2022-retro"
+      ],
+      "expectedYear": 2007,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 1852,
+        "romaji": "Hidamari Sketch",
+        "english": "Hidamari Sketch",
+        "native": "ひだまりスケッチ",
+        "year": 2007,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/1852",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1852-N3qrLcuVdUTF.png",
+      "localPath": "/images/animation/posters/hidamari-sketch.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "来自深渊",
+      "queryName": "Made in Abyss",
+      "slug": "made-in-abyss",
+      "categories": [
+        "annual-2022-retro"
+      ],
+      "expectedYear": 2017,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 97986,
+        "romaji": "Made in Abyss",
+        "english": "Made in Abyss",
+        "native": "メイドインアビス",
+        "year": 2017,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/97986",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97986-TQ7dCgbS3y5s.jpg",
+      "localPath": "/images/animation/posters/made-in-abyss.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "玉响",
+      "queryName": "Tamayura",
+      "slug": "tamayura",
+      "categories": [
+        "annual-2022-retro"
+      ],
+      "expectedYear": 2010,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 9055,
+        "romaji": "Tamayura",
+        "english": "Tamayura",
+        "native": "たまゆら",
+        "year": 2010,
+        "format": "OVA",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/9055",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9055-6pfufpCEvRgs.png",
+      "localPath": "/images/animation/posters/tamayura.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "葬送的芙莉莲",
+      "queryName": "Sousou no Frieren",
+      "slug": "frieren",
+      "categories": [
+        "annual-2024"
+      ],
+      "expectedYear": 2023,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 154587,
+        "romaji": "Sousou no Frieren",
+        "english": "Frieren: Beyond Journey’s End",
+        "native": "葬送のフリーレン",
+        "year": 2023,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/154587",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx154587-qQTzQnEJJ3oB.jpg",
+      "localPath": "/images/animation/posters/frieren.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "摇曳百合 大室家 亲爱的姐妹",
+      "queryName": "Oomuro-ke: Dear Sisters",
+      "slug": "oomuro-ke-dear-sisters",
+      "categories": [
+        "annual-2024"
+      ],
+      "expectedYear": 2024,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 167984,
+        "romaji": "Oomuro-ke: dear sisters",
+        "english": null,
+        "native": "大室家 dear sisters",
+        "year": 2024,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/167984",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx167984-vZELUFDNk0Ax.jpg",
+      "localPath": "/images/animation/posters/oomuro-ke-dear-sisters.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "攻壳机动队 S.A.C.",
+      "queryName": "Koukaku Kidoutai: Stand Alone Complex",
+      "slug": "ghost-in-the-shell-sac",
+      "categories": [
+        "annual-2024"
+      ],
+      "expectedYear": 2002,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 467,
+        "romaji": "Koukaku Kidoutai: STAND ALONE COMPLEX",
+        "english": "Ghost in the Shell: Stand Alone Complex",
+        "native": "攻殻機動隊 STAND ALONE COMPLEX",
+        "year": 2002,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/467",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx467-mBTtIoR13qs2.jpg",
+      "localPath": "/images/animation/posters/ghost-in-the-shell-sac.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "恋爱小行星",
+      "queryName": "Koisuru Asteroid",
+      "slug": "asteroid-in-love",
+      "categories": [
+        "annual-2024-rewatch"
+      ],
+      "expectedYear": 2020,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 108092,
+        "romaji": "Koisuru Asteroid",
+        "english": "Asteroid in Love",
+        "native": "恋する小惑星〈アステロイド〉",
+        "year": 2020,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/108092",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108092-vbL3rf0b23sp.jpg",
+      "localPath": "/images/animation/posters/asteroid-in-love.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "海贼王 Fan Letter",
+      "queryName": "One Piece Fan Letter",
+      "slug": "one-piece-fan-letter",
+      "categories": [
+        "annual-2024"
+      ],
+      "expectedYear": 2024,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 182469,
+        "romaji": "ONE PIECE FAN LETTER",
+        "english": "ONE PIECE FAN LETTER",
+        "native": "ONE PIECE FAN LETTER",
+        "year": 2024,
+        "format": "SPECIAL",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/182469",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx182469-JQ808NBPxmgn.jpg",
+      "localPath": "/images/animation/posters/one-piece-fan-letter.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "赛马娘 Pretty Derby 新时代之门",
+      "queryName": "Uma Musume: Pretty Derby - Shin Jidai no Tobira",
+      "slug": "uma-musume-beginning-new-era",
+      "categories": [
+        "annual-2024"
+      ],
+      "expectedYear": 2024,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 172420,
+        "romaji": "Uma Musume: Pretty Derby - Shin Jidai no Tobira",
+        "english": "Umamusume: Pretty Derby - Beginning of a New Era",
+        "native": "ウマ娘 プリティーダービー 新時代の扉",
+        "year": 2024,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/172420",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx172420-4LjhmwpNMHti.jpg",
+      "localPath": "/images/animation/posters/uma-musume-beginning-new-era.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "败犬女主太多了！",
+      "queryName": "Make Heroine ga Oosugiru!",
+      "slug": "makeine",
+      "categories": [
+        "annual-2024",
+        "annual-2025-rewatch"
+      ],
+      "expectedYear": 2024,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 171457,
+        "romaji": "Make Heroine ga Oosugiru!",
+        "english": "Makeine: Too Many Losing Heroines!",
+        "native": "負けヒロインが多すぎる！",
+        "year": 2024,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/171457",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171457-nmMIk0gNiWsm.jpg",
+      "localPath": "/images/animation/posters/makeine.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "机动战士高达 闪光的哈萨维",
+      "queryName": "Kidou Senshi Gundam: Senkou no Hathaway",
+      "slug": "gundam-hathaway",
+      "categories": [
+        "annual-2025-rewatch",
+        "review"
+      ],
+      "expectedYear": 2021,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 105595,
+        "romaji": "Kidou Senshi Gundam: Senkou no Hathaway",
+        "english": "Mobile Suit Gundam Hathaway",
+        "native": "機動戦士ガンダム 閃光のハサウェイ",
+        "year": 2021,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/105595",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx105595-40ugr6S9NfOb.jpg",
+      "localPath": "/images/animation/posters/gundam-hathaway.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "一杆青空",
+      "queryName": "Sorairo Utility TV",
+      "slug": "sorairo-utility",
+      "categories": [
+        "annual-2025"
+      ],
+      "expectedYear": 2025,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 174596,
+        "romaji": "Sora-iro Utility (TV)",
+        "english": "Sorairo Utility (TV)",
+        "native": "空色ユーティリティ (TV)",
+        "year": 2025,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/174596",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx174596-GbgKrUtBBuIg.jpg",
+      "localPath": "/images/animation/posters/sorairo-utility.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "金牌得主",
+      "queryName": "Medalist",
+      "slug": "medalist",
+      "categories": [
+        "annual-2025"
+      ],
+      "expectedYear": 2025,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 165171,
+        "romaji": "Medalist",
+        "english": "Medalist",
+        "native": "メダリスト",
+        "year": 2025,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/165171",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx165171-an9pyRXwVxJS.jpg",
+      "localPath": "/images/animation/posters/medalist.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "琉璃的宝石",
+      "queryName": "Ruri no Houseki",
+      "slug": "ruri-no-houseki",
+      "categories": [
+        "annual-2025"
+      ],
+      "expectedYear": 2025,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 180929,
+        "romaji": "Ruri no Houseki",
+        "english": "Ruri Rocks",
+        "native": "瑠璃の宝石",
+        "year": 2025,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/180929",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180929-ytdzqbrOhots.jpg",
+      "localPath": "/images/animation/posters/ruri-no-houseki.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "时光流逝，饭菜依旧美味",
+      "queryName": "Hibi wa Sugiredo Meshi Umashi",
+      "slug": "hibi-meshi",
+      "categories": [
+        "annual-2025"
+      ],
+      "expectedYear": 2025,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 185939,
+        "romaji": "Hibi wa Sugiredo Meshi Umashi",
+        "english": "Food for the Soul",
+        "native": "日々は過ぎれど飯うまし",
+        "year": 2025,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/185939",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx185939-hqt1He153el8.jpg",
+      "localPath": "/images/animation/posters/hibi-meshi.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "阳光马达棒球场",
+      "queryName": "Ballpark de Tsukamaete!",
+      "slug": "ballpark-de-tsukamaete",
+      "categories": [
+        "annual-2025"
+      ],
+      "expectedYear": 2025,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 184279,
+        "romaji": "Ballpark de Tsukamaete!",
+        "english": "Catch Me at the Ballpark!",
+        "native": "ボールパークでつかまえて！",
+        "year": 2025,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/184279",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx184279-dw02k4DPxwGz.png",
+      "localPath": "/images/animation/posters/ballpark-de-tsukamaete.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "这里是充满笑容的职场",
+      "queryName": "Egao no Taenai Shokuba desu.",
+      "slug": "egao-no-taenai-shokuba",
+      "categories": [
+        "annual-2025"
+      ],
+      "expectedYear": 2025,
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": 173523,
+        "romaji": "Egao no Taenai Shokuba desu.",
+        "english": "A Mangaka's Weirdly Wonderful Workplace",
+        "native": "笑顔のたえない職場です。",
+        "year": 2025,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/173523",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx173523-wy1rDK1NaKuc.png",
+      "localPath": "/images/animation/posters/egao-no-taenai-shokuba.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "电锯人 蕾塞篇",
+      "slug": "chainsaw-man-reze",
+      "categories": [
+        "annual-2025-placeholder-review"
+      ],
+      "expectedYear": 2025,
+      "queryName": "Chainsaw Man Reze Arc",
+      "matched": {
+        "id": 171627,
+        "romaji": "Chainsaw Man: Reze-hen",
+        "english": "Chainsaw Man – The Movie: Reze Arc",
+        "native": "チェンソーマン レゼ篇",
+        "year": 2025,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/171627",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171627-ZN9D7P46yHnw.png",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/chainsaw-man-reze.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "魔笛 MAGI",
+      "slug": "magi",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2012,
+      "queryName": "Magi: The Labyrinth of Magic",
+      "matched": {
+        "id": 14513,
+        "romaji": "Magi: The labyrinth of magic",
+        "english": "Magi: The Labyrinth of Magic",
+        "native": "マギ The labyrinth of magic",
+        "year": 2012,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/14513",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14513-HuUdrFFYftA7.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/magi.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "BanG Dream! 第三季",
+      "slug": "bang-dream-season-3",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2020,
+      "queryName": "BanG Dream! 3rd Season",
+      "matched": {
+        "id": 101634,
+        "romaji": "BanG Dream! 3rd Season",
+        "english": "BanG Dream! 3rd Season",
+        "native": "BanG Dream! 3rd Season",
+        "year": 2020,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/101634",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101634-4PSQAU2bw7s3.png",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/bang-dream-season-3.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "知晓天空之蓝的人啊",
+      "slug": "her-blue-sky",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2019,
+      "queryName": "Her Blue Sky",
+      "matched": {
+        "id": 108577,
+        "romaji": "Sora no Aosa wo Shiru Hito yo",
+        "english": "Her Blue Sky",
+        "native": "空の青さを知る人よ",
+        "year": 2019,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/108577",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108577-plhp2UMSmEhk.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/her-blue-sky.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "Re:Stage! Dream Days♪",
+      "slug": "restage-dream-days",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2019,
+      "queryName": "Re:Stage! Dream Days",
+      "matched": {
+        "id": 103048,
+        "romaji": "Re:Stage! Dream Days♪",
+        "english": "Re:Stage! Dream Days",
+        "native": "Re:ステージ! ドリームデイズ♪",
+        "year": 2019,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/103048",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx103048-f3hrT5ZmVPKr.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/restage-dream-days.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "赛马娘 Pretty Derby 第二季",
+      "slug": "uma-musume-season-2",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2021,
+      "queryName": "Uma Musume: Pretty Derby Season 2",
+      "matched": {
+        "id": 124223,
+        "romaji": "Uma Musume: Pretty Derby Season 2",
+        "english": "Umamusume: Pretty Derby Season 2",
+        "native": "ウマ娘 プリティーダービー Season 2",
+        "year": 2021,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/124223",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124223-XMOEUPopjtrI.png",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/uma-musume-season-2.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "新世纪福音战士新剧场版：终",
+      "slug": "evangelion-thrice-upon-a-time",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2021,
+      "queryName": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+      "matched": {
+        "id": 3786,
+        "romaji": "Shin Evangelion Movie:||",
+        "english": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+        "native": "シン・エヴァンゲリオン劇場版:||",
+        "year": 2021,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/3786",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx3786-Tpt9iM72dxTv.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/evangelion-thrice-upon-a-time.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "崩坏3 动画短片《毕业旅行》",
+      "slug": "honkai-graduation-trip",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2023,
+      "queryName": "Official Honkai Impact 3rd animated short: Graduation Trip",
+      "status": "downloaded",
+      "exactMatch": true,
+      "matched": {
+        "id": "youtube:VeWCBissZy8",
+        "romaji": null,
+        "english": "Honkai Impact 3rd Animated Short: Graduation Trip",
+        "native": "崩坏3 动画短片《毕业旅行》",
+        "year": 2023,
+        "format": "OFFICIAL_VIDEO_THUMBNAIL",
+        "releaseStatus": "PUBLISHED"
+      },
+      "sourcePage": "https://www.youtube.com/watch?v=VeWCBissZy8",
+      "sourceUrl": "https://i.ytimg.com/vi/VeWCBissZy8/maxresdefault.jpg",
+      "localPath": "/images/animation/posters/honkai-graduation-trip.jpg",
+      "assetKind": "official-video-thumbnail",
+      "copyrightNote": "Official Honkai Impact 3rd animated-short thumbnail from its official YouTube upload; rights remain with miHoYo/HoYoverse.",
+      "error": null
+    },
+    {
+      "title": "BanG Dream!",
+      "slug": "bang-dream-tv",
+      "categories": [
+        "review-franchise"
+      ],
+      "expectedYear": 2017,
+      "queryName": "BanG Dream!",
+      "matched": {
+        "id": 87435,
+        "romaji": "BanG Dream!",
+        "english": "BanG Dream!",
+        "native": "BanG Dream!（バンドリ！）",
+        "year": 2017,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/87435",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx87435-yHlVTP1HFiXH.png",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/bang-dream-tv.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "Love Live! 学园偶像计划",
+      "slug": "love-live-school-idol-project",
+      "categories": [
+        "review-franchise"
+      ],
+      "expectedYear": 2013,
+      "queryName": "Love Live! School Idol Project",
+      "matched": {
+        "id": 15051,
+        "romaji": "Love Live! School idol project",
+        "english": "Love Live! School Idol Project",
+        "native": "ラブライブ! School idol project",
+        "year": 2013,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/15051",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b15051-lwm0wVRWjKub.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/love-live-school-idol-project.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "银河英雄传说",
+      "slug": "legend-of-the-galactic-heroes",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 1988,
+      "queryName": "Legend of the Galactic Heroes",
+      "matched": {
+        "id": 820,
+        "romaji": "Ginga Eiyuu Densetsu",
+        "english": "Legend of the Galactic Heroes",
+        "native": "銀河英雄伝説",
+        "year": 1988,
+        "format": "OVA",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/820",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx820-x5dNLNFeKb8B.png",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/legend-of-the-galactic-heroes.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "黄金拼图 Thank You!!",
+      "slug": "kiniro-mosaic-thank-you",
+      "categories": [
+        "review"
+      ],
+      "expectedYear": 2021,
+      "queryName": "Kiniro Mosaic: Thank You!!",
+      "matched": {
+        "id": 116676,
+        "romaji": "Kiniro Mosaic: Thank you!!",
+        "english": "KINMOZA The Movie: Thank you!!",
+        "native": "きんいろモザイク Thank you!!",
+        "year": 2021,
+        "format": "MOVIE",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/116676",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116676-SmbBAKOS6XUw.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/kiniro-mosaic-thank-you.jpg",
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    },
+    {
+      "title": "寻找失去的未来",
+      "slug": "ushinawareta-mirai-wo-motomete",
+      "categories": [
+        "review",
+        "journey-origin"
+      ],
+      "expectedYear": 2014,
+      "queryName": "Ushinawareta Mirai wo Motomete",
+      "matched": {
+        "id": 20591,
+        "romaji": "Ushinawareta Mirai wo Motomete",
+        "english": "In Search of the Lost Future",
+        "native": "失われた未来を求めて",
+        "year": 2014,
+        "format": "TV",
+        "releaseStatus": "FINISHED"
+      },
+      "sourcePage": "https://anilist.co/anime/20591",
+      "sourceUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20591-xeTJt8QoFCXA.jpg",
+      "status": "downloaded",
+      "exactMatch": true,
+      "localPath": "/images/animation/posters/ushinawareta-mirai-wo-motomete.jpg",
+      "mimeType": "image/jpeg",
+      "width": 230,
+      "height": 345,
+      "bytes": 27531,
+      "copyrightNote": "Low-resolution promotional cover from AniList CDN; rights remain with the original creators and rights holders.",
+      "error": null
+    }
+  ]
+}

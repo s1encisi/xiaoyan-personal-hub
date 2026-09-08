@@ -1,0 +1,110 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.npm-cache/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/.playwright-cli/
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+/.claude/settings.local.json
+
+# local reference material and external review notes
+/local/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+/dist/
+/.wrangler/
+/outputs/
+/output/
+/work/
+*.tsbuildinfo
+
+# Private source material: keep locally, never include in GitHub snapshots.
+/app/_data/animation/source-content.json
+/.impeccable/
+/.claude/
+/.codex/
+/.agents/
+/.agent/
+/.workbuddy-ai/
+/data/
+/datasets/
+/raw-data/
+/private/
+/confidential/
+
+# Spreadsheets, data extracts, local databases and serialized datasets.
+*.[xX][lL][sS]*
+*.[xX][lL][tT]*
+*.[oO][dD][sS]
+*.[cC][sS][vV]
+*.[tT][sS][vV]
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.mat
+*.h5
+*.hdf5
+*.rds
+*.db
+*.sqlite
+*.sqlite3
+
+# Original documents and archives require a separate public-content review.
+*.[dD][oO][cC]*
+*.[pP][dD][fF]
+*.[pP][pP][tT]*
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.bundle
+
+# Runtime credentials and machine-specific authentication configuration.
+.dev.vars*
+.npmrc
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials*.json
+secrets*.json
+**/*保密*
+**/*机密*
+**/*隐私*
+**/*身份证*
+**/*护照*
+**/*合同*

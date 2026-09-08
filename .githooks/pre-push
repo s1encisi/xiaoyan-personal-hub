@@ -1,0 +1,6 @@
+#!/bin/sh
+case "$2" in
+  https://github.com/*|git@github.com:*|ssh://git@github.com/*)
+    exec node "$(dirname "$0")/../scripts/check-github-upload.mjs"
+    ;;
+esac
