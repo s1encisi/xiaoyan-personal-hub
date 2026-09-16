@@ -1,39 +1,6 @@
 import { PageHero } from "../_components/page-hero";
-import { createFixedPageMetadata } from "../_data/metadata";
+import { PortfolioSection } from "../_components/portfolio";
 import { knowledge } from "../_data/content";
-
-export const metadata = createFixedPageMetadata({
-  path: "/notes",
-  title: "知识库｜小闫",
-  description: "研究方法、建模优化、论文表达与可复现工程的个人知识索引。",
-});
-
-export default function NotesPage() {
-  return (
-    <main id="main-content" tabIndex={-1}>
-      <PageHero
-        code="I1"
-        eyebrow="KNOWLEDGE BASE"
-        breadcrumbs={[{ label: "首页", href: "/" }, { label: "记录与洞察", href: "/insights" }, { label: "知识库" }]}
-        title={<>把零散知识，<br /><span>整理成可复用的方法。</span></>}
-        description="这里不是链接仓库，而是把正在理解、验证与实践的内容重新组织成一套持续迭代的研究索引。"
-        tone="dark"
-        aside={<div className="knowledge-console" aria-hidden="true"><span>INDEX</span><strong>{String(knowledge.length).padStart(2, "0")}</strong><small>TOPIC CLUSTERS</small></div>}
-      />
-
-      <section className="knowledge-index section-shell" aria-labelledby="knowledge-index-title">
-        <div className="section-kicker split-kicker">
-          <div><p className="micro-label">LIBRARY / 知识索引</p><h2 id="knowledge-index-title">{knowledge.length} 组持续更新的主题</h2></div>
-          <p>每组内容用问题、检查项和边界组织，方便在下一次研究中真正复用。</p>
-        </div>
-        <div className="knowledge-index-grid">
-          {knowledge.map((entry) => (
-            <a key={entry.slug} href={`/notes/${entry.slug}`}>
-              <span>{entry.code}</span><small>TOPIC</small><h3>{entry.title}</h3><p>{entry.summary}</p><b aria-hidden="true">打开索引 ↗</b>
-            </a>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
-}
+import { createFixedPageMetadata } from "../_data/metadata";
+export const metadata = createFixedPageMetadata({ path: "/notes", title: "方法与知识笔记｜闫哲祯", description: "结合铜电积、污水能耗、空间生态和 CuLab 实践，整理研究、建模、写作和软件工程方法。" });
+export default function NotesPage() { return <main id="main-content" className="notes-index" tabIndex={-1}><PageHero code="I1" eyebrow="METHOD NOTES" breadcrumbs={[{ label: "首页", href: "/" }, { label: "记录与洞察", href: "/insights" }, { label: "知识库" }]} title={<>把项目中的理解，<br /><span>整理成可以继续使用的方法。</span></>} description="从自己的研究与工程实践出发，记录问题如何定义、模型如何连接决策，以及成果如何被表达和接续。" tone="dark" /><PortfolioSection id="notes" code="FOUR PERSPECTIVES" title="研究、建模、写作与工程"><div className="pf-reading-links">{knowledge.map(record => <a key={record.slug} href={"/notes/" + record.slug}><small>{record.code}</small><h3>{record.title}</h3><p>{record.summary}</p><b>阅读笔记 ↗</b></a>)}</div></PortfolioSection></main>; }

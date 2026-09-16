@@ -3,7 +3,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navigationGroups } from "../_data/site";
+import { navigationGroups, siteInfo } from "../_data/site";
 import { MotionSettings } from "./motion-settings";
 
 function pathMatches(pathname: string, href: string) {
@@ -48,7 +48,7 @@ export function SiteHeader() {
 
   const restoreDesktopFocus = (code: string | null) => {
     if (!code) return;
-    window.requestAnimationFrame(() => desktopToggleRefs.current.get(code)?.focus());
+    window.requestAnimationFrame(() => desktopToggleRefs.current.get(code)?.focus({ preventScroll: true }));
   };
 
   const closeDesktopNavigation = (restoreFocus = false) => {
@@ -91,6 +91,7 @@ export function SiteHeader() {
     if (!mobileOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    const previousScroll = { left: window.scrollX, top: window.scrollY };
     const headerInner = headerInnerRef.current;
     const previousHeaderInert = headerInner?.inert ?? false;
     const backgroundTargets = Array.from(document.body.children).filter(
@@ -102,7 +103,7 @@ export function SiteHeader() {
       element.inert = true;
     });
     if (headerInner) headerInner.inert = true;
-    mobileCloseRef.current?.focus();
+    mobileCloseRef.current?.focus({ preventScroll: true });
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -133,6 +134,7 @@ export function SiteHeader() {
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      window.scrollTo({ ...previousScroll, behavior: "instant" });
       backgroundTargets.forEach((element, index) => {
         element.inert = previousInert[index];
       });
@@ -183,7 +185,7 @@ export function SiteHeader() {
         event.preventDefault();
         const code = openGroup;
         setOpenGroup(null);
-        window.requestAnimationFrame(() => desktopToggleRefs.current.get(code)?.focus());
+        window.requestAnimationFrame(() => desktopToggleRefs.current.get(code)?.focus({ preventScroll: true }));
       }
     };
     const handlePointerDown = (event: PointerEvent) => {
@@ -212,7 +214,7 @@ export function SiteHeader() {
           className="site-brand"
           href="/"
           data-navigation="document"
-          aria-label="小闫的个人官网，返回首页"
+          aria-label={`${siteInfo.name}的个人网站，返回首页`}
           onClick={() => {
             setOpenGroup(null);
             setMobileOpen(false);
@@ -220,7 +222,7 @@ export function SiteHeader() {
         >
           <span className="brand-symbol" aria-hidden="true"><i />Y</span>
           <span className="brand-copy">
-            <strong>小闫</strong>
+            <strong>{siteInfo.name}</strong>
             <small>Zhezhen Yan</small>
           </span>
         </a>

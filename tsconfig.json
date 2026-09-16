@@ -25,5 +25,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "work", "local", "output", "outputs", "dist", ".npm-cache", ".wrangler", "University", "Postgraduate 1", "postgraduate1"]
 }

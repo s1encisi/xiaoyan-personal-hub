@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-08",
+  "date": "2026-09-10",
   "images": [
     {
       "file": "public/images/celestial/celestial-planet.webp",
@@ -30,6 +30,15 @@
       "height": 1040,
       "bytes": 147974,
       "prompt": "Use case: photorealistic-natural\nAsset type: final wide editorial lifestyle bitmap, approximately 1600 x 1100.\nPrimary request: Beautiful natural photography-style quiet everyday scene beside a window: a wooden table with a blue glazed ceramic coffee cup and an open blank notebook, soft branch and leaf shadows fall across the tabletop. Nearby greenery may be blurred outside the window. Warm neutral natural daylight, airy and peaceful, true-to-life wood grain, blue ceramic glaze, subtle fabric and paper textures.\nComposition/framing: Wide landscape close-to-medium table view, window along left or upper-left, cup near the right-middle and notebook lower-middle. Balanced spacious composition with negative space, no clutter; a realistic photographed still life, not a flat lay. Photograph is a generated scene, not a claimed photograph taken by the user.\nLighting/mood: Gentle daylight with soft shadow edges, warm but not yellow, bright whites and natural forest greens with amber highlights.\nConstraints: Absolutely no text, no notebook writing, no UI, no watermark, no brand logos, no faces or human identity, no recognizable landmark or location. No extra decorative objects beyond the simple everyday tabletop scene. One final image only."
+    },
+    {
+      "file": "public/images/profile/zhezhen-yan.webp",
+      "kind": "Owner-provided portrait extracted from the existing professional CV",
+      "source": "Owner-provided local resume; original kept outside the public site",
+      "width": 640,
+      "height": 893,
+      "bytes": 23816,
+      "processing": "Original framing preserved; resized and encoded as WebP; metadata removed"
     }
   ],
   "avatar": {
@@ -44,5 +53,17 @@
   "githubMark": {
     "implementation": "app/_components/social-links.tsx",
     "source": "https://api.github.com/repos/simple-icons/simple-icons/contents/icons/github.svg"
+  },
+  "fieldNotes": {
+    "directory": "public/images/field-notes/",
+    "kind": "Owner-provided photographs from personal trips, events and field visits",
+    "photoCount": 22,
+    "variantCount": 44,
+    "bytes": 3350244,
+    "metadata": "app/_data/field-photos.ts",
+    "stories": "app/_data/field-notes.ts",
+    "processing": "Original photographs; faithful extracts from four collage panels; resized to maximum width 1280px with smaller responsive variants; WebP; file metadata removed",
+    "originalSources": "Original posts, source images and provenance remain in ignored local directories",
+    "replaces": "Former AI life-window image on the home page and life landing page"
   }
 }

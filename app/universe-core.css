@@ -154,3 +154,30 @@ html[data-motion="on"] .celestial-scroll i { animation:scroll-light 2.6s ease-in
 .home-social .social-links { color:#18334d; }
 .home-more-links { display:flex; flex-wrap:wrap; gap:12px 26px; margin-top:30px; color:var(--muted); font-size:15px; }
 .home-more-links a { min-height:44px; display:inline-flex; align-items:center; }
+/* Navigation and interaction rhythm shared across the three visual worlds. */
+.mega-navigation-inner{grid-template-columns:240px minmax(0,1fr) 82px;gap:32px;padding-block:24px}
+.mega-navigation-close{writing-mode:horizontal-tb;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:82px;min-height:44px;height:44px;align-self:start;padding:8px 12px}
+.mega-navigation-intro{padding-block:0}.mega-navigation-intro>a>strong{font-size:25px}.mega-navigation-intro>a>span{font-size:14px;line-height:1.7}
+.mega-navigation-links>a{min-height:106px;padding:18px}.mega-navigation-links small{font-size:13px;line-height:1.65}
+.u-reveal{transition:opacity .28s ease,transform .28s cubic-bezier(.2,.7,.2,1)}
+html[data-motion="on"] .u-reveal.is-pending{transform:translateY(8px)}
+.celestial-kicker{font-size:13px;line-height:1.7;letter-spacing:.12em;color:#b6c9de;margin:0 0 20px}
+.hero-star-action{align-self:stretch;border-radius:8px;min-height:52px;color:#edf3ff;text-decoration:none}
+.hero-star-action>.inner-content{display:flex;align-items:center;justify-content:center;gap:26px;padding:13px 24px;border-radius:7px;min-height:50px}
+.hero-star-action>.inner-content>svg{width:18px;height:18px}
+.celestial-hero__bottom{gap:24px}.celestial-hero__bottom .launch-replay{margin-left:0}.celestial-hero__credit{white-space:nowrap}
+.global-footer .footer-sitemap-group>div>a{font-size:13px;line-height:1.65}
+@media(hover:hover) and (pointer:fine){.research-ledger a>svg,.pf-project b span,.record-links a span{transition:transform .15s}.research-ledger a:hover>svg,.pf-project:hover b span{transform:translateX(2px)}}
+
+.page-hero::after{display:none}
+.module-accent{position:absolute;bottom:0;left:0;width:44%;height:2px;background:linear-gradient(90deg,var(--blue),var(--sky));transform-origin:left;pointer-events:none}
+.page-hero[data-module="L"] .module-accent{background:linear-gradient(90deg,#345f50,#93b49c)}
+@media(prefers-reduced-motion:no-preference){html[data-motion="on"] .module-accent[data-in-view="true"]{animation:module-accent-enter .55s ease-out both}}
+@keyframes module-accent-enter{from{transform:scaleX(.15);opacity:.4}to{transform:scaleX(1);opacity:1}}
+
+.mega-navigation-inner{min-height:0}
+.mega-navigation-intro{padding-right:20px}
+.mega-navigation-intro .micro-label{margin-bottom:10px}
+.mega-navigation-intro>a{min-height:0}
+.mega-navigation-intro span{margin-top:8px}
+.mega-navigation-intro b{margin-top:14px}

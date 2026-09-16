@@ -1,9 +1,14 @@
-/** Public sources checked on 2026-09-08. No private repositories or street address are exposed. */
+/** Profile links verified on 2026-09-08; professional identity matched to the owner's current CV on 2026-09-10. */
 export const publicIdentity = {
-  name: "小闫",
+  name: "闫哲祯",
+  nickname: "小闫",
   englishName: "Zhezhen Yan",
   handle: "s1encisi",
   affiliation: "Tongji University",
+  department: "同济大学环境科学与工程学院",
+  program: "资源与环境硕士",
+  email: "2431509@tongji.edu.cn",
+  graduation: "2027 年 6 月（预计）",
   city: "上海",
   profileBio: "水无灯里",
   bilibiliAlias: "水无灯里Aquamarine",

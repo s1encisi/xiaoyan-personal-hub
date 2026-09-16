@@ -72,74 +72,81 @@ const newAnimationReviewRoutes = [
 const animationReviewRoutes = [...legacyAnimationReviewRoutes, ...newAnimationReviewRoutes];
 
 const moduleRoutes = [
-  ["/", /从复杂过程/],
-  ["/about", /我关注工业问题与/],
-  ["/about/profile", /把模型放回工艺/],
-  ["/contact", /在这里，/],
-  ["/research", /选择阅读路径/],
-  ["/projects", /4(?:<!-- -->)? 个相互连接的方向/],
-  ["/outputs", /一条完整证据链/],
-  ["/outputs/project-results", /四条研究议程的证据准备状态/],
-  ["/publications", /每条成果记录会回答四组问题/],
-  ["/skills", /四个方向，一条闭环/],
-  ["/journey", /当前研究问题可以沿一条连贯的方法路径展开/],
-  ["/education", /一段教育经历需要回答四类问题/],
-  ["/experience", /从“参加过”走向“我具体做了什么”/],
-  ["/honors", /每项荣誉都需要四层信息/],
-  ["/insights", /两种互补的记录方式/],
-  ["/notes", /4(?:<!-- -->)? 组持续更新的主题/],
-  ["/thoughts", /缓慢生长的想法/],
-  ["/life", /研究之外，保持具体/],
-  ["/life/animation", /让故事，/],
+  ["/", new RegExp("从复杂过程")],
+  ["/about", new RegExp("连接环境问题")],
+  ["/about/profile", new RegExp("从区域生态")],
+  ["/contact", new RegExp("通过邮箱联系我")],
+  ["/research", new RegExp("预测、优化与工程实现")],
+  ["/projects", new RegExp("工业智能与工程系统")],
+  ["/outputs", new RegExp("论文、算法与研究软件")],
+  ["/outputs/project-results", new RegExp("四类交付")],
+  ["/publications", new RegExp("第一作者研究成果")],
+  ["/skills", new RegExp("六个方向")],
+  ["/journey", new RegExp("从大连到上海")],
+  ["/education", new RegExp("两段学习经历")],
+  ["/experience", new RegExp("科研、工程与实习")],
+  ["/honors", new RegExp("奖学金与荣誉记录")],
+  ["/insights", new RegExp("来自项目的方法笔记")],
+  ["/notes", new RegExp("研究、建模、写作与工程")],
+  ["/thoughts", new RegExp("研究、协作与日常")],
+  ["/life", new RegExp("研究之外，保持具体")],
+  ["/life/animation", new RegExp("让故事，")],
   ...animationModuleRoutes,
 ];
 
 const detailRoutes = [
-  ["/projects/copper-electrowinning-surrogate", /铜电积过程的代理建模/],
-  ["/projects/electrolyte-purification-optimization", /电解液净化的多目标优化/],
-  ["/projects/safe-reinforcement-learning", /约束场景下的安全强化学习/],
-  ["/projects/causal-explainable-industrial-ai", /可解释与因果工业智能/],
-  ["/publications/publication-record-01", /建立正式论文记录需要什么/],
-  ["/publications/publication-record-02", /建立公开研究报告需要什么/],
-  ["/skills/industrial-process-modeling", /工业过程建模/],
-  ["/skills/multi-objective-optimization", /多目标优化/],
-  ["/skills/safe-reinforcement-learning", /安全强化学习/],
-  ["/skills/explainable-causal-ml", /可解释与因果机器学习/],
-  ["/education/masters-stage", /硕士研究阶段/],
-  ["/experience/masters-research", /硕士研究阶段/],
-  ["/honors/academic-research", /学术与科研记录/],
-  ["/honors/competition-practice", /竞赛与实践记录/],
-  ["/honors/growth-service", /成长与服务记录/],
-  ["/notes/research-methods", /研究方法/],
-  ["/notes/modeling-optimization", /建模与优化/],
-  ["/notes/academic-writing", /论文与表达/],
-  ["/notes/reproducibility", /工具与复现/],
-  ["/thoughts/research-boundaries", /复杂之前，先把边界说清楚/],
-  ["/thoughts/method-failure", /比平均指标更重要的/],
-  ["/thoughts/life-curiosity", /认真生活/],
-  ["/life/local-flavors", /地方风味与认真吃饭/],
-  ["/life/coffee-tea", /咖啡、茶与慢时刻/],
-  ["/life/travel-walks", /旅行、散步与临时起意/],
-  ["/life/culture-objects", /电影、动画、音乐与好东西/],
+  ["/projects/copper-electrowinning-surrogate", new RegExp("铜电积过程的机器学习预测")],
+  ["/projects/electrolyte-purification-optimization", new RegExp("铜电积的约束多目标优化")],
+  ["/projects/safe-reinforcement-learning", new RegExp("ESRL-CMO")],
+  ["/projects/causal-explainable-industrial-ai", new RegExp("工业模型解释与诊断")],
+  ["/projects/culab-agent-workbench", new RegExp("CuLab")],
+  ["/projects/wastewater-energy-tabpfn", new RegExp("有限样本下的污水处理能耗预测")],
+  ["/projects/urban-rural-ecological-footprint", new RegExp("城乡视角下的省域生态足迹")],
+  ["/projects/land-use-gee", new RegExp("辽西地区土地利用")],
+  ["/projects/biochar-arsenic-adsorption", new RegExp("酸洗去灰")],
+  ["/publications/publication-record-01", new RegExp("10.20237/j.issn.1007-7545.2025.09.002")],
+  ["/publications/publication-record-02", new RegExp("Journal of Cleaner Production")],
+  ["/publications/wastewater-energy-tabpfn", new RegExp("Water Environment Research")],
+  ["/publications/urban-rural-ecological-footprint", new RegExp("城乡视角下中国省域")],
+  ["/publications/urban-water-poster-2025", new RegExp("Sustainable Urban Water Systems")],
+  ["/skills/industrial-process-modeling", new RegExp("工业过程与表格数据建模")],
+  ["/skills/multi-objective-optimization", new RegExp("多目标优化")],
+  ["/skills/safe-reinforcement-learning", new RegExp("安全强化学习")],
+  ["/skills/explainable-causal-ml", new RegExp("可解释机器学习")],
+  ["/skills/agent-engineering", new RegExp("AI Agent")],
+  ["/skills/spatial-environmental-analysis", new RegExp("空间分析与环境研究")],
+  ["/education/masters-stage", new RegExp("资源与环境硕士")],
+  ["/education/undergraduate-stage", new RegExp("大连理工大学")],
+  ["/experience/masters-research", new RegExp("铜砷分离数字调控")],
+  ["/experience/jincheng-talent-internship", new RegExp("晋城市委组织部")],
+  ["/experience/tongji-library", new RegExp("图书馆阅读推广")],
+  ["/experience/tongji-class-communication", new RegExp("班级宣传")],
+  ["/experience/dongdaor-internship", new RegExp("废酸资源化")],
+  ["/experience/dut-student-affairs", new RegExp("校园融媒体")],
+  ["/experience/dut-sunshine-association", new RegExp("阳光心理健康协会")],
+  ["/experience/dut-international-media", new RegExp("双语校园传播")],
+  ["/experience/nature-education", new RegExp("E-ONE")],
+  ["/experience/hangzhou-tech-visit", new RegExp("宇树科技与强脑科技参访")],
+  ["/honors/national-encouragement-2021", new RegExp("国家励志奖学金")],
+  ["/honors/national-encouragement-2022", new RegExp("国家励志奖学金")],
+  ["/honors/academic-excellence-2021", new RegExp("学习优秀奖学金")],
+  ["/honors/culture-sports-2021", new RegExp("文体活动奖学金")],
+  ["/honors/merit-student-2021", new RegExp("校三好学生")],
+  ["/notes/research-methods", new RegExp("从真实任务建立研究问题")],
+  ["/notes/modeling-optimization", new RegExp("从预测器走向优化器")],
+  ["/notes/academic-writing", new RegExp("把研究贡献讲清楚")],
+  ["/notes/reproducibility", new RegExp("让研究软件")],
+  ["/thoughts/research-boundaries", new RegExp("从一张地图")],
+  ["/thoughts/method-failure", new RegExp("整理成别人用得上的信息")],
+  ["/thoughts/life-curiosity", new RegExp("把好奇心")],
+  ["/life/running-outdoors", new RegExp("长跑与户外")],
+  ["/life/reading-notes", new RegExp("阅读与科幻")],
+  ["/life/travel-walks", new RegExp("城市观察与散步")],
+  ["/life/culture-objects", new RegExp("影像与文化表达")],
   ...animationReviewRoutes,
 ];
 
-const placeholderDetailRoutes = [
-  "/publications/publication-record-01",
-  "/publications/publication-record-02",
-  "/education/masters-stage",
-  "/experience/masters-research",
-  "/honors/academic-research",
-  "/honors/competition-practice",
-  "/honors/growth-service",
-  "/thoughts/research-boundaries",
-  "/thoughts/method-failure",
-  "/thoughts/life-curiosity",
-  "/life/local-flavors",
-  "/life/coffee-tea",
-  "/life/travel-walks",
-  "/life/culture-objects",
-];
+const publicPortfolioRoutes = detailRoutes.filter(([path]) => !path.startsWith("/life/animation/")).map(([path]) => path);
 
 test("home server-renders the official-site navigation hierarchy", async () => {
   const response = await render();
@@ -148,14 +155,14 @@ test("home server-renders the official-site navigation hierarchy", async () => {
   const html = await response.text();
   for (const href of [
     "/about/profile", "/research", "/outputs", "/outputs/project-results", "/journey",
-    "/insights", "/contact", "/life/local-flavors", "/life/animation",
+    "/insights", "/contact", "/life/running-outdoors", "/life/animation",
   ]) {
     assert.match(html, new RegExp(`href="${href.replaceAll("/", "\\/")}"`), href);
   }
   for (const href of [
     "/about/profile", "/contact", "/projects", "/skills", "/publications",
     "/outputs/project-results", "/education", "/experience", "/honors", "/notes",
-    "/thoughts", "/life/local-flavors", "/life/coffee-tea", "/life/travel-walks",
+    "/thoughts", "/life/running-outdoors", "/life/reading-notes", "/life/travel-walks",
     "/life/culture-objects", "/life/animation",
   ]) {
     const escapedHref = href.replaceAll("/", "\\/");
@@ -168,7 +175,7 @@ test("home server-renders the official-site navigation hierarchy", async () => {
   assert.match(html, /copper-electrowinning-hero\.webp/);
   assert.match(html, /copper-electrowinning-hero-768\.webp 768w/);
   assert.match(html, /copper-electrowinning-hero-1200\.webp 1200w/);
-  assert.match(html, /研究议程/);
+  assert.match(html, /研究与工程/);
   assert.equal(
     readAttribute(findTag(html, "link", "rel", "canonical"), "href"),
     "https://xiaoyan-personal-hub.s1encisi.chatgpt.site",
@@ -190,9 +197,9 @@ test("public profiles are usable links and omit unnecessary personal details", a
   }
   const profile = await (await render("/about/profile")).text();
   assert.match(profile, /Zhezhen Yan/);
-  assert.match(profile, /Tongji University/);
+  assert.match(profile, /同济大学/);
   assert.match(profile, /https:\/\/github\.com\/langchain-ai\/langchain\/issues\/37713/);
-  assert.match(profile, /不代表补丁已被合并/);
+  assert.match(profile, /反馈过 ChatDeepSeek/);
 });
 
 test("motion controls have a static server fallback on all themed entry pages", async () => {
@@ -247,7 +254,7 @@ test("four fixed animation module pages render distinct content", async () => {
   assert.equal(new Set(rendered).size, animationModuleRoutes.length, "module pages must not collapse to one document");
 });
 
-test("annual recommendation pages preserve source counts and explicit missing-review state", async () => {
+test("annual recommendation pages preserve source counts and identify title-only list entries", async () => {
   for (const [year, expectedCount] of [["2022", 26], ["2024", 11], ["2025", 10]]) {
     const path = `/life/animation/recommendations/${year}`;
     const response = await render(path);
@@ -258,7 +265,7 @@ test("annual recommendation pages preserve source counts and explicit missing-re
     assert.equal(recommendationEntries.length, expectedCount, path);
     if (year === "2025") {
       assert.match(html, /电锯人 蕾塞篇/, path);
-      assert.match(html, /完善条目需要提供推荐理由/, path);
+      assert.match(html, /年度片单收录/, path);
     }
   }
 });
@@ -320,9 +327,9 @@ test("recommendation and review indexes render accessible local posters lazily",
 test("fixed pages emit route-specific canonical and social metadata", async () => {
   const origin = "https://xiaoyan-personal-hub.s1encisi.chatgpt.site";
   for (const [path, title, description] of [
-    ["/about", "关于我｜小闫", "了解小闫的研究命题、工作准则与当前关注方向。"],
-    ["/outputs/project-results", "项目成果｜小闫", "小闫研究主题的成果索引；性能、论文、代码与工业验证仅在核实后公开。"],
-    ["/life", "生活记录｜小闫", "关于动画、味道、咖啡、散步与日常好物，慢慢收集具体的喜欢。"],
+    ["/about", "关于闫哲祯｜Zhezhen Yan", "同济大学资源与环境硕士，以环境工程为基础，研究工业预测、智能优化与 AI Agent 工程。"],
+    ["/outputs/project-results", "项目成果｜闫哲祯", "机器学习预测器、ESRL-CMO 优化框架、CuLab 工作台及空间生态分析成果。"],
+    ["/life", "生活记录｜闫哲祯", "长跑、科幻阅读、城市观察、摄影与动画，构成研究之外的闫哲祯。"],
     ["/life/animation", "动画观测站｜动画与影评｜小闫", "从 2017 年开始的动画档案：年度推荐、影评原文、番剧总表，以及 Bilibili 与 Bangumi 的公开记录。"],
   ]) {
     const response = await render(path);
@@ -401,26 +408,19 @@ test("new and legacy animation review URLs remain live", async () => {
   }
 });
 
-test("unconfirmed previews are noindex but remain followable", async () => {
-  for (const path of placeholderDetailRoutes) {
+test("complete portfolio records are indexable and visitor-facing", async () => {
+  for (const path of publicPortfolioRoutes) {
     const response = await render(path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
-    assert.match(html, /<meta[^>]+name="robots"[^>]+content="noindex, follow"/i, path);
-  }
-
-  for (const path of [
-    "/projects/copper-electrowinning-surrogate",
-    "/skills/industrial-process-modeling",
-    "/notes/research-methods",
-    "/life/animation/anime-journey-since-2017",
-  ]) {
-    const response = await render(path);
-    assert.doesNotMatch(await response.text(), /<meta[^>]+name="robots"[^>]+content="noindex/i, path);
+    assert.doesNotMatch(html, /<meta[^>]+name="robots"[^>]+content="noindex/i, path);
+    assert.doesNotMatch(html, /需要提供|资料待完善|当前尚未|尚未获得|档案框架|查看所需资料|未来条目|现有正文/, path);
+    assert.match(html, /<h1\b/, path);
+    assert.match(html, /<h2\b/, path);
   }
 });
 
-test("sitemap includes indexable records and excludes unconfirmed previews", async () => {
+test("sitemap includes completed portfolio and animation records", async () => {
   const response = await render("/sitemap.xml");
   assert.equal(response.status, 200);
   const xml = await response.text();
@@ -440,61 +440,40 @@ test("sitemap includes indexable records and excludes unconfirmed previews", asy
   ]) {
     assert.match(xml, new RegExp(path.replaceAll("/", "\\/")), `included: ${path}`);
   }
-  for (const path of placeholderDetailRoutes) {
-    assert.doesNotMatch(xml, new RegExp(path.replaceAll("/", "\\/")), `excluded: ${path}`);
+  for (const path of publicPortfolioRoutes) {
+    assert.ok(xml.includes(path), "portfolio record included: " + path);
   }
 });
 
-test("research and insight pages expose their parent hierarchy and draft status", async () => {
-  for (const path of [
-    "/projects",
-    "/projects/copper-electrowinning-surrogate",
-    "/skills",
-    "/skills/industrial-process-modeling",
-  ]) {
-    const response = await render(path);
-    assert.match(await response.text(), /href="\/research"[^>]*>研究中心<\/a>/, path);
+test("research and personal pages retain usable parent navigation", async () => {
+  for (const [path, parent] of [["/projects/copper-electrowinning-surrogate", "/projects"], ["/skills/agent-engineering", "/skills"], ["/notes/reproducibility", "/notes"], ["/thoughts/life-curiosity", "/thoughts"], ["/life/reading-notes", "/life"]]) {
+    const html = await (await render(path)).text();
+    assert.ok(findTag(html, "a", "href", parent), path);
+    assert.doesNotMatch(html, /status-placeholder|可预览的随想草稿|可预览随想草稿/, path);
   }
-
-  for (const path of ["/notes", "/notes/research-methods"]) {
-    const response = await render(path);
-    assert.match(await response.text(), /href="\/insights"[^>]*>记录与洞察<\/a>/, path);
-  }
-
-  const notes = await (await render("/notes")).text();
-  assert.match(notes, /正在理解、验证与实践/);
-  assert.doesNotMatch(notes, /理解过、验证过和实践过/);
-
-  const insights = await (await render("/insights")).text();
-  assert.match(insights, /可预览的随想草稿/);
-  assert.match(insights, /status-badge status-placeholder[^>]*>资料待完善/);
-
-  const thoughts = await (await render("/thoughts")).text();
-  assert.match(thoughts, /可预览随想草稿/);
-  assert.match(thoughts, /当前内容不作为学术结论/);
-  assert.match(thoughts, /status-badge status-placeholder[^>]*>资料待完善/);
 });
 
-test("incomplete sections state the exact information required without internal user-facing copy", async () => {
-  const requirements = [
-    ["/contact", /常用邮箱、ORCID、Google Scholar/],
-    ["/education/masters-stage", /学校、学院、专业、学位层次/],
-    ["/experience/masters-research", /机构、团队、角色、地点和准确起止时间/],
-    ["/honors/academic-research", /证书、官方获奖名单或可公开查询的链接/],
-    ["/publications/publication-record-01", /DOI、出版社页面、预印本/],
-    ["/life/local-flavors", /店铺准确名称、城市、地址和到访日期/],
-    ["/skills/industrial-process-modeling", /实际使用过的 Python\/R\/MATLAB 等语言/],
-    ["/thoughts/research-boundaries", /最终标题、正文、写作日期和主题标签/],
-    ["/life/animation/recommendations/2025", /推荐理由、观看感受/],
-  ];
-
-  for (const [path, expected] of requirements) {
-    const response = await render(path);
-    assert.equal(response.status, 200, path);
-    const html = await response.text();
-    assert.match(html, expected, path);
-    assert.doesNotMatch(html, /用户原稿|用户提供|待本人|本人确认|由本人补充|由用户|占位内容|占位信息/, path);
-  }
+test("professional identity, publication stages and contact are consistent", async () => {
+  const home = await (await render("/")).text();
+  assert.match(home, /闫哲祯/);
+  assert.match(home, /4\.66/);
+  assert.match(home, /2027/);
+  const contact = await (await render("/contact")).text();
+  assert.ok(findTag(contact, "a", "href", "mailto:2431509@tongji.edu.cn"));
+  const published = await (await render("/publications/publication-record-01")).text();
+  assert.match(published, /已发表/);
+  assert.match(published, /10\.20237\/j\.issn\.1007-7545\.2025\.09\.002/);
+  const revised = await (await render("/publications/publication-record-02")).text();
+  assert.match(revised, /Journal of Cleaner Production/);
+  assert.match(revised, /修回中/);
+  const submitted = await (await render("/publications/wastewater-energy-tabpfn")).text();
+  assert.match(submitted, /Water Environment Research/);
+  assert.match(submitted, /在审/);
+  assert.doesNotMatch(submitted, /Environmental Research<|10\.\d{4,9}\//);
+  const optimization = await (await render("/projects/electrolyte-purification-optimization")).text();
+  assert.match(optimization, /43\.1%/);
+  assert.match(optimization, /50—55 g\/L/);
+  assert.match(optimization, /离线代理环境/);
 });
 
 test("all rendered website routes omit internal user and placeholder phrasing", async () => {
@@ -546,12 +525,12 @@ test("project detail table-of-contents fragments resolve", async () => {
   }
 });
 
-test("skill method descriptions remain grouped with their headings", async () => {
+test("skill methods keep descriptions with their headings", async () => {
   const response = await render("/skills/industrial-process-modeling");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /class="skill-layer-copy"/);
-  assert.match(html, /class="skill-layer-copy"><h3>[^<]+<\/h3><p>[^<]+<\/p><\/div>/);
+  assert.match(html, /class="pf-methods"/);
+  assert.match(html.replace(/<!--[\s\S]*?-->/g, ""), /<article><small>[^<]+<\/small><h3>[^<]+<\/h3><p>[^<]+<\/p><\/article>/);
 });
 
 test("detail routes expose both current page and parent location", async () => {
@@ -593,5 +572,82 @@ test("unknown detail routes return the custom 404", async () => {
     const response = await render(path);
     assert.equal(response.status, 404, path);
     assert.match(await response.text(), /这条路径还没有内容/);
+  }
+});
+
+
+test("legacy placeholder URLs lead to complete related content", async () => {
+  for (const [oldPath, newPath] of [["/life/local-flavors", "/life/culture-objects"], ["/life/coffee-tea", "/life/reading-notes"], ["/honors/academic-research", "/honors/national-encouragement-2021"], ["/honors/competition-practice", "/honors/culture-sports-2021"], ["/honors/growth-service", "/honors/merit-student-2021"]]) {
+    const response = await render(oldPath);
+    assert.equal(response.status, 308, oldPath);
+    assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname, newPath);
+    assert.equal((await render(newPath)).status, 200, newPath);
+  }
+});
+
+test("all public images exist and private source files have no download links", async () => {
+  const assets = new Set();
+  for (const [path] of [...moduleRoutes, ...detailRoutes]) {
+    const html = await (await render(path)).text();
+    for (const tag of findTags(html, "img")) {
+      const src = readAttribute(tag, "src");
+      if (src?.startsWith("/")) assets.add(src);
+      assert.ok(readAttribute(tag, "alt"), path + ": image alternative text");
+      assert.ok(Number(readAttribute(tag, "width")) > 0, path + ": image width");
+      assert.ok(Number(readAttribute(tag, "height")) > 0, path + ": image height");
+    }
+    assert.doesNotMatch(html, /href="[^"<>]*\.(?:docx?|xlsx?|csv|bundle)(?:[?#"])/i, path);
+    assert.doesNotMatch(html, /(?:E|C):[\\/]|身份证|家庭经济情况|原始成绩单|github_pat_/, path);
+  }
+  assert.ok(assets.has("/images/profile/zhezhen-yan.webp"));
+  for (const src of assets) assert.ok((await stat(new URL("../public" + src, import.meta.url))).isFile(), src);
+});
+
+test("personal photo stories are reachable, responsive and isolated from private archives", async () => {
+  const pages = ["/", "/life", "/life/travel-walks", "/life/culture-objects", "/life/animation", "/about/profile", "/experience/hangzhou-tech-visit", "/experience/jincheng-talent-internship"];
+  const rendered = new Map();
+  const publicPhotos = new Set();
+  for (const path of pages) {
+    const response = await render(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    rendered.set(path, html);
+    const photos = findTags(html, "img").filter(tag => (readAttribute(tag, "src") ?? "").startsWith("/images/field-notes/"));
+    assert.ok(photos.length > 0, `${path}: actual personal photos`);
+    for (const tag of photos) {
+      const src = readAttribute(tag, "src");
+      publicPhotos.add(src);
+      const srcSet = readAttribute(tag, "srcSet") ?? "";
+      assert.equal(srcSet.split(",").length, 2, `${src}: two responsive variants`);
+      assert.ok(readAttribute(tag, "sizes"), `${src}: responsive sizes`);
+      for (const candidate of srcSet.split(",")) {
+        const match = candidate.trim().match(/^(\/images\/field-notes\/[a-z0-9-]+\.webp) (\d+)w$/);
+        assert.ok(match, `${src}: local srcset candidate`);
+        const file = await stat(new URL("../public" + match[1], import.meta.url));
+        assert.ok(file.isFile() && file.size > 0 && file.size < 500_000, `${match[1]}: optimized photo`);
+      }
+    }
+    assert.doesNotMatch(html, /wxid_|qpic\.cn|video\.qq\.com|media-access|dpapi|my-moments|local[\\/]moments|sns\.db|\b(?:enc|token|authkey)=/i, `${path}: no private archive or access data`);
+    for (const tag of findTags(html, "a")) {
+      const href = readAttribute(tag, "href") ?? "";
+      if (!href.startsWith("/images/field-notes/")) continue;
+      assert.equal(readAttribute(tag, "target"), "_blank", `${href}: full-size image`);
+      assert.match(readAttribute(tag, "aria-label") ?? "", /新标签页/, `${href}: opening behavior is announced`);
+    }
+  }
+  assert.equal(publicPhotos.size, 22, "22 curated photographs are visible on relevant website pages");
+  assert.equal((rendered.get("/life/travel-walks").match(/class="field-story"/g) ?? []).length, 6, "six travel and astronomy stories");
+  assert.equal((rendered.get("/life/culture-objects").match(/class="field-story"/g) ?? []).length, 4, "four music and culture stories");
+  assert.match(rendered.get("/experience/hangzhou-tech-visit"), /参访参与者/);
+  assert.match(rendered.get("/experience/hangzhou-tech-visit"), /参访与观察/);
+  for (const path of ["/", "/life"]) assert.doesNotMatch(rendered.get(path), /life-window(?:-768)?\.webp/, `${path}: real life cover replaces illustration`);
+
+  for (const [path, html] of rendered) {
+    for (const tag of findTags(html, "a")) {
+      const href = readAttribute(tag, "href") ?? "";
+      if (!/^\/life\/(?:travel-walks|culture-objects)#/.test(href)) continue;
+      const [destination, fragment] = href.split("#");
+      assert.ok(findTag(rendered.get(destination), "article", "id", fragment), `${path}: ${href} resolves to a photo story`);
+    }
   }
 });

@@ -42,7 +42,7 @@ export default async function AnimationArchiveYearPage({ params }: ArchiveYearPa
   const pageTitle = year === "undated" ? "未标注时间的番剧总表" : `${displayYear}番剧总表`;
 
   return (
-    <main id="main-content" className="animation-year-page animation-archive-year-page" tabIndex={-1}>
+    <main id="main-content" className="animation-year-page animation-archive-year-page" data-density="compact" tabIndex={-1}>
       <div className="animation-year-page-grid">
         <AnimationYearRail
           activeYear={year}
@@ -59,7 +59,7 @@ export default async function AnimationArchiveYearPage({ params }: ArchiveYearPa
             stats={[{ label: "总表条目", value: `${record.entries.length} 条` }, { label: "包含内容", value: "作品 · 排期 · 重看备注" }, { label: "排序", value: "遵循原始总表" }]}
           />
 
-          <ol className="animation-archive-list">
+          <ol className="animation-archive-list" id="archive-records">
             {record.entries.map((entry, index) => (
               <li key={entry.id} data-archive-entry>
                 <span>{String(index + 1).padStart(3, "0")}</span>
@@ -72,6 +72,7 @@ export default async function AnimationArchiveYearPage({ params }: ArchiveYearPa
               </li>
             ))}
           </ol>
+          <a className="archive-back-top" href="#main-content">回到本年目录 <span aria-hidden="true">↑</span></a>
 
           <nav className="animation-year-adjacent" aria-label="相邻年份总表">
             {older ? <a href={`/life/animation/archive/${older.year}`} data-navigation="document"><ArrowLeft aria-hidden="true" /><span><small>较早</small>{older.year === "undated" ? "未标注时间" : `${older.year} 年`}</span></a> : <span />}

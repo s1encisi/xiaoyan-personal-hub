@@ -1,6 +1,9 @@
+import { personalKnowledge, personalReflections, personalLife } from "./personal-writing";
+import { careerProjects, careerSkills, careerPublications, careerEducation, careerExperience, careerHonors } from "./career";
+
 export type VerificationStatus = "verified" | "topic" | "placeholder";
 
-export type ContentStatusLabel = "已确认" | "研究主题" | "资料待完善" | "暂不公开";
+export type ContentStatusLabel = "已确认" | "研究主题" | "资料待完善" | "暂不公开" | "已发表" | "修回中" | "在审" | "已完成" | "会议展示";
 
 const nonPublicStatusLabels: ReadonlySet<ContentStatusLabel> = new Set([
   "资料待完善",
@@ -29,118 +32,7 @@ export type ProjectRecord = {
   relatedSkills: string[];
 };
 
-// TODO(content): 在小闫确认正式项目名称、周期、个人职责、数据与结果后，
-// 将对应条目的 status 改为 verified，并补充可公开的事实字段。
-export const projects: ProjectRecord[] = [
-  {
-    slug: "copper-electrowinning-surrogate",
-    index: "01",
-    title: "铜电积过程的代理建模",
-    englishTitle: "SURROGATE MODELING FOR COPPER ELECTROWINNING",
-    category: "过程建模",
-    summary: "面向计算代价高、变量耦合强的铜电积过程，探索能够服务于后续优化与决策的代理模型。",
-    question: "如何在有限数据与复杂工艺耦合下，得到既准确、又知道自身适用边界的过程近似？",
-    status: "topic",
-    tags: ["Surrogate Model", "Process Data", "Uncertainty"],
-    facts: [
-      { label: "内容类型", value: "研究主题" },
-      { label: "工艺场景", value: "铜电积" },
-      { label: "完善案例需要", value: "项目周期、职责、数据来源与样本说明" },
-      { label: "结果部分需要", value: "评价指标、对比结果与可公开证据" },
-    ],
-    route: [
-      { step: "01", title: "定义过程边界", text: "明确输入、输出、工况范围与模型将支持的决策任务。" },
-      { step: "02", title: "审查数据", text: "检查采样机制、异常、漂移与潜在泄漏，再建立可信的数据划分。" },
-      { step: "03", title: "构建代理模型", text: "比较适合有限样本与非线性过程的建模路径，而不是默认选择最复杂的模型。" },
-      { step: "04", title: "评估不确定性", text: "同时观察平均性能、边界工况、失败案例与模型置信程度。" },
-      { step: "05", title: "连接优化", text: "让模型输出能够被后续多目标优化与方案筛选安全使用。" },
-    ],
-    evaluation: ["训练、验证与正式测试严格隔离", "报告重复实验与不确定性", "检验边界工况与外推风险", "保留失败案例与误差结构"],
-    boundaries: ["当前页面描述研究问题与方法框架，不代表已经取得特定性能结果。", "数据来源、样本量、模型对比与数值指标将在核实后补充。"],
-    relatedSkills: ["industrial-process-modeling", "explainable-causal-ml"],
-  },
-  {
-    slug: "electrolyte-purification-optimization",
-    index: "02",
-    title: "电解液净化的多目标优化",
-    englishTitle: "MULTI-OBJECTIVE ELECTROLYTE PURIFICATION",
-    category: "优化决策",
-    summary: "面向质量、能耗、安全和操作约束，研究多目标折中与可解释的方案选择方法。",
-    question: "当目标彼此冲突时，如何找到可行、透明，并能被工程人员理解的折中方案？",
-    status: "topic",
-    tags: ["Multi-objective", "Constraints", "Decision Making"],
-    facts: [
-      { label: "内容类型", value: "研究主题" },
-      { label: "工艺场景", value: "电解液净化" },
-      { label: "决策重点", value: "多目标权衡" },
-      { label: "结果部分需要", value: "目标定义、约束、Pareto 结果与方案依据" },
-    ],
-    route: [
-      { step: "01", title: "刻画目标", text: "把质量、资源消耗、安全与运行稳定性转化为清晰的评价对象。" },
-      { step: "02", title: "表达约束", text: "区分必须满足的工艺边界与可在方案间权衡的软目标。" },
-      { step: "03", title: "搜索可行域", text: "用多目标方法寻找一组有代表性的非支配方案，而非单一最优点。" },
-      { step: "04", title: "审查稳健性", text: "观察方案对数据误差、工况变化与模型不确定性的敏感程度。" },
-      { step: "05", title: "支持选择", text: "用可解释比较帮助决策者理解每种折中的收益与代价。" },
-    ],
-    evaluation: ["可行解比例与约束违反程度", "Pareto 前沿的覆盖与稳定性", "多次运行的一致性", "方案选择的可解释性"],
-    boundaries: ["没有真实目标函数、约束与数值结果前，不展示虚构 Pareto 曲线。", "最终方案仍需结合工艺知识与现场验证。"],
-    relatedSkills: ["multi-objective-optimization", "industrial-process-modeling"],
-  },
-  {
-    slug: "safe-reinforcement-learning",
-    index: "03",
-    title: "约束场景下的安全强化学习",
-    englishTitle: "SAFE REINFORCEMENT LEARNING UNDER CONSTRAINTS",
-    category: "安全控制",
-    summary: "关注智能体在探索与控制过程中如何满足安全边界，并把离线评估、风险度量与部署约束纳入同一流程。",
-    question: "如何让策略在学习收益的同时，不把试错成本转移给真实工业系统？",
-    status: "topic",
-    tags: ["Safe RL", "Risk", "Industrial Control"],
-    facts: [
-      { label: "内容类型", value: "方法研究主题" },
-      { label: "核心对象", value: "约束策略学习" },
-      { label: "评价重点", value: "收益与风险并列" },
-      { label: "结果部分需要", value: "环境设置、基线、约束违反率与稳定性结果" },
-    ],
-    route: [
-      { step: "01", title: "建立安全定义", text: "明确状态、动作、奖励、成本与不可越过的运行边界。" },
-      { step: "02", title: "选择验证环境", text: "在可控仿真或离线数据中先验证策略，不让真实系统承担探索风险。" },
-      { step: "03", title: "学习约束策略", text: "比较惩罚、拉格朗日、安全层等不同约束处理逻辑。" },
-      { step: "04", title: "开展风险评估", text: "同时报告期望收益、违规概率、尾部风险与最坏情形。" },
-      { step: "05", title: "设置部署门槛", text: "定义回退策略、监控机制与人工接管条件。" },
-    ],
-    evaluation: ["累计收益与约束成本分开报告", "多随机种子重复实验", "尾部风险与最坏情形", "策略失效与回退场景"],
-    boundaries: ["仿真安全不等同于真实过程安全。", "没有经过现场验证的策略不能被表述为可直接部署。"],
-    relatedSkills: ["safe-reinforcement-learning", "multi-objective-optimization"],
-  },
-  {
-    slug: "causal-explainable-industrial-ai",
-    index: "04",
-    title: "可解释与因果工业智能",
-    englishTitle: "EXPLAINABLE & CAUSAL INDUSTRIAL INTELLIGENCE",
-    category: "可信智能",
-    summary: "区分预测关联、模型解释与因果效应，探索面向工业决策的可信解释与模型审计方法。",
-    question: "模型为什么这样判断，与改变某个变量会带来什么结果，究竟是不是同一个问题？",
-    status: "topic",
-    tags: ["XAI", "Causal ML", "Model Audit"],
-    facts: [
-      { label: "内容类型", value: "研究主题" },
-      { label: "方法边界", value: "关联 ≠ 因果" },
-      { label: "关注对象", value: "解释与审计" },
-      { label: "结果部分需要", value: "解释方法、验证方式、案例与适用边界" },
-    ],
-    route: [
-      { step: "01", title: "明确解释对象", text: "区分全局规律、局部预测、群体差异与决策问题。" },
-      { step: "02", title: "检查模型可靠性", text: "解释之前先确认数据、预测与评价设计本身是否可信。" },
-      { step: "03", title: "分析模型关联", text: "使用 SHAP、PDP、ICE 等方法描述模型行为，并说明适用范围。" },
-      { step: "04", title: "建立因果假设", text: "只有在研究设计与识别条件成立时，才讨论干预或因果效应。" },
-      { step: "05", title: "形成审计结论", text: "记录解释稳定性、敏感性、失败案例与不能回答的问题。" },
-    ],
-    evaluation: ["解释对数据与模型扰动的稳定性", "关联结论与因果结论明确分栏", "领域知识一致性检查", "异常与反例分析"],
-    boundaries: ["SHAP、PDP 与 ICE 解释模型关联，不自动证明控制规律。", "因果结论强度不能超过数据与研究设计。"],
-    relatedSkills: ["explainable-causal-ml", "industrial-process-modeling"],
-  },
-];
+export const projects: ProjectRecord[] = careerProjects;
 
 export type SkillRecord = {
   slug: string;
@@ -154,72 +46,7 @@ export type SkillRecord = {
   relatedProjects: string[];
 };
 
-export const skills: SkillRecord[] = [
-  {
-    slug: "industrial-process-modeling",
-    index: "A",
-    title: "工业过程建模",
-    englishTitle: "INDUSTRIAL PROCESS MODELING",
-    summary: "围绕复杂耦合、有限数据与高成本实验，建立能够支持分析和决策的过程模型。",
-    principle: "模型首先要服务于清晰的问题边界，而不是追求脱离场景的复杂度。",
-    layers: [
-      { title: "问题与变量", description: "定义对象、目标变量、干预边界和部署场景。" },
-      { title: "数据审查", description: "处理泄漏、漂移、缺失、异常与采样偏差。" },
-      { title: "模型比较", description: "用可复现基线比较精度、稳定性和成本。" },
-      { title: "失效边界", description: "说明模型不知道什么，以及何时需要回退。" },
-    ],
-    checks: ["预处理只在训练数据或训练折拟合", "正式测试集不参与选择与调参", "报告不确定性与失败案例", "区分插值表现与外推能力"],
-    relatedProjects: ["copper-electrowinning-surrogate", "causal-explainable-industrial-ai"],
-  },
-  {
-    slug: "multi-objective-optimization",
-    index: "B",
-    title: "多目标优化",
-    englishTitle: "MULTI-OBJECTIVE OPTIMIZATION",
-    summary: "研究多个冲突目标和真实操作约束下的折中解，并帮助决策者理解方案差异。",
-    principle: "好的优化不是给出一个神秘答案，而是让收益、代价与约束一目了然。",
-    layers: [
-      { title: "目标建模", description: "区分性能、资源、安全和稳定性目标。" },
-      { title: "约束表达", description: "把物理边界、操作规则和安全要求纳入搜索。" },
-      { title: "方案搜索", description: "寻找具有代表性的 Pareto 折中方案。" },
-      { title: "决策支持", description: "比较稳健性、敏感性与不同偏好下的选择。" },
-    ],
-    checks: ["不以单次最好结果代替稳定表现", "同时报告可行性与目标质量", "比较基线和消融", "解释决策偏好如何影响最终方案"],
-    relatedProjects: ["electrolyte-purification-optimization", "safe-reinforcement-learning"],
-  },
-  {
-    slug: "safe-reinforcement-learning",
-    index: "C",
-    title: "安全强化学习",
-    englishTitle: "SAFE REINFORCEMENT LEARNING",
-    summary: "关注约束满足、风险度量、离线评估，以及策略进入真实工业系统前的安全门槛。",
-    principle: "在工业场景中，探索不是免费的，失败也不能只用平均奖励掩盖。",
-    layers: [
-      { title: "MDP / CMDP", description: "定义状态、动作、奖励、成本和约束。" },
-      { title: "安全学习", description: "在策略更新中显式处理风险与边界。" },
-      { title: "离线评估", description: "用仿真和历史数据降低真实探索风险。" },
-      { title: "运行保障", description: "设计监控、回退和人工接管机制。" },
-    ],
-    checks: ["收益和安全指标并列", "使用多个随机种子", "报告违规分布和尾部风险", "明确仿真到真实的差距"],
-    relatedProjects: ["safe-reinforcement-learning"],
-  },
-  {
-    slug: "explainable-causal-ml",
-    index: "D",
-    title: "可解释与因果机器学习",
-    englishTitle: "EXPLAINABLE & CAUSAL MACHINE LEARNING",
-    summary: "理解模型如何使用信息，同时严格区分预测关联、模型解释与因果作用。",
-    principle: "解释可以帮助审查模型，但不能越过研究设计替代因果证据。",
-    layers: [
-      { title: "预测审计", description: "先检查模型和评价设计是否可靠。" },
-      { title: "关联解释", description: "用 SHAP、PDP、ICE 等描述模型行为。" },
-      { title: "因果识别", description: "明确处理、结果、混杂与识别假设。" },
-      { title: "决策边界", description: "把可回答的问题与不能回答的问题分开。" },
-    ],
-    checks: ["不把特征重要性写成控制规律", "验证解释稳定性", "陈述因果识别假设", "结论强度不超过研究设计"],
-    relatedProjects: ["causal-explainable-industrial-ai", "copper-electrowinning-surrogate"],
-  },
-];
+export const skills: SkillRecord[] = careerSkills;
 
 export type KnowledgeRecord = {
   slug: string;
@@ -230,52 +57,7 @@ export type KnowledgeRecord = {
   sections: { title: string; items: string[] }[];
 };
 
-export const knowledge: KnowledgeRecord[] = [
-  {
-    slug: "research-methods",
-    code: "K01",
-    title: "研究方法",
-    summary: "从问题定义到可信结论",
-    intro: "把容易被忽略的研究设计问题变成一份可以重复使用的检查清单。",
-    sections: [
-      { title: "问题边界", items: ["研究对象与决策场景", "目标变量与数据时间边界", "成功标准与失败代价"] },
-      { title: "验证设计", items: ["数据拆分与泄漏检查", "基线、消融与敏感性", "重复实验与不确定性"] },
-    ],
-  },
-  {
-    slug: "modeling-optimization",
-    code: "K02",
-    title: "建模与优化",
-    summary: "把算法放回真实约束里",
-    intro: "整理代理建模、多目标优化和安全决策之间能够互相连接的方法结构。",
-    sections: [
-      { title: "模型", items: ["代理模型与混合建模", "误差结构与适用范围", "不确定性与稳健性"] },
-      { title: "决策", items: ["多目标与约束", "方案选择与敏感性", "安全强化学习评估"] },
-    ],
-  },
-  {
-    slug: "academic-writing",
-    code: "K03",
-    title: "论文与表达",
-    summary: "让研究逻辑经得起追问",
-    intro: "把研究问题、方法、结果与结论组织成一致、克制而可核查的表达。",
-    sections: [
-      { title: "逻辑链", items: ["问题、方法、结果闭环", "创新点与证据对应", "结论边界与局限"] },
-      { title: "投稿检查", items: ["图表公式与补充材料", "术语和数值一致性", "目标期刊指南适配"] },
-    ],
-  },
-  {
-    slug: "reproducibility",
-    code: "K04",
-    title: "工具与复现",
-    summary: "把一次实验变成可靠流程",
-    intro: "关注实验记录、代码结构、性能成本和失败案例，让工作能够被复查和继续。",
-    sections: [
-      { title: "实验", items: ["数据与版本管理", "随机种子与重复次数", "配置、日志与产物"] },
-      { title: "工程", items: ["延迟、吞吐与成本", "缓存、重试与失败率", "p50 / p95 与稳定性"] },
-    ],
-  },
-];
+export const knowledge: KnowledgeRecord[] = personalKnowledge;
 
 export type ReflectionRecord = {
   slug: string;
@@ -289,47 +71,7 @@ export type ReflectionRecord = {
   status: ContentStatusLabel;
 };
 
-export const reflections: ReflectionRecord[] = [
-  {
-    slug: "research-boundaries",
-    topic: "关于研究",
-    title: "复杂之前，先把边界说清楚",
-    summary: "真正困难的往往不是找到更复杂的模型，而是把问题边界说清楚，并愿意对每一个结论负责。",
-    text: "真正困难的往往不是找到更复杂的模型，而是把问题边界说清楚，并愿意对每一个结论负责。",
-    body: [
-      "真正困难的往往不是找到更复杂的模型，而是把问题边界说清楚，并愿意对每一个结论负责。",
-      "研究对象、数据边界、目标变量和决策场景一旦含混，后续更漂亮的指标也很难自动补上逻辑缺口。先回答问题究竟是什么，才能判断方法是否合适、证据是否充分。",
-    ],
-    tags: ["研究设计", "问题边界", "证据责任"],
-    status: "资料待完善",
-  },
-  {
-    slug: "method-failure",
-    topic: "关于方法",
-    title: "比平均指标更重要的，是知道何时失效",
-    summary: "好的方法不只在平均指标上胜出，还要知道它何时失效、为什么失效，以及失败的代价是什么。",
-    text: "好的方法不只在平均指标上胜出，还要知道它何时失效、为什么失效，以及失败的代价是什么。",
-    body: [
-      "好的方法不只在平均指标上胜出，还要知道它何时失效、为什么失效，以及失败的代价是什么。",
-      "在真实工业场景中，边界工况、约束违反、数据漂移和尾部风险不会因为平均表现良好而消失。记录失败案例，是理解方法适用范围的一部分。",
-    ],
-    tags: ["模型评价", "失败案例", "风险边界"],
-    status: "资料待完善",
-  },
-  {
-    slug: "life-curiosity",
-    topic: "关于生活",
-    title: "认真生活，也是保持判断力的方法",
-    summary: "生活不是研究之外的留白。认真吃饭、走路、看世界，也是保持判断力与好奇心的方式。",
-    text: "生活不是研究之外的留白。认真吃饭、走路、看世界，也是保持判断力与好奇心的方式。",
-    body: [
-      "生活不是研究之外的留白。认真吃饭、走路、看世界，也是保持判断力与好奇心的方式。",
-      "具体的味道、路线、作品与相遇，让抽象思考重新回到真实经验。这里记录的不是标准答案，而是值得保存和再次回看的感受。",
-    ],
-    tags: ["生活记录", "好奇心", "具体经验"],
-    status: "资料待完善",
-  },
-];
+export const reflections: ReflectionRecord[] = personalReflections;
 
 export type LifeSection = {
   title: string;
@@ -348,67 +90,7 @@ export type LifeCategoryRecord = {
   status: ContentStatusLabel;
 };
 
-export const lifeCategories: LifeCategoryRecord[] = [
-  {
-    slug: "local-flavors",
-    code: "EAT",
-    title: "地方风味与认真吃饭",
-    summary: "记录值得专程去吃的一餐，也收藏巷子里那些没有标准答案的味道。",
-    intro: "完善这一页需要提供真实到访的店铺名称、地点、日期、消费价格、推荐理由、注意事项与现场图片。",
-    tone: "copper",
-    sections: [
-      { title: "需要提供", items: ["店铺名称、城市与具体地点", "到访日期、菜品名称与实际价格", "推荐理由、注意事项与现场图片"] },
-      { title: "发布边界", items: ["只记录亲自体验过的内容", "营业时间与价格等时效信息会在发布时核实"] },
-    ],
-    status: "资料待完善",
-  },
-  {
-    slug: "coffee-tea",
-    code: "DRINK",
-    title: "咖啡、茶与慢时刻",
-    summary: "一间店、一只杯子，或者一段适合放空和整理思绪的下午。",
-    intro: "完善这一页需要提供店铺或品牌、地点、到访日期、饮品与价格、空间感受及现场图片。",
-    tone: "sand",
-    sections: [
-      { title: "需要提供", items: ["店铺或品牌名称与具体地点", "饮品名称、口味、环境与消费价格", "到访日期与现场图片"] },
-      { title: "发布边界", items: ["个人体验与可核实信息分开呈现", "不使用未经体验的推荐内容"] },
-    ],
-    status: "资料待完善",
-  },
-  {
-    slug: "travel-walks",
-    code: "GO",
-    title: "旅行、散步与临时起意",
-    summary: "路线、交通、预算和避坑，也保留途中没有被计划的惊喜。",
-    intro: "完善这一页需要提供目的地、出行日期、逐段路线、交通耗时、预算、预约事项、步行强度与现场图片。",
-    tone: "blue",
-    sections: [
-      { title: "需要提供", items: ["目的地、出行日期与同行人数", "路线、交通方式、耗时与预算", "预约要求、步行强度、避坑信息与现场图片"] },
-      { title: "发布边界", items: ["事实信息与个人感受明确区分", "路线建议标注适用时间和步行强度"] },
-    ],
-    status: "资料待完善",
-  },
-  {
-    slug: "culture-objects",
-    code: "ENJOY",
-    title: "电影、动画、音乐与好东西",
-    summary: "分享真正打动过我的作品，以及日常中反复使用、值得推荐的小物。动画与影评另设专题持续整理。",
-    intro: "完善这一页需要提供作品或物品名称、体验时间与背景、推荐理由、官方链接及可公开图片；动画片单与影评已设独立专题。",
-    tone: "sage",
-    sections: [
-      { title: "需要提供", items: ["作品或物品的准确名称", "观看、聆听或使用背景与推荐理由", "官方链接与可公开图片"] },
-      { title: "发布边界", items: ["只分享真实观看、聆听或使用体验", "主观感受不包装成普遍结论"] },
-    ],
-    relatedLinks: [
-      {
-        href: "/life/animation",
-        title: "动画与影评",
-        description: "进入动画兴趣档案、番剧总表与影评手记。",
-      },
-    ],
-    status: "资料待完善",
-  },
-];
+export const lifeCategories: LifeCategoryRecord[] = personalLife;
 
 export const animationInterest = {
   code: "ANIME",
@@ -740,40 +422,7 @@ export type PublicationRecord = {
   status: ContentStatusLabel;
 };
 
-// TODO(content): 以下两个入口只说明建立正式论文/报告记录需要什么，不代表真实成果。
-// 题名、作者、年份、刊物或发布机构、DOI 与公开链接等资料齐备后替换。
-export const publicationRecords: PublicationRecord[] = [
-  {
-    slug: "publication-record-01",
-    code: "P01",
-    type: "论文条目资料清单",
-    title: "建立正式论文记录需要什么",
-    summary: "需要提供正式题名、作者顺序、年份、期刊或会议、发表状态、摘要、主要贡献、DOI 与公开链接。",
-    year: "需要提供发表或投稿年份",
-    venue: "需要提供期刊或会议名称",
-    authors: "需要提供作者名单与顺序",
-    doi: null,
-    abstract: "需要提供摘要或可公开的内容概述",
-    contribution: "需要提供承担的工作与主要贡献",
-    links: [],
-    status: "资料待完善",
-  },
-  {
-    slug: "publication-record-02",
-    code: "P02",
-    type: "报告条目资料清单",
-    title: "建立公开研究报告需要什么",
-    summary: "需要提供报告题名、作者或团队、完成日期、发布机构、版本、关联项目、核心结论与可公开链接。",
-    year: "需要提供完成或发布日期",
-    venue: "需要提供发布机构、项目或使用场景",
-    authors: "需要提供作者、团队与个人角色",
-    doi: null,
-    abstract: "需要提供执行摘要、研究范围与可公开结论",
-    contribution: "需要提供负责的分析、实验、撰写或交付工作",
-    links: [],
-    status: "资料待完善",
-  },
-];
+export const publicationRecords: PublicationRecord[] = careerPublications;
 
 export type EducationRecord = {
   slug: string;
@@ -792,24 +441,7 @@ export type EducationRecord = {
   status: ContentStatusLabel;
 };
 
-export const educationRecords: EducationRecord[] = [
-  {
-    slug: "masters-stage",
-    code: "EDU-01",
-    phase: "CURRENT",
-    level: "硕士研究生",
-    title: "硕士研究阶段",
-    institution: "需要提供学校名称",
-    school: "需要提供学院或院系名称",
-    major: "需要提供专业名称",
-    supervisor: "需要提供导师姓名",
-    period: "需要提供入学与毕业时间",
-    location: "需要提供城市或校区",
-    summary: "当前处于硕士研究阶段，关注工业过程建模、优化与可信智能。",
-    details: ["需要提供学校、学院与专业信息", "需要提供导师、研究团队与起止时间", "需要提供核心课程、研究内容与阶段成果"],
-    status: "资料待完善",
-  },
-];
+export const educationRecords: EducationRecord[] = careerEducation;
 
 export type ExperienceRecord = {
   slug: string;
@@ -830,25 +462,7 @@ export type ExperienceRecord = {
   status: ContentStatusLabel;
 };
 
-export const experienceRecords: ExperienceRecord[] = [
-  {
-    slug: "masters-research",
-    code: "EXP-01",
-    phase: "CURRENT",
-    type: "科研经历",
-    title: "硕士研究阶段",
-    description: "围绕工业过程建模、优化与可信智能开展学习与研究。",
-    summary: "关注铜电积、电解液净化、代理模型、多目标优化、安全强化学习，以及可解释与因果机器学习。",
-    organization: "需要提供学校、实验室或机构名称",
-    role: "需要提供角色或岗位",
-    period: "需要提供起止时间",
-    location: "需要提供城市或工作地点",
-    responsibilities: ["需要提供承担的具体研究任务", "需要提供团队角色与协作内容"],
-    outputs: ["需要提供可公开的项目、论文、报告、代码或其他成果"],
-    meta: "需要提供：机构 · 角色 · 起止时间 · 地点",
-    status: "资料待完善",
-  },
-];
+export const experienceRecords: ExperienceRecord[] = careerExperience;
 
 export type HonorRecord = {
   slug: string;
@@ -866,53 +480,7 @@ export type HonorRecord = {
   status: ContentStatusLabel;
 };
 
-export const honorRecords: HonorRecord[] = [
-  {
-    slug: "academic-research",
-    code: "H01",
-    category: "学术与科研",
-    title: "学术与科研记录",
-    description: "完善这条记录需要提供奖项名称、等级、授予机构、日期、参评范围、承担角色、主要贡献与证明材料。",
-    issuer: "需要提供授予机构",
-    level: "需要提供奖项等级或名次",
-    date: "需要提供获奖日期",
-    scope: "需要提供参评或评选范围",
-    role: "需要提供个人或团队角色",
-    contribution: "需要提供承担工作与主要贡献",
-    proofUrl: null,
-    status: "资料待完善",
-  },
-  {
-    slug: "competition-practice",
-    code: "H02",
-    category: "竞赛与实践",
-    title: "竞赛与实践记录",
-    description: "完善这条记录需要提供竞赛名称、成绩、主办方、日期、参赛范围、团队角色、个人贡献与证明材料。",
-    issuer: "需要提供主办或授予机构",
-    level: "需要提供奖项等级或成绩",
-    date: "需要提供参赛或获奖日期",
-    scope: "需要提供竞赛级别与参赛范围",
-    role: "需要提供个人或团队角色",
-    contribution: "需要提供承担工作与主要贡献",
-    proofUrl: null,
-    status: "资料待完善",
-  },
-  {
-    slug: "growth-service",
-    code: "H03",
-    category: "成长与服务",
-    title: "成长与服务记录",
-    description: "完善这条记录需要提供奖学金、学生工作或志愿经历的名称、机构、日期、职责、贡献与证明材料。",
-    issuer: "需要提供授予或组织机构",
-    level: "需要提供类别、等级或服务性质",
-    date: "需要提供发生日期或时间范围",
-    scope: "需要提供活动或评选范围",
-    role: "需要提供承担角色",
-    contribution: "需要提供主要工作、贡献与结果",
-    proofUrl: null,
-    status: "资料待完善",
-  },
-];
+export const honorRecords: HonorRecord[] = careerHonors;
 
 /** 兼容既有荣誉列表页；新页面应优先使用 honorRecords。 */
 export const honorGroups = honorRecords;

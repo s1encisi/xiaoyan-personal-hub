@@ -1,23 +1,13 @@
-/* eslint-disable @next/next/no-img-element -- Optimized public profile avatar. */
-import { ArrowUpRight } from "lucide-react";
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production uses native document navigation. */
 import { PageHero } from "../_components/page-hero";
+import { PortfolioSection, RecordLinks } from "../_components/portfolio";
 import { SocialLinks } from "../_components/social-links";
-import { SectionHeading } from "../_components/section-heading";
-import { publicIdentity, publicProfiles } from "../_data/profiles";
+import { publicIdentity } from "../_data/profiles";
 import { createFixedPageMetadata } from "../_data/metadata";
-
-export const metadata = createFixedPageMetadata({path:"/contact",title:"联系与合作｜小闫",description:"通过小闫的 Bilibili、GitHub 和 Bangumi 公开主页，继续关于研究、技术与动画的交流。"});
-const conversationPaths = [
-  {href:"/projects/copper-electrowinning-surrogate",title:"过程建模",description:"铜电积、有限数据代理模型、误差与外推边界。"},
-  {href:"/projects/electrolyte-purification-optimization",title:"优化决策",description:"电解液净化、多目标权衡、约束与方案选择。"},
-  {href:"/projects/safe-reinforcement-learning",title:"安全学习",description:"约束强化学习、风险评估与安全决策。"},
-  {href:"/projects/causal-explainable-industrial-ai",title:"可信智能",description:"模型审计、关联解释与因果边界。"},
-];
-export default function ContactPage() {
-  return <main id="main-content" tabIndex={-1}>
-    <PageHero code="A2" eyebrow="CONTACT" breadcrumbs={[{label:"首页",href:"/"},{label:"关于",href:"/about"},{label:"联系与合作"}]} title={<>在这里，<br /><span>继续对话。</span></>} description="从一个具体问题、一段代码，或一部喜欢的作品开始。下面三个公开主页，分别记录研究之外的不同侧面。" tone="dark" />
-    <section className="contact-platforms section-shell" aria-labelledby="contact-platforms-title"><header className="universe-section-title u-reveal"><h2 id="contact-platforms-title">在别处找到我</h2><p>选一个熟悉的平台，认识更多一点的小闫。</p></header><SocialLinks variant="editorial" /><div className="public-identity u-reveal"><img src="/images/celestial/github-avatar.webp" alt="Zhezhen Yan 的 GitHub 公开头像" width="90" height="90" loading="lazy" /><div><h3>{publicIdentity.englishName}</h3><p>{publicIdentity.affiliation} · {publicIdentity.city}</p><p><a href={publicIdentity.source} target="_blank" rel="noopener noreferrer">GitHub 公开资料 <ArrowUpRight size={13} aria-hidden="true" /></a></p></div></div><p className="public-source-note">公开主页于 {publicIdentity.verifiedAt} 核验。站点保留公开资料的表述，未补写院系、导师和联系方式。</p></section>
-    <section className="contact-paths section-shell" aria-labelledby="contact-paths-title"><SectionHeading eyebrow="RESEARCH" id="contact-paths-title" title="从共同关注的问题开始" description={<p>这些研究专题记录了问题、方法路径与需要进一步验证的边界。</p>} /><div className="contact-path-list">{conversationPaths.map((item,index)=><a href={item.href} key={item.href}><span>0{index+1}</span><div><h3>{item.title}</h3><p>{item.description}</p></div><ArrowUpRight aria-hidden="true" /></a>)}</div></section>
-    <section className="contact-extra section-shell"><details><summary>其他联系资料</summary><p>常用邮箱、ORCID、Google Scholar 和公开简历尚未提供。当前可用入口为 {publicProfiles.map(profile=>profile.name).join("、")}；不会生成未经核实的邮箱或外链。</p></details></section>
-  </main>;
-}
+export const metadata = createFixedPageMetadata({ path: "/contact", title: "联系与合作｜闫哲祯", description: "联系闫哲祯，交流工业智能、算法研发、AI Agent 工程与博士研究机会。" });
+export default function ContactPage() { return <main id="main-content" className="contact-page" tabIndex={-1}>
+  <PageHero code="A2" eyebrow="CONTACT & OPPORTUNITIES" breadcrumbs={[{ label: "首页", href: "/" }, { label: "关于", href: "/about" }, { label: "联系与合作" }]} title={<>期待新的问题，<br /><span>也期待新的同行者。</span></>} description="我关注工业智能、算法研发与 AI Agent 工程方向的职业机会，也期待在环境 AI、安全强化学习和智能决策领域继续博士研究。" tone="dark" />
+  <PortfolioSection id="email" code="GET IN TOUCH" title="通过邮箱联系我"><a className="pf-contact-email" href={"mailto:" + publicIdentity.email}>{publicIdentity.email}</a><p className="pf-status-note">闫哲祯 · 同济大学资源与环境硕士 · 预计 2027 年 6 月毕业</p></PortfolioSection>
+  <PortfolioSection id="topics" code="CONVERSATION STARTERS" title="我们可以从这些方向开始"><div className="pf-reading-links"><a href="/projects"><small>工业智能与算法研发</small><h3>过程预测与优化决策</h3><p>工业表格建模、可解释分析、约束多目标优化和安全强化学习。</p><b>查看研究项目 ↗</b></a><a href="/projects/culab-agent-workbench"><small>AI Agent 与研究软件</small><h3>把工具组织为工作流程</h3><p>Python 服务、前端交互、数值工具、运行管理与可追溯的 Agent 诊断。</p><b>查看 CuLab ↗</b></a><a href="/publications"><small>博士研究与学术交流</small><h3>环境问题与智能方法</h3><p>工业与环境过程的资源效率、能耗建模和智能优化。</p><b>阅读论文与成果 ↗</b></a></div></PortfolioSection>
+  <PortfolioSection id="platforms" code="ELSEWHERE" title="在别处找到我"><SocialLinks variant="editorial" /><RecordLinks items={[{ label: "完整个人介绍", href: "/about/profile" }, { label: "教育与实践", href: "/journey" }]} /></PortfolioSection>
+</main>; }

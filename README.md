@@ -1,49 +1,81 @@
-# 小闫的个人研究网站
+# 闫哲祯｜研究、工程与生活
 
-一个基于 Vinext、React 19、TypeScript 与 Cloudflare Sites 的多页面个人展示网站。
+<img align="right" src="public/images/profile/zhezhen-yan.webp" width="132" alt="闫哲祯的个人照片" />
 
-## 项目目录
+你好，我是小闫，现为**同济大学资源与环境硕士研究生**。我关注工业过程建模、机器学习与约束优化，希望把复杂过程中的数据转化为可理解、可比较的决策信息。
 
-- `app/`：页面、复用组件、设计系统与权威内容数据
-- `public/`：网站公开使用的图片、海报和社交分享资源
-- `docs/`：产品规范、设计规范、内容缺口与质量检查记录
-- `tests/`：页面、链接、元数据与内容口径回归测试
-- `db/`、`drizzle/`、`worker/`：Sites 模板保留的服务端能力与部署入口
-- `local/`：本地参考图和外部审阅意见，不进入版本库或公开部署
-- `work/`、`output/`：生成脚本、来源中间文件、测试截图和部署包，不进入版本库
+这里保存我的个人网站源码，也作为了解我的一个入口。研究与论文、校园实践、旅行摄影、动画与阅读，都可以在网站中继续展开。
 
-## 页面结构
+### [访问完整个人网站 →](https://xiaoyan-personal-hub.s1encisi.chatgpt.site)
 
-- `/`：个人与研究概览
-- `/about`：个人介绍与研究准则
-- `/projects`、`/projects/[slug]`：研究主题与案例详情
-- `/publications`：经核实的论文与成果档案
-- `/skills`、`/skills/[slug]`：技术能力地图与方向详情
-- `/experience`：教育与经历时间轴
-- `/honors`：竞赛与荣誉档案
-- `/notes`、`/notes/[slug]`：知识库与主题索引
-- `/thoughts`：个人随想
-- `/life`：生活记录总览
-- `/life/animation`：深色“动画观测站”分站首页
-- `/life/animation/recommendations`、`/life/animation/recommendations/[year]`：2017—2025 年度推荐、片单与已保存原稿
-- `/life/animation/reviews`、`/life/animation/[slug]`：影评档案与独立长文
-- `/life/animation/archive`、`/life/animation/archive/[year]`：2,276 条番剧主表的年份索引与完整清单
-- `/life/animation/timeline`：按真实年份编排的观看时间线
+[研究与项目](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/projects) · [论文与成果](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/publications) · [个人介绍](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/about/profile) · [联系我](mailto:2431509@tongji.edu.cn)
 
-## 本地运行
+## 关于我
 
-```bash
-npm install
+- **硕士**：同济大学，资源与环境，2024—2027 年，预计 2027 年 6 月毕业。
+- **本科**：大连理工大学，环境工程，2020—2024 年。
+- **研究兴趣**：铜电积与电解液净化、代理模型、多目标优化、安全强化学习、模型解释与工业智能系统。
+- **研究之外**：校园传播、阅读推广、自然教育、长跑、天文、城市旅行与影像记录。
+
+## 研究与工程
+
+| 方向 | 正在做或已经完成的工作 | 深入阅读 |
+| --- | --- | --- |
+| 铜电积过程预测 | 比较 10 种机器学习算法，预测槽电压与出液铜浓度，结合 SHAP 分析模型响应；第一作者论文已发表 | [项目详情](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/projects/copper-electrowinning-surrogate) |
+| 约束多目标优化 | ESRL-CMO：分工况代理模型与 PPO-Lagrangian，协调铜回收、砷控制、能耗和净收益；JCP 稿件修回中 | [研究框架](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/projects/electrolyte-purification-optimization) |
+| 研究软件 | CuLab 研究工作台，将建模、优化、诊断与结果展示连接到实际工具和交互界面 | [软件实践](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/projects/culab-agent-workbench) |
+| 污水处理能耗 | 使用 TabPFN 等模型研究有限样本下的能耗预测；Water Environment Research 在审 | [项目与成果](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/projects/wastewater-energy-tabpfn) |
+| 本科环境研究 | 省域城乡生态足迹、土地利用变化与生物炭砷吸附科研训练 | [更多项目](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/projects) |
+
+论文状态与研究概述对应网站现有记录，更新于 2026 年 9 月。具体方法、个人分工和结果条件见各项目详情。
+
+## 生活里的另一面
+
+我喜欢为一次现场体验留出时间：走进天文馆、沿海岸散步、去一场演出，或把一部动画看完之后的感受写下来。
+
+| 走近宇宙 | 城市与山水 |
+| --- | --- |
+| [![上海天文馆里的地球装置](public/images/field-notes/astronomy-earth.webp)](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/life/travel-walks#astronomy-and-dishui) | [![西湖、岛屿与远处城市](public/images/field-notes/westlake-view.webp)](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/life/travel-walks#hangzhou-weekend) |
+
+网站收录了十篇现场图文，也保留了长期整理的动画推荐、影评和 2,276 条总表记录。
+
+[旅行与摄影](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/life/travel-walks) · [动画观测站](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/life/animation) · [个人随想](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/thoughts) · [实践经历](https://xiaoyan-personal-hub.s1encisi.chatgpt.site/experience)
+
+## 在其他地方找到我
+
+[学术邮箱](mailto:2431509@tongji.edu.cn) · [Bilibili](https://space.bilibili.com/103442064) · [Bangumi](https://bgm.tv/user/s1encisi) · [GitHub](https://github.com/s1encisi)
+
+## 关于这个网站项目
+
+这个仓库对应上方已经运行的个人网站。使用 **React 19、TypeScript、Vinext / Vite、Motion 与 Cloudflare Sites**，将研究、动画和生活组织为 105 个正式页面地址。首页采用天文主题，动画与摄影栏目有各自的阅读布局，导航与动效支持键盘操作和减少动态设置。
+
+我主导需求、内容核验、设计选择与验收，使用 Codex 辅助代码实现和验证。项目说明、技术取舍与面试准备放在文档中：
+
+- [项目介绍与演示路线](docs/PROJECT_CASE_STUDY.md)
+- [面试常见问题与口述回答](docs/INTERVIEW_QA.md)
+- [全站设计与验证记录](docs/REDESIGN_20260911.md)
+- [本次同步记录](docs/RELEASE_20260916.md)
+- [完整文档索引](docs/README.md)
+
+### 本地运行
+
+使用 Node.js 22.13 或以上版本；本次在 Node.js 24 下验证。本地浏览无需账号、API Key 或数据库。
+
+```powershell
+git clone https://github.com/s1encisi/xiaoyan-personal-hub.git
+cd xiaoyan-personal-hub
+npm ci
 npm run dev
-npm test
 ```
 
-## 内容维护
+打开终端打印的 Local 地址，默认是 [http://localhost:3000](http://localhost:3000)。
 
-权威静态内容集中在 `app/_data/`。动画原文数据独立位于 `app/_data/animation/`，海报素材与来源清单分别位于 `public/images/animation/` 和 `docs/animation/poster-sources.json`。学校、论文、奖项、项目结果、联系方式与个人照片等未完整信息会直接列出所需字段；资料齐备后再更新对应记录。
+```powershell
+npm test
+npm run lint
+node node_modules/typescript/bin/tsc --noEmit
+```
 
-动画页面使用 `app/_data/animation/public-content.json`。包含未公开补充记录的 `source-content.json` 仅留在本地，不进入 GitHub。公开快照保留页面已经展示的推荐、影评和总表，以及补充记录的数量；新克隆的项目无需原始文件即可运行。需要从本地原稿更新公开快照时，运行 `node scripts/export-public-animation.mjs`，再审阅生成内容。
+`npm test` 包含构建与页面回归检查。`app/` 保存页面、组件和内容；`public/` 保存网站图片；`docs/` 保存说明与验收记录。本次同步分支为 `codex/portfolio-release`，保留 `main`，不合并。GitHub 源码与 Sites 部署分别管理。
 
-产品与设计约束从 [`docs/README.md`](docs/README.md) 进入。个人参考资料统一保存在本地 `local/` 目录，避免把外部模型审阅稿或过程截图误发到公开版本。
-
-GitHub 同步范围、历史保留方式和上传检查见 [`docs/GITHUB_SYNC.md`](docs/GITHUB_SYNC.md)。
+个人照片与文字用于个人展示；动画海报和第三方组件保留各自的来源与许可说明。

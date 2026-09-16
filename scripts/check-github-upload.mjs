@@ -15,6 +15,7 @@ if (refs.length === 0) {
 if (refs.length === 0) process.exit(0);
 const commits = [...new Set(refs.map((ref) => git(["rev-parse", "--verify", `${ref}^{commit}`]).toString().trim()))];
 const denyPaths = [
+  /^(?:university|postgraduate ?1)\//i,
   /^(?:local|work|output|outputs|data|datasets|raw-data|private|confidential|node_modules|dist)\//i,
   /^\.(?:impeccable|claude|codex|agents|agent|workbuddy-ai|next|vinext|wrangler|npm-cache|playwright-cli)\//i,
   /^app\/_data\/animation\/source-content\.json$/i,

@@ -48,6 +48,9 @@ yarn-error.log*
 *.tsbuildinfo
 
 # Private source material: keep locally, never include in GitHub snapshots.
+/University/
+/Postgraduate 1/
+/postgraduate1/
 /app/_data/animation/source-content.json
 /.impeccable/
 /.claude/

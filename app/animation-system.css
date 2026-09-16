@@ -566,7 +566,7 @@ body:has(.animation-site-shell) .footer-meta { padding-top: 18px; border-top: 0;
   .animation-subnav { height: 52px; }
   .animation-subnav-inner { display: block; }
   .animation-subnav-brand { display: none; }
-  .animation-subnav-links a { min-width: 104px; padding: 0 12px; }
+.animation-subnav-links a { min-width: 104px; padding: 0 12px; }
   .animation-subnav-links a::after { right: 12px; left: 12px; }
   .animation-observatory-grid,
   .animation-year-page-grid { display: block; border-right: 0; border-left: 0; }
@@ -700,3 +700,88 @@ body:has(.animation-site-shell) .footer-meta { padding-top: 18px; border-top: 0;
   .animation-year-page-grid { display: block; border: 0; }
   .animation-review-article section > div { color: #000; }
 }
+/* Compact annual archive: preserve the source order while giving titles the reading width. */
+.animation-archive-year-page[data-density="compact"] .animation-section-hero{padding-block:28px 24px}
+.animation-archive-year-page[data-density="compact"] .animation-section-heading{grid-template-columns:1fr;gap:16px;margin-top:24px}
+.animation-archive-year-page[data-density="compact"] .animation-section-heading h1{font-size:40px;line-height:1.35;max-width:none;letter-spacing:0;margin-top:8px;text-wrap:balance}
+.animation-archive-year-page[data-density="compact"] .animation-section-heading>p{max-width:64ch;font-size:16px;line-height:1.8}
+.animation-archive-year-page[data-density="compact"] .animation-section-stats{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:20px;padding-top:18px}
+.animation-archive-year-page[data-density="compact"] .animation-section-stats>div{display:flex;gap:10px;align-items:baseline;min-height:0;padding:0;border:0}
+.animation-archive-year-page[data-density="compact"] .animation-section-stats dt{font-size:13px}.animation-archive-year-page[data-density="compact"] .animation-section-stats dd{font-size:14px;margin:0}
+.animation-archive-year-page[data-density="compact"] .animation-archive-list{margin-top:12px;margin-bottom:32px}
+.animation-archive-year-page[data-density="compact"] .animation-archive-list>li{min-height:0;padding-block:18px;grid-template-columns:48px minmax(0,1fr) 92px;gap:20px;contain-intrinsic-size:auto 100px}
+.animation-archive-year-page[data-density="compact"] .animation-archive-list h2{font-size:20px;line-height:1.6;letter-spacing:0}
+.animation-archive-year-page[data-density="compact"] .animation-archive-list p{font-size:13px;line-height:1.7;margin-top:5px}
+.animation-archive-year-page[data-density="compact"] .animation-archive-list>li>span{font-size:13px;font-variant-numeric:tabular-nums}
+.archive-back-top{display:flex;align-items:center;gap:14px;width:min(1080px,calc(100% - 64px));min-height:44px;margin:0 auto;color:var(--animation-blue);font-size:14px}
+@media(max-width:760px){
+  .animation-archive-year-page[data-density="compact"] .animation-section-hero{padding-block:22px 18px}
+  .animation-archive-year-page[data-density="compact"] .animation-section-heading{margin-top:18px;gap:12px}
+  .animation-archive-year-page[data-density="compact"] .animation-section-heading h1{font-size:30px;line-height:1.45}
+  .animation-archive-year-page[data-density="compact"] .animation-section-stats{gap:10px 20px;margin-top:16px;padding-top:14px}
+  .animation-archive-year-page[data-density="compact"] .animation-archive-list>li{grid-template-columns:34px minmax(0,1fr);gap:6px 12px;padding-block:15px;contain-intrinsic-size:auto 105px}
+  .animation-archive-year-page[data-density="compact"] .animation-archive-list>li>small{display:none}
+  .animation-archive-year-page[data-density="compact"] .animation-archive-list>li>a{grid-column:2;justify-self:start;min-height:44px}
+  .animation-archive-year-page[data-density="compact"] .animation-archive-list h2{font-size:17px;line-height:1.65}
+  .animation-archive-year-page[data-density="compact"] .animation-archive-list>li>span{padding-top:3px}
+  .archive-back-top{width:calc(100% - 40px)}
+}
+/* Editorial hierarchy for the whole animation collection. */
+:root{--animation-nav-height:56px}
+.animation-section-hero{padding-block:28px 30px}
+.animation-section-heading{gap:30px;margin-top:24px;align-items:start}
+.animation-section-heading h1{max-width:none;font-size:44px;line-height:1.4;letter-spacing:0;text-wrap:balance}
+.animation-section-heading>p{font-size:16px;line-height:1.85}
+.animation-section-stats{margin-top:22px}.animation-section-stats>div{min-height:60px;padding-top:12px}.animation-section-stats dt{font-size:13px}.animation-section-stats dd{font-size:14px;line-height:1.7}
+.animation-breadcrumbs{font-size:13px;line-height:1.7}
+.animation-review-detail-hero{padding-top:28px;padding-bottom:40px}
+.animation-review-detail-grid{grid-template-columns:minmax(0,1fr) 260px;gap:52px;align-items:start;margin-top:30px}
+.animation-review-detail-heading h1{font-size:clamp(32px,3.1vw,44px);line-height:1.4;letter-spacing:0;text-wrap:balance;margin-top:18px;max-width:none}
+.animation-review-detail-heading>strong{font-size:17px;line-height:1.6}.animation-review-detail-heading>p{font-size:17px;line-height:1.85;max-width:42rem}
+.animation-review-detail-topline{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}.animation-review-detail-topline>p{flex:1 1 200px;min-width:0;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+.animation-review-detail-topline .status-badge{flex:0 0 auto;white-space:nowrap}
+.animation-review-detail-grid>.animation-poster{width:100%;max-width:260px;margin:0;justify-self:end}
+.animation-review-detail-grid .animation-poster-image{height:auto;max-height:none;aspect-ratio:auto}
+.animation-review-detail-grid .animation-poster-image img{display:block;width:100%;height:auto;max-height:380px;object-fit:contain}
+.animation-review-detail-grid .animation-poster[data-orientation="landscape"]{max-width:340px;align-self:center}
+.animation-review-detail-grid .animation-poster[data-orientation="landscape"] .animation-poster-image{aspect-ratio:auto}
+.animation-review-detail-grid .animation-poster figcaption{font-size:12px;line-height:1.75}
+.animation-review-detail-body{grid-template-columns:200px minmax(0,1fr);gap:64px;padding-block:44px 56px}
+.animation-review-detail-body>aside{top:calc(var(--header-height) + var(--animation-nav-height) + 24px)}
+.animation-review-article>section{padding-bottom:36px;scroll-margin-top:calc(var(--header-height) + var(--animation-nav-height) + 24px)}
+.animation-review-article>section+section{padding-top:36px}.animation-review-article h2{font-size:28px;line-height:1.5;letter-spacing:0;text-wrap:balance}
+.animation-review-article section>div{font-size:17px;line-height:1.85;margin-top:20px}.animation-review-article section>div p+p{margin-top:18px}
+.animation-review-ledger{margin-top:24px}.animation-review-ledger>article{min-height:0;grid-template-columns:118px 44px minmax(0,1fr) 110px;gap:22px;padding-block:24px}
+.animation-review-ledger-copy h2{font-size:25px;line-height:1.5;letter-spacing:0}.animation-review-ledger-copy>p:not(:first-child){font-size:15px;line-height:1.85}
+.animation-archive-index{margin-top:24px}.animation-archive-index>article{min-height:0;padding-block:22px}
+.animation-year-entries{margin-top:32px}.animation-year-entries>article{min-height:0;grid-template-columns:190px minmax(0,1fr);gap:36px;padding-block:30px}.animation-year-entry-copy h2{font-size:28px;line-height:1.5;letter-spacing:0}.animation-year-entry-prose{font-size:17px;line-height:1.85}
+.animation-year-entries .animation-poster-image{height:auto;aspect-ratio:auto;max-height:none}.animation-year-entries .animation-poster-image img{height:auto;max-height:310px;object-fit:contain}
+.animation-year-page-grid>.animation-year-rail{top:calc(var(--header-height) + var(--animation-nav-height))}
+@media(max-width:1020px){.animation-review-detail-grid{grid-template-columns:minmax(0,1fr) 200px;gap:32px}.animation-review-detail-body{grid-template-columns:170px minmax(0,1fr);gap:36px}}
+@media(max-width:760px){
+ :root{--animation-nav-height:96px}
+ .animation-subnav{height:auto;min-height:96px}.animation-subnav-inner{min-height:96px;padding-block:4px}.animation-subnav-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;width:100%}
+ .animation-subnav-links a{min-width:0;min-height:44px;height:auto;justify-content:flex-start;padding-inline:16px;font-size:14px;white-space:nowrap}.animation-subnav-links a[aria-current]{font-weight:650}
+ .animation-subnav-links a::after{left:16px;right:16px}.animation-subnav-links small{font-size:12px}
+ .animation-year-page-grid>.animation-year-rail{height:auto;min-height:0;position:static;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:8px 16px;overflow:visible;gap:0}
+ .animation-year-page-grid>.animation-year-rail .animation-year-rail-line{display:none}
+ .animation-year-page-grid>.animation-year-rail>a:not(.animation-year-rail-more){display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;min-height:44px;padding:6px 0;font-size:13px;border-bottom:2px solid transparent}
+ .animation-year-page-grid>.animation-year-rail>a[aria-current]{border-bottom-color:var(--animation-copper);font-weight:650}
+ .animation-year-page-grid>.animation-year-rail>a:not(.animation-year-rail-more) i{position:static;flex:none;width:5px;height:5px;margin:0}
+ .animation-year-page-grid>.animation-year-rail .animation-year-rail-more{min-height:44px;min-width:0;display:flex;justify-content:center;align-items:center;padding:0;border:0}.animation-year-rail-more strong{font-size:12px;white-space:nowrap}.animation-year-page-grid>.animation-year-rail .animation-year-rail-more small{display:none}
+ .animation-section-page{width:calc(100% - 2 * var(--gutter))}.animation-section-hero{padding-block:22px 24px}.animation-section-heading{display:block;margin-top:20px}.animation-section-heading h1{font-size:32px;line-height:1.45;margin-top:8px}.animation-section-heading>p{margin-top:14px;max-width:none;font-size:16px}
+ .animation-section-stats{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:18px;padding-top:14px}.animation-section-stats>div,.animation-section-stats>div+div{display:flex;align-items:baseline;gap:8px;min-height:0;padding:0;border:0}.animation-section-stats dd{margin:0;font-size:13px}.animation-section-stats dt{font-size:13px}
+ .animation-review-detail-hero{padding-block:24px 32px}.animation-review-detail-grid{display:flex;flex-direction:column;gap:26px;margin-top:24px}
+ .animation-review-detail-heading{order:0;width:100%;padding:0}.animation-review-detail-heading h1{font-size:32px;line-height:1.45;margin-top:16px}.animation-review-detail-heading>p{font-size:16px;line-height:1.85;margin-top:16px}
+ .animation-review-detail-heading dl{margin-top:20px}.animation-review-detail-heading dt{font-size:12px}.animation-review-detail-heading dd{font-size:14px}
+ .animation-review-detail-grid>.animation-poster{order:1;max-width:200px;width:100%;align-self:flex-start}.animation-review-detail-grid>.animation-poster[data-orientation="landscape"]{max-width:100%;align-self:flex-start}.animation-review-detail-grid .animation-poster-image img{max-height:260px;width:100%;height:auto}
+ .animation-review-detail-body{display:block;padding-top:30px}.animation-review-detail-body>aside{position:static;margin-bottom:36px}.animation-review-detail-body>aside nav{grid-template-columns:1fr}.animation-review-article h2{font-size:25px;line-height:1.5}.animation-review-article>section>header{grid-template-columns:28px minmax(0,1fr);gap:12px}.animation-review-article section>div{font-size:16px;line-height:1.85;margin-top:18px}.animation-review-article>section+section{padding-top:32px}
+ .animation-year-entries>article{grid-template-columns:90px minmax(0,1fr);gap:20px;padding-block:26px;min-height:0}.animation-year-entry-copy h2{font-size:22px}.animation-year-entry-prose{font-size:16px;line-height:1.85}.animation-year-entries .animation-poster-image img{max-height:160px}.animation-year-entry-index span{font-size:19px}
+ .animation-review-ledger>article{grid-template-columns:76px minmax(0,1fr);gap:16px;padding-block:24px}.animation-review-ledger-copy h2{font-size:22px}.animation-review-ledger .animation-poster-image{height:auto;aspect-ratio:auto}.animation-review-ledger .animation-poster-image img{height:auto;max-height:120px;object-fit:contain}.animation-review-ledger-action{min-height:44px}
+ .animation-breadcrumbs{font-size:12px;line-height:1.75}
+}
+@media(prefers-reduced-motion:no-preference){.animation-section-hero{animation-duration:240ms}.animation-poster img{transition-duration:220ms}}
+
+.animation-section-stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.animation-source-note>p+p{margin-top:10px}
+@media(hover:none),(pointer:coarse){.animation-review-ledger article:hover img,.animation-review-horizon-track>a:hover img,.beyond-anime:hover img,.beyond-life:hover img{transform:none}}

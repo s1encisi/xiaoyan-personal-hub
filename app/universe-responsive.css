@@ -9,6 +9,8 @@
 }
 @media (max-width:1020px) {
   :root { --header-height:72px; }
+  /* A filtered ancestor contains position:fixed; the mobile dialog needs the viewport. */
+  .global-header { -webkit-backdrop-filter:none; backdrop-filter:none; }
   .header-inner { gap:15px; } .site-brand { margin-right:auto; }
   .brand-symbol { display:block; } .motion-toggle { margin-left:auto; }
   .menu-toggle { flex-shrink:0; }
@@ -183,3 +185,27 @@ html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="of
   .celestial-hero h1 span,.celestial-hero__intro,.research-ledger p { color:#111; }
   .u-reveal { opacity:1 !important; transform:none !important; }
 }
+/* Reflow boundaries: no filtered fixed ancestor and no hidden navigation entries. */
+@media(max-width:1020px){
+ .global-header{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fbfcff}
+ .global-header.header-cosmic{background:#060c18}.global-header.header-anime{background:#061323}.global-header.header-life{background:#fcfcf8}
+ .mobile-navigation-shell{transition:opacity .15s ease,visibility 0s linear .15s}
+ .mobile-navigation-shell.is-open{transition-delay:0s}
+ .mobile-navigation{transition:opacity .18s ease,transform .2s cubic-bezier(.22,1,.36,1)}
+ .mobile-navigation-shell:not(.is-open) .mobile-navigation{transform:translateX(12px)}
+ .mobile-navigation-shell.is-open .mobile-navigation{transform:translateX(0)}
+}
+@media(max-width:760px){
+ :root{--gutter:20px}
+ .footer-sitemap{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:24px}
+ .footer-primary{gap:32px;padding-bottom:32px}.footer-brand-block h2{font-size:27px;line-height:1.5}.footer-meta{gap:10px 24px}
+ .footer-group-link{min-height:44px}.global-footer .footer-sitemap-group>div>a{font-size:13px;min-height:44px}
+ .celestial-hero h1{letter-spacing:0}.celestial-kicker{font-size:12px;margin-bottom:16px}
+ .hero-star-action{min-height:50px}.hero-star-action>.inner-content{min-height:48px;padding:11px 20px;gap:20px;font-size:14px}
+ .celestial-hero__bottom{gap:8px 18px}.celestial-hero__bottom .social-links{width:100%}.celestial-hero__bottom .launch-replay{margin-right:auto}.celestial-hero__bottom .celestial-scroll{margin-left:0}
+ .anime-hero{min-height:620px}.anime-hero__inner{gap:20px}.anime-frame-stack{height:190px}
+}
+@media(max-width:360px){:root{--gutter:16px}.page-hero{padding-inline:16px}.footer-sitemap{column-gap:16px}.hero-star-action>.inner-content{padding-inline:16px;gap:12px}.celestial-hero__actions .universe-action{padding-inline:16px}}
+
+/* Keep small text readable over the brightest mobile artwork details. */
+@media(max-width:760px){.celestial-hero__intro{color:#edf3ff}.anime-hero__copy{position:relative;isolation:isolate}.anime-hero__copy::before{content:"";position:absolute;inset:-30px -20px -50px;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(3,10,24,.72),rgba(3,10,24,.55));mask-image:linear-gradient(0deg,transparent,#000 12%,#000 90%,transparent)}}

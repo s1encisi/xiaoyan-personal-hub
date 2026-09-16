@@ -56,7 +56,6 @@ export default async function AnimationReviewPage({ params }: DetailProps) {
           </nav>
 
           <div className="animation-review-detail-grid">
-            <AnimationPoster poster={record.poster} posters={record.posters} title={record.workTitle} eager showCredit />
             <div className="animation-review-detail-heading">
               <div className="animation-review-detail-topline">
                 <p>{record.code} / {record.englishTitle}</p>
@@ -70,6 +69,7 @@ export default async function AnimationReviewPage({ params }: DetailProps) {
                 <div><dt>记录年份</dt><dd>{record.year}</dd></div>
               </dl>
             </div>
+            <AnimationPoster poster={record.poster} posters={record.posters} title={record.workTitle} eager showCredit />
           </div>
         </header>
 

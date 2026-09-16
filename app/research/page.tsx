@@ -1,60 +1,10 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production requires native document navigation. */
 import { PageHero } from "../_components/page-hero";
+import { PortfolioSection, ProjectTiles, RecordLinks } from "../_components/portfolio";
+import { projects } from "../_data/content";
 import { createFixedPageMetadata } from "../_data/metadata";
-import { projects, skills } from "../_data/content";
-
-const researchMethod = [
-  ["01", "理解过程", "明确对象、变量、数据与约束"],
-  ["02", "建立模型", "比较预测、代理与不确定性"],
-  ["03", "搜索方案", "处理多目标、可行域与稳健性"],
-  ["04", "审查决策", "检验安全、解释与部署边界"],
-];
-
-export const metadata = createFixedPageMetadata({
-  path: "/research",
-  title: "研究中心｜小闫",
-  description: "从工业问题、研究专题到技术方法的小闫研究中心。",
-});
-
-export default function ResearchPortalPage() {
-  return (
-    <main id="main-content" tabIndex={-1}>
-      <PageHero
-        code="02"
-        eyebrow="RESEARCH CENTER"
-        breadcrumbs={[{ label: "首页", href: "/" }, { label: "研究中心" }]}
-        title={<>从问题出发，<br /><span>沿证据链深入。</span></>}
-        description="这里是研究内容的总入口：先理解我关注的工业问题，再进入具体研究专题与技术方向。完整项目案例需要项目周期、职责、数据、方法、结果与公开证据。"
-        tone="dark"
-        aside={<div className="hero-aside-count"><strong>{String(projects.length).padStart(2, "0")}</strong><span>RESEARCH<br />TOPICS</span></div>}
-      />
-
-      <section className="portal-section section-shell" aria-labelledby="research-portals-title">
-        <div className="section-kicker split-kicker">
-          <div><p className="micro-label">EXPLORE / 研究导航</p><h2 id="research-portals-title">选择阅读路径</h2></div>
-          <p>专题页解释“正在研究什么”，能力页说明“如何开展研究”。二者通过详情页互相连接。</p>
-        </div>
-        <div className="portal-grid">
-          <a className="portal-card" href="/projects">
-            <span>01 / RESEARCH AGENDAS</span><strong>研究专题</strong><p>查看研究问题、方法路线、评价重点与公开边界。</p><b>{projects.length} 个专题 ↗</b>
-          </a>
-          <a className="portal-card" href="/skills">
-            <span>02 / CAPABILITIES</span><strong>技术能力</strong><p>查看工业过程建模、优化、安全决策与可信解释的方法体系。</p><b>{skills.length} 个方向 ↗</b>
-          </a>
-        </div>
-      </section>
-
-      <section className="research-method section-shell" aria-labelledby="research-method-title">
-        <div className="section-kicker split-kicker">
-          <div><p className="micro-label">METHOD / 研究工作链</p><h2 id="research-method-title">从过程理解到决策审查</h2></div>
-          <p>四个步骤构成共同的方法骨架；具体问题、评价和边界进入项目与能力详情页阅读。</p>
-        </div>
-        <ol className="research-method-track">
-          {researchMethod.map(([step, title, description]) => (
-            <li key={step}><span>{step}</span><strong>{title}</strong><p>{description}</p></li>
-          ))}
-        </ol>
-      </section>
-    </main>
-  );
-}
+export const metadata = createFixedPageMetadata({ path: "/research", title: "研究与工程｜闫哲祯", description: "面向工业与环境过程，以预测建模、优化决策、可解释分析和研究软件连接数据与应用。" });
+export default function ResearchPage() { return <main id="main-content" className="research-index" tabIndex={-1}>
+  <PageHero code="02" eyebrow="INDUSTRIAL & ENVIRONMENTAL INTELLIGENCE" breadcrumbs={[{ label: "首页", href: "/" }, { label: "研究与工程" }]} title={<>让数据读懂过程，<br /><span>让模型支持选择。</span></>} description="我的研究从环境数据与工艺需求出发，发展预测、解释和优化方法，并将它们组织为能够使用的工程系统。" tone="dark" />
+  <PortfolioSection id="research-line" code="RESEARCH THREAD" title="预测、优化与工程实现"><div className="pf-methods"><article><small>01 / UNDERSTAND</small><h3>从过程与数据建立预测</h3><p>针对铜电积浓度、电压与污水能耗，比较模型并分析不同工况与数据条件。</p></article><article><small>02 / DECIDE</small><h3>在多项目标中生成可行方案</h3><p>以分工况代理环境连接 NSGA-II 与 PPO-Lagrangian，处理目标偏好与工艺约束。</p></article><article><small>03 / EXPLAIN</small><h3>让变量响应可以被讨论</h3><p>使用 SHAP、PDP 和 ICE，把模型表现展开为特征贡献与工程语境中的响应关系。</p></article><article><small>04 / BUILD</small><h3>让研究工作能够接续</h3><p>通过 CuLab 工作台、数值工具和证据诊断连接运行、结果与使用者。</p></article></div></PortfolioSection>
+  <PortfolioSection id="selected-work" code="SELECTED CASES" title="代表性工作"><ProjectTiles items={projects.filter(project => ["copper-electrowinning-surrogate", "electrolyte-purification-optimization", "culab-agent-workbench", "wastewater-energy-tabpfn"].includes(project.slug))} /><RecordLinks items={[{ label: "全部研究与项目", href: "/projects" }, { label: "技术能力", href: "/skills" }, { label: "论文与成果", href: "/publications" }]} /></PortfolioSection>
+</main>; }

@@ -4,9 +4,14 @@
 
 | 文档 | 用途 |
 | --- | --- |
+| [`PROJECT_CASE_STUDY.md`](PROJECT_CASE_STUDY.md) | 项目介绍、工程取舍、演示路线与简历表述 |
+| [`INTERVIEW_QA.md`](INTERVIEW_QA.md) | 面向 HR 和技术面试的口述问答 |
+| [`RELEASE_20260916.md`](RELEASE_20260916.md) | 当前线上源码的 GitHub 同步与验证记录 |
 | [`PRODUCT.md`](PRODUCT.md) | 网站定位、信息架构、内容边界和验收标准 |
 | [`DESIGN.md`](DESIGN.md) | 视觉系统、排版、动效、响应式与可访问性规范 |
-| [`CONTENT_GAPS.md`](CONTENT_GAPS.md) | 待补充资料、占位内容和已核实数据口径 |
+| [`CONTENT_GAPS.md`](CONTENT_GAPS.md) | 当前内容覆盖范围与后续维护事项 |
+| [`PORTFOLIO_CONTENT.md`](PORTFOLIO_CONTENT.md) | 面向求职与申博的内容组织、来源和表达规范 |
+| [`REDESIGN_20260911.md`](REDESIGN_20260911.md) | 本轮逐页视觉改造、开场动效、问题对照与验证方法 |
 | [`design-qa.md`](design-qa.md) | 已执行的设计检查、问题与修正记录 |
 | [`GITHUB_SYNC.md`](GITHUB_SYNC.md) | GitHub 同步范围、本地资料保护与推送检查 |
 | [`CELESTIAL_REDESIGN.md`](CELESTIAL_REDESIGN.md) | 当前个人星图视觉、公开资料来源及外部评审依据 |
