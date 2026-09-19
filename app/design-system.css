@@ -478,7 +478,12 @@ p, li, dd { overflow-wrap: anywhere; }
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
-.page-hero-meta { max-width: 100%; }
+.page-hero-meta {
+  max-width: 100%;
+  margin-top: 24px;
+  font-size: var(--step-sm);
+  color: inherit;
+}
 .section-shell {
   width: min(var(--max), calc(100% - 2 * var(--gutter)));
   margin-right: auto;
@@ -2807,6 +2812,7 @@ a.portal-card:hover, a.portal-card:focus-visible, .portal-card:has(> a:hover) { 
   .page-chapter-code { top: 20px; right: 20px; font-size: 84px; }
   .breadcrumbs { margin-bottom: 34px; }
   .page-hero h1 { font-size: clamp(42px, 11.8vw, 60px); line-height: var(--leading-none); }
+  .page-hero-meta { margin-top: 20px; }
   .page-hero-description { margin-top: 20px; font-size: 15px; }
   .page-hero-aside { max-width: 360px; padding: 18px 0 0; border-top: 1px solid var(--line-strong); border-left: 0; }
   .page-hero-dark .page-hero-aside { border-top-color: #40516d; }
