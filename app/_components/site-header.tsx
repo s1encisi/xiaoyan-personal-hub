@@ -348,6 +348,7 @@ export function SiteHeader() {
       <div
         ref={mobileDialogRef}
         className={`mobile-navigation-shell${mobileOpen ? " is-open" : ""}`}
+        inert={!mobileOpen}
         role={mobileOpen ? "dialog" : undefined}
         aria-modal={mobileOpen ? true : undefined}
         aria-labelledby="mobile-navigation-title"
