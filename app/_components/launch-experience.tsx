@@ -6,11 +6,12 @@ import { ArrowRight, Play } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useMotionEnabled } from "./motion-settings";
+import { OpeningParticleName } from "./effects/ai-effects";
 import { siteInfo } from "../_data/site";
 import "./launch-experience.css";
 
-const viewedKey = "xiaoyan:opening:orbit-1";
-const durationMs = 3200;
+const viewedKey = "xiaoyan:opening:cosmos-3";
+const durationMs = 4100;
 const cinematicEase = [0.22, 1, 0.36, 1] as const;
 
 function LaunchFilm({ onFinish }: { onFinish: () => void }) {
@@ -51,21 +52,20 @@ function LaunchFilm({ onFinish }: { onFinish: () => void }) {
     };
   }, [onFinish]);
 
-  return <m.div ref={layer} className="launch-sequence" role="dialog" aria-modal="true" aria-labelledby="launch-name" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.24 }}>
+  return <m.div ref={layer} className="launch-sequence launch-cosmos" role="dialog" aria-modal="true" aria-labelledby="launch-name" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.55 }}>
     <div className="launch-space" aria-hidden="true">
-      <m.div className="launch-aperture" initial={{ clipPath: "circle(6% at 72% 50%)" }} animate={{ clipPath: "circle(140% at 72% 50%)" }} transition={{ duration: 1.65, ease: cinematicEase }}>
-        <m.img src="/images/celestial/celestial-planet.webp" srcSet="/images/celestial/celestial-planet-768.webp 768w, /images/celestial/celestial-planet.webp 1586w" sizes="100vw" width="1586" height="992" alt="" fetchPriority="high" onError={onFinish} initial={{ scale: 1.85, opacity: 0.4 }} animate={{ scale: [1.85, 1.16, 1], opacity: [0.4, 1, 0.76] }} transition={{ duration: 3.15, times: [0, 0.55, 1], ease: cinematicEase }} />
+      <m.div className="launch-aperture" initial={{ clipPath: "circle(4% at 66% 45%)" }} animate={{ clipPath: "circle(125% at 66% 45%)" }} transition={{ duration: 1.7, ease: cinematicEase }}>
+        <m.img src="/images/ai/cosmos-1672.webp" srcSet="/images/ai/cosmos-768.webp 768w, /images/ai/cosmos-1200.webp 1200w, /images/ai/cosmos-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="" fetchPriority="high" onError={onFinish} initial={{ scale: 1.18, y: "8%", rotate: -2, opacity: 0.4 }} animate={{ scale: 1.025, y: "0%", rotate: 0, opacity: 1 }} transition={{ duration: 3.45, ease: cinematicEase }} />
       </m.div>
       <div className="launch-shade" />
-      <m.div className="launch-light" initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: [0, 1, 1.25], opacity: [0, 0.9, 0] }} transition={{ duration: 2, times: [0, 0.4, 1], ease: cinematicEase }} />
     </div>
-    <div className="launch-caption"><span>RESEARCH / ENGINEERING / LIFE</span><span>个人星图</span></div>
+    <div className="launch-caption"><span>MACHINE LEARNING / REINFORCEMENT LEARNING / AGENTS</span><span>FROM LEARNING TO ACTION</span></div>
     <div className="launch-identity">
-      <m.p className="launch-eyebrow" initial={{ opacity: 0, y: 6 }} animate={{ opacity: [0, 1, 1, 0], y: [6, 0, 0, -6] }} transition={{ delay: 0.35, duration: 2.65, times: [0, 0.18, 0.85, 1] }}>以好奇为起点</m.p>
-      <p id="launch-name" className="launch-name" aria-label={siteInfo.name}>{Array.from(siteInfo.name).map((letter, index) => <span className="launch-letter-mask" key={index} aria-hidden="true"><m.span initial={{ y: "105%" }} animate={{ y: ["105%", "0%", "0%", "-105%"] }} transition={{ delay: 0.45 + index * 0.08, duration: 2.55 - index * 0.08, times: [0, 0.22, 0.86, 1], ease: cinematicEase }}>{letter}</m.span></span>)}</p>
-      <m.p className="launch-english" initial={{ opacity: 0, y: 8 }} animate={{ opacity: [0, 1, 1, 0], y: [8, 0, 0, -4] }} transition={{ delay: 0.75, duration: 2.2, times: [0, 0.2, 0.86, 1] }}>{siteInfo.englishName}</m.p>
+      <m.p className="launch-eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: [0, 1, 1], y: [12, 0, 0] }} transition={{ delay: 0.6, duration: 2.2, times: [0, 0.3, 1] }}>以好奇开始，让想法成为现实</m.p>
+      <div id="launch-name" className="launch-name" aria-label={siteInfo.name}><OpeningParticleName text={siteInfo.name} /></div>
+      <m.p className="launch-english" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.35, duration: 0.8 }}>{siteInfo.englishName}</m.p>
     </div>
-    <div className="launch-bottom"><p>从复杂过程，到可信决策。</p><button ref={skip} type="button" onClick={onFinish}>跳过开场 <ArrowRight size={17} aria-hidden="true" /><kbd>Esc</kbd></button></div>
+    <div className="launch-bottom"><p>机器学习 · 强化学习 · 智能体工程</p><button ref={skip} type="button" onClick={onFinish}>跳过开场 <ArrowRight size={17} aria-hidden="true" /><kbd>Esc</kbd></button></div>
     <m.div className="launch-timeline" aria-hidden="true" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: durationMs / 1000, ease: "linear" }} />
   </m.div>;
 }

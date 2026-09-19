@@ -5,6 +5,8 @@ import test from "node:test";
 const animationSource = JSON.parse(
   await readFile(new URL("../app/_data/animation/public-content.json", import.meta.url), "utf8"),
 );
+const journalSource = JSON.parse(await readFile(new URL("../app/_data/journal-data.json", import.meta.url), "utf8"));
+const journalYears = [...new Set(journalSource.map(record => record.year))];
 
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -72,12 +74,12 @@ const newAnimationReviewRoutes = [
 const animationReviewRoutes = [...legacyAnimationReviewRoutes, ...newAnimationReviewRoutes];
 
 const moduleRoutes = [
-  ["/", new RegExp("从复杂过程")],
-  ["/about", new RegExp("连接环境问题")],
+  ["/", new RegExp("让模型学会理解")],
+  ["/about", new RegExp("研究智能方法")],
   ["/about/profile", new RegExp("从区域生态")],
   ["/contact", new RegExp("通过邮箱联系我")],
   ["/research", new RegExp("预测、优化与工程实现")],
-  ["/projects", new RegExp("工业智能与工程系统")],
+  ["/projects", new RegExp("机器学习与智能体工程")],
   ["/outputs", new RegExp("论文、算法与研究软件")],
   ["/outputs/project-results", new RegExp("四类交付")],
   ["/publications", new RegExp("第一作者研究成果")],
@@ -90,11 +92,15 @@ const moduleRoutes = [
   ["/notes", new RegExp("研究、建模、写作与工程")],
   ["/thoughts", new RegExp("研究、协作与日常")],
   ["/life", new RegExp("研究之外，保持具体")],
+  ["/life/journal", new RegExp("按年份翻阅")],
+  ["/life/gaming", new RegExp("对局之外")],
   ["/life/animation", new RegExp("让故事，")],
   ...animationModuleRoutes,
 ];
 
 const detailRoutes = [
+  ["/projects/reliable-commerce-agents", /电商智能体的可靠售后执行/],
+  ...journalYears.map(year => ["/life/journal/" + year, new RegExp(year + " 年图文目录")]),
   ["/projects/copper-electrowinning-surrogate", new RegExp("铜电积过程的机器学习预测")],
   ["/projects/electrolyte-purification-optimization", new RegExp("铜电积的约束多目标优化")],
   ["/projects/safe-reinforcement-learning", new RegExp("ESRL-CMO")],
@@ -148,6 +154,51 @@ const detailRoutes = [
 
 const publicPortfolioRoutes = detailRoutes.filter(([path]) => !path.startsWith("/life/animation/")).map(([path]) => path);
 
+test("Notion library exposes eight topics and real chapter links", async () => {
+  const html = await (await render("/notes")).text();
+  assert.equal((html.match(/class="library-chapter"/g) ?? []).length, 8);
+  const links = findTags(html, "a").filter(tag => (readAttribute(tag, "href") ?? "").startsWith("https://app.notion.com/"));
+  assert.equal(links.length, 35);
+  for (const tag of links) {
+    assert.equal(readAttribute(tag, "target"), "_blank");
+    assert.match(readAttribute(tag, "rel") ?? "", /noopener/);
+  }
+  assert.match(html, /完整资料可直接在 Notion 中阅读/);
+});
+
+test("journal preserves broad coverage, year navigation and local image boundaries", async () => {
+  assert.equal(journalSource.length, 61);
+  assert.equal(journalSource.reduce((sum, item) => sum + item.photos.length, 0), 250);
+  const images = new Set();
+  for (const year of journalYears) {
+    const response = await render(`/life/journal/${year}`);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    const records = journalSource.filter(entry => entry.year === year);
+    assert.equal((html.match(/class="journal-story"/g) ?? []).length, records.length);
+    for (const record of records) {
+      assert.ok(findTag(html, "article", "id", `entry-${record.slug}`));
+      assert.ok(html.includes(`href="#entry-${record.slug}"`));
+      for (const photo of record.photos) {
+        assert.match(photo.src, /^\/images\/journal\/[a-z0-9-]+\.webp$/);
+        assert.ok(photo.width > 0 && photo.height > 0 && photo.smallWidth > 0);
+        images.add(photo.src); images.add(photo.small);
+      }
+    }
+    assert.doesNotMatch(html, /wxid_|qpic\.cn|video\.qq\.com|media-access|dpapi|my-moments|local[\\/]moments|sns\.db|\b(?:enc|token|authkey)=/i);
+  }
+  for (const path of images) assert.ok((await stat(new URL("../public" + path, import.meta.url))).isFile());
+  assert.equal((await render("/life/journal/1900")).status, 404);
+});
+
+test("visitor pages omit production labels while retaining professional AI topics", async () => {
+  for (const [path] of [...moduleRoutes, ...detailRoutes]) {
+    const html = await (await render(path)).text();
+    assert.doesNotMatch(html, /AI\s*生成|AI\s*辅助|Codex\s*辅助/, path);
+  }
+  assert.match(await (await render("/skills/agent-engineering")).text(), /AI Agent/);
+});
+
 test("home server-renders the official-site navigation hierarchy", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -172,9 +223,12 @@ test("home server-renders the official-site navigation hierarchy", async () => {
       `document navigation fallback: ${href}`,
     );
   }
-  assert.match(html, /copper-electrowinning-hero\.webp/);
-  assert.match(html, /copper-electrowinning-hero-768\.webp 768w/);
-  assert.match(html, /copper-electrowinning-hero-1200\.webp 1200w/);
+  assert.match(html, /images\/home-p3r\/hero-1920\.webp/);
+  for (const abstract of ["commerce", "policy", "tabpfn", "culab"]) {
+    assert.match(html, new RegExp(`images/home-p3r/${abstract}-abstract\\.webp`));
+  }
+  assert.match(html, /images\/home-p3r\/agent-stargazing\.jpg/);
+  assert.doesNotMatch(html, /copper-electrowinning-hero/);
   assert.match(html, /研究与工程/);
   assert.equal(
     readAttribute(findTag(html, "link", "rel", "canonical"), "href"),
@@ -194,6 +248,15 @@ test("public profiles are usable links and omit unnecessary personal details", a
       assert.match(readAttribute(link, "rel") ?? "", /noopener/);
     }
     assert.doesNotMatch(html, /Siping Road|Shanghai 200092|github_pat_/);
+    assert.doesNotMatch(html, /douyin\.com\/user\/self|zhipin\.com\/web\/geek\/recommend|trackable_token=/);
+    if (path !== "/") {
+      for (const url of ["https://steamcommunity.com/profiles/76561198817662858/", "https://www.xiaohongshu.com/user/profile/65f73295000000000600c869", "https://maimai.cn/profile/detail?dstu=248600540", "https://www.douyin.com/user/MS4wLjABAAAAWZujBJd_opt8w_n_PRs2c_8Fqr41sQNg1ANtqttAwjH09VPv7sJSpz0tg-0RaV6Z"]) {
+        const link = findTag(html, "a", "href", url);
+        assert.ok(link, `${path}: additional owner profile ${url}`);
+        assert.equal(readAttribute(link, "target"), "_blank");
+        assert.match(readAttribute(link, "rel") ?? "", /noopener/);
+      }
+    }
   }
   const profile = await (await render("/about/profile")).text();
   assert.match(profile, /Zhezhen Yan/);
@@ -456,8 +519,10 @@ test("research and personal pages retain usable parent navigation", async () => 
 test("professional identity, publication stages and contact are consistent", async () => {
   const home = await (await render("/")).text();
   assert.match(home, /闫哲祯/);
-  assert.match(home, /4\.66/);
-  assert.match(home, /2027/);
+  assert.match(home, /机器学习、强化学习与智能体工程/);
+  const profile = await (await render("/about/profile")).text();
+  assert.match(profile, /4\.66/);
+  assert.match(profile, /2027/);
   const contact = await (await render("/contact")).text();
   assert.ok(findTag(contact, "a", "href", "mailto:2431509@tongji.edu.cn"));
   const published = await (await render("/publications/publication-record-01")).text();
@@ -545,8 +610,8 @@ test("detail routes expose both current page and parent location", async () => {
   assert.match(animationHtml, /页面保留原文措辞与观点/, "animation review source boundary copy");
 
   const hathawayHtml = await (await render("/life/animation/mobile-suit-gundam-hathaway-rewatch")).text();
-  assert.match(hathawayHtml, /只采用《2025推荐动画》中的定稿/, "Hathaway public-source boundary");
-  assert.match(hathawayHtml, /候选与 AI 辅助草稿/, "Hathaway excluded drafts");
+  assert.match(hathawayHtml, /采用《2025推荐动画》中的定稿/, "Hathaway public-source boundary");
+  assert.match(hathawayHtml, /采用年度推荐定稿/, "Hathaway uses the final recommendation text");
 
   const evaHtml = await (await render("/life/animation/evangelion-thrice-upon-a-time")).text();
   assert.match(evaHtml, /2021 年首段在源文件中本就未写完/, "EVA incomplete-source disclosure");

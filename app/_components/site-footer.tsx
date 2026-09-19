@@ -30,7 +30,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-meta">
         <span>© {new Date().getFullYear()} {siteInfo.name}</span>
-        <span>工业过程建模 · 优化 · 可信决策</span>
+        <span>机器学习 · 强化学习 · 智能体工程</span>
         <a href="#top">返回顶部 <span aria-hidden="true">↑</span></a>
       </div>
     </footer>

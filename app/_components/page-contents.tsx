@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import LineSidebar from "./react-bits-v2/LineSidebar";
+import { useMotionEnabled } from "./motion-settings";
 
 type ContentsItem = { id: string; label: string };
 
 export function PageContents({ items, label = "本页目录" }: { items: ContentsItem[]; label?: string }) {
+  const enabled = useMotionEnabled();
   const [active, setActive] = useState(items[0]?.id ?? "");
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -18,5 +21,5 @@ export function PageContents({ items, label = "本页目录" }: { items: Content
     }
     return () => observer.disconnect();
   }, [items]);
-  return <nav className="page-contents" aria-label={label}><p>{label}</p><ol>{items.map(item => <li key={item.id}><a href={`#${item.id}`} aria-current={active === item.id ? "location" : undefined} onClick={() => setActive(item.id)}>{item.label}</a></li>)}</ol><a className="page-contents__top" href="#top">回到顶部 <span aria-hidden="true">↑</span></a></nav>;
+  return <nav className="page-contents" aria-label={label}><p>{label}</p><div data-effect="Line Sidebar" data-effect-active={enabled}>{enabled ? <LineSidebar items={items.map(item => item.label)} hrefs={items.map(item => "#" + item.id)} activeIndex={items.findIndex(item => item.id === active)} onItemClick={index => setActive(items[index].id)} accentColor="#2668a2" textColor="#405e79" markerColor="#b9cee0" markerLength={18} maxShift={7} itemGap={8} fontSize={0.9} showIndex={false} /> : <ol>{items.map(item => <li key={item.id}><a href={`#${item.id}`} aria-current={active === item.id ? "location" : undefined} onClick={() => setActive(item.id)}>{item.label}</a></li>)}</ol>}</div><a className="page-contents__top" href="#top">回到顶部 <span aria-hidden="true">↑</span></a></nav>;
 }

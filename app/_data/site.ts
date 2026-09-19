@@ -1,10 +1,10 @@
 export const siteInfo = {
   name: "闫哲祯",
   englishName: "ZHEZHEN YAN",
-  role: "同济大学资源与环境硕士 · 工业智能与优化研究",
-  statement: "理解复杂系统，构建可信决策。",
+  role: "同济大学硕士 · 机器学习、强化学习与智能体工程",
+  statement: "让模型学会理解，让智能走向行动。",
   description:
-    "以环境工程为起点，将机器学习、安全强化学习与 AI Agent 工程用于工业过程建模和优化决策。",
+    "关注机器学习、强化学习与智能体工程，在真实应用中连接模型、工具与可靠执行。",
 };
 
 export type NavigationChild = {
@@ -85,6 +85,7 @@ export const navigationGroups: NavigationGroup[] = [
       { label: "城市观察与散步", href: "/life/travel-walks", description: "博物馆、自然教育与城市体验", code: "L3" },
       { label: "影像与文化表达", href: "/life/culture-objects", description: "摄影、视频、双语内容与长期观看", code: "L4" },
       { label: "动画与影评", href: "/life/animation", description: "动画片单、总表条目与个人影评", code: "L5" },
+      { label: "游戏足迹", href: "/life/gaming", description: "竞技对局、游戏世界与个人档案", code: "L6" },
     ],
   },
 ];

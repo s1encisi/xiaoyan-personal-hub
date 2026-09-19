@@ -5,6 +5,8 @@ import { DetailNavigation } from "../../_components/detail-navigation";
 import { PortfolioSection, ProjectTiles } from "../../_components/portfolio";
 import { getSkill, projects, skills } from "../../_data/content";
 import { PageContents } from "../../_components/page-contents";
+import { RecordReading } from "../../_components/record-reading";
+import { skillReading } from "../../_data/portfolio-reading";
 
 const methodContents = [{ id: "practice", label: "方法与适用范围" }, { id: "working-method", label: "如何使用" }, { id: "projects", label: "对应项目" }];
 type DetailProps = { params: Promise<{ slug: string }> };
@@ -17,6 +19,7 @@ export default async function SkillDetailPage({ params }: DetailProps) {
     <div className="case-layout section-shell"><PageContents items={methodContents} /><div className="case-body">
     <PortfolioSection id="practice" code="01 / IN PRACTICE" title={skill.principle} density="chapter"><div className="pf-methods">{skill.layers.map((layer, i) => <article key={layer.title}><small>0{i + 1}</small><h3>{layer.title}</h3><p>{layer.description}</p></article>)}</div></PortfolioSection>
     <PortfolioSection id="working-method" code="02 / WORKING METHOD" title="我如何使用这些方法" density="chapter"><ol className="pf-result-list">{skill.checks.map(item => <li key={item}>{item}</li>)}</ol></PortfolioSection>
+    <RecordReading prefix="skill-reading" sections={skillReading[slug]} />
     <PortfolioSection id="projects" code="03 / RELATED WORK" title="对应的项目实践" density="chapter"><ProjectTiles items={projects.filter(project => skill.relatedProjects.includes(project.slug))} variant="rows" /></PortfolioSection>
     </div></div>
     <DetailNavigation back={{ title: "全部技术能力", href: "/skills" }} previous={skills[index - 1] ? { title: skills[index - 1].title, href: "/skills/" + skills[index - 1].slug } : undefined} next={skills[index + 1] ? { title: skills[index + 1].title, href: "/skills/" + skills[index + 1].slug } : undefined} />

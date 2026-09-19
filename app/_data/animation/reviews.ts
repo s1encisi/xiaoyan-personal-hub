@@ -135,11 +135,11 @@ const hathawayReview: AnimationReview = {
   facts: [
     { label: "内容类型", value: "二刷影评定稿" },
     { label: "原始来源", value: "《2025推荐动画》" },
-    { label: "公开边界", value: "排除候选与 AI 辅助草稿" },
+    { label: "文本版本", value: "采用年度推荐定稿" },
   ],
   sections: [{ title: "公开定稿", paragraphs: sourceContent.hathaway.paragraphs }],
   tags: ["高达", "政治结构", "理想主义"],
-  sourceNote: "公开文本只采用《2025推荐动画》中的定稿。另一份《闪光的哈撒韦影评》包含多份候选稿与 AI 辅助草稿，无法确定最终采用版本，因此未公开。",
+  sourceNote: "本文采用《2025推荐动画》中的定稿。",
   status: "已确认",
 };
 

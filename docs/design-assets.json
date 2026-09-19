@@ -1,5 +1,6 @@
 {
-  "date": "2026-09-10",
+  "date": "2026-09-18",
+  "homeP3r": "docs/home-p3r-assets.json",
   "images": [
     {
       "file": "public/images/celestial/celestial-planet.webp",
@@ -39,6 +40,54 @@
       "height": 893,
       "bytes": 23816,
       "processing": "Original framing preserved; resized and encoded as WebP; metadata removed"
+    },
+    {
+      "file": "public/images/celestial/earth-horizon-1920.webp",
+      "mobileFile": "public/images/celestial/earth-horizon-960.webp",
+      "largeFile": "public/images/celestial/earth-horizon-2560.webp",
+      "kind": "NASA photograph",
+      "width": 1920,
+      "height": 1078,
+      "source": "https://www.nasa.gov/image-article/an-orbital-sunrise-begins-illuminating-earths-atmosphere/",
+      "originalImage": "https://images-assets.nasa.gov/image/iss068e044995/iss068e044995~orig.jpg",
+      "attribution": "NASA / ISS Expedition 68 / ISS068-E-044995",
+      "guidance": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "file": "public/images/ai/cosmos-1672.webp",
+      "mobileFile": "public/images/ai/cosmos-768.webp",
+      "kind": "Generated conceptual artwork, not a research result or documentary photograph",
+      "mode": "built-in image_gen",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Use case: stylized-concept\nAsset type: premium personal research website hero background, one standalone panoramic image.\nPrimary request: a breathtaking, elegant deep-space panorama that feels like extraordinarily detailed cinematic concept art. A vast interstellar sea of layered nebular clouds and luminous gas filaments extends into immense depth. Distinct sculptural billows and translucent fine fibers sweep horizontally through the right half; a tiny distant pearl-colored planet and one extremely delicate orbital arc provide scale. The scene feels expansive, intelligent and quietly wondrous.\nComposition: wide 16:9 landscape, ideally 3840 × 2160 or highest available landscape resolution. Keep the visual anchor and brightest, most intricate cloud structures in the right half and lower-right third. The left 40 percent is a calm, rich deep-indigo field with subtle haze and faint distant star texture, dark enough for large white Chinese title overlay; it must feel like continuous atmospheric space, not empty flat black. Maintain usable background near all edges.\nColor palette: deep indigo #071126, layered ocean blue #69b9db, misty violet #948dca, restrained pearl white highlights. Fine nuanced color, restrained bloom, beautifully separated tonal layers.\nMaterials and light: physically convincing volumetric gas, finely resolved dust lanes and star pinpoints, soft internal illumination, graceful scale transitions and deep spatial perspective. Rich details with refined luminous edges, no glaring center.\nConstraints: purely imaginative atmospheric artwork, not a scientific finding or data plot. Exactly one image. No text, no letters, no labels, no symbols, no logos, no watermark.\nAvoid: tilted Earth horizon, Earth limb, big close-up planet, generic swirling portal, cheap glowing orb, explosion, oversized lens flare, rainbow neon, magenta cyberpunk, noisy star confetti, UI, circuit boards, collage, image grid."
+    },
+    {
+      "file": "public/images/ai/learning-1672.webp",
+      "mobileFile": "public/images/ai/learning-768.webp",
+      "kind": "Generated conceptual artwork, not a research result or documentary photograph",
+      "mode": "built-in image_gen",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Use case: stylized-concept\nAsset type: premium research portfolio machine-learning section banner; a single standalone cinematic image.\nPrimary request: an exquisite abstract scientific sculpture that expresses learning through layers, transformation and refined flowing light. Several precise, thin layers of optical glass and crystal form an elegant nested sculptural volume, positioned slightly right of center in a deep ocean-blue atmosphere. Their contours are subtly different rather than repetitive. Hair-fine pearl-blue light paths flow into the lower translucent layers and reorganize into a few clean, gently rising paths within the upper layers. The sculpture has a graceful spatial rhythm and real optical detail, a balance of complexity and clarity.\nComposition: widescreen 16:9 horizontal image, ideally 3840 × 2160 or highest available landscape resolution. Main sculpture spans the middle to right two-thirds with dark atmospheric breathing room at left. Medium-wide view with multiple crisp foreground edges and softly receding glass layers, deep spatial separation; complete composition with all principal sculptural elements inside frame.\nStyle: museum-quality cinematic scientific concept art, tactile and precise, exceptionally elegant, realistic optical materials within an imaginative scene.\nPalette: deep indigo #071126 background, ocean blue #69b9db, mist violet #948dca, pearl-white highlights and only a few restrained warm champagne-gold accents within the light paths.\nMaterial and lighting: flawless optically clear layered glass, subtle prismatic refraction, extremely fine etched edges, soft volumetric side lighting, sharp microdetail and delicate caustics, no overpowering bloom.\nConstraints: conceptual metaphor for machine learning, never a real experimental result or actual data plot. Exactly one image. No text, lettering, labels, equations, logos, watermarks or interface.\nAvoid: computer chips, circuit boards, mechanical brain, human brain, neural network node diagram, floating dashboards, cheap glowing orb, central white explosion, neon rainbow, black empty background, collage, split panels."
+    },
+    {
+      "file": "public/images/ai/decisions-1672.webp",
+      "mobileFile": "public/images/ai/decisions-768.webp",
+      "kind": "Generated conceptual artwork, not a research result or documentary photograph",
+      "mode": "built-in image_gen",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Use case: stylized-concept\nAsset type: premium personal research website reinforcement-learning banner, one standalone panoramic artwork.\nPrimary request: a beautiful imaginative decision landscape, an expansive dreamlike terrain of elegant ridges, flowing valleys and overlapping semi-transparent curved surfaces. A slender pearl-blue stream of light enters from the lower-left foreground, separates into a few graceful possible routes across the terrain, and one refined brighter route passes through a gap between delicate translucent constraint surfaces toward the distant upper-right. Make the paths organically integrated into the physical landscape, not a chart or interface. The visual expresses intelligent sequential decisions within boundaries without implying any real experiment.\nComposition: 16:9 horizontal wide cinematic landscape, ideally 3840 × 2160 or highest available resolution. A low, sweeping oblique view across sculptural terrain creates rich depth. The terrain fills the lower two-thirds; layered ridges and translucent sheets recede into a quietly luminous blue-violet distance. Meaningful focal detail toward middle-right, left area has darker calm tones. Broad graceful geometry, clear subject, layered depth, ample atmospheric breathing room.\nStyle: extraordinarily refined cinematic scientific concept art with realistic optical materials, meticulous fine surface detail and subtle mist, visually compatible with a deep-space panorama and a layered crystal learning sculpture.\nColor palette: deep indigo #071126, ocean blue #69b9db, mist violet #948dca and pearl white, with tiny muted champagne accents on the chosen path. Controlled highlights, deep but readable shadows.\nMaterials and lighting: polished dark mineral ridges, fine striations, softly frosted glass-like translucent surfaces, grazing side light, gently glowing hairline paths, physically convincing reflections and restrained diffusion.\nConstraints: evocative abstract art, not a real research figure, measurement, data plot or accurate performance claim. Exactly one image. No text, letters, numerals, labels, arrows, axes, equations, logos, watermark or UI.\nAvoid: gridded mathematical surface, wireframe mesh, heatmap, node-network diagram, video-game map, cartoon mountains, central neon orb, explosion, overexposed flare, rainbow neon, cheap sci-fi template, collage or split panels."
+    },
+    {
+      "file": "public/images/ai/agents-1672.webp",
+      "mobileFile": "public/images/ai/agents-768.webp",
+      "kind": "Generated conceptual artwork, not a research result or documentary photograph",
+      "mode": "built-in image_gen",
+      "width": 1672,
+      "height": 941,
+      "prompt": "Use case: stylized-concept\nAsset type: premium personal research website AI agents and orchestration section banner, single standalone cinematic artwork.\nPrimary request: an extraordinary abstract collaborative instrument suspended within vast deep-indigo space, combining the beauty of a cosmic constellation with the precision of microscopic optical engineering. Five clearly differentiated translucent precision modules form a graceful asymmetric spatial composition. Each has its own coherent function-inspired form: a thin stack of clear optical plates, a crystalline ring assembly, a faceted prism with internal channels, a small layered cylindrical resonator, and an open sculptural frame. The modules connect with only a few beautiful gently curving bundles of hair-fine optical fibers carrying restrained pearl-blue light. Their placement and interconnected paths convey purposeful collaboration, tool use and coordination. The ensemble reads as an elegant engineered art installation, never as an app screen or diagram.\nComposition: widescreen 16:9 horizontal banner, ideally 3840 × 2160 or highest available landscape resolution. Ensemble concentrated from center to right, with subtle atmospheric space at the left for potential heading overlay. Keep a clear visual hierarchy: one slightly larger main module and four distinct supporting modules, believable spacing and depth, a few crisp foreground details, soft distant nebular haze. Modules fully visible, no messy tangle.\nStyle: high-end cinematic science-fiction concept art, precise realistic glass and optical materials, restrained spectacular beauty, tactile fine details, visually consistent with deep-space clouds, layered crystal learning sculpture and an abstract decision terrain.\nPalette: deep indigo #071126, ocean blue #69b9db, mist violet #948dca, pearl white; very slight soft champagne edge accents.\nMaterials and light: flawless transparent glass, finely brushed dark titanium connectors, delicate refractive edges, physically plausible internal reflections, thin luminous optical fibers, gentle directional light and deep spatial separation. Restrained bloom and small highlights.\nConstraints: purely conceptual artistic metaphor, not a claim about a real system or research results. Exactly one image. No text, words, numbers, labels, logos, equations, watermark or UI.\nAvoid: node-network interface, identical spheres joined by lines, charts, flat circuit boards, computer chips, mechanical brains, robots, huge white light orb, glowing explosion, neon rainbow, magenta cyberpunk, decorative clutter, collage or split panels."
     }
   ],
   "avatar": {

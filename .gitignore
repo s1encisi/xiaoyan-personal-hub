@@ -111,3 +111,7 @@ secrets*.json
 **/*身份证*
 **/*护照*
 **/*合同*
+
+# Original user-supplied media/reference projects; optimized site assets live in public/.
+/photo/
+/P3RE官网开场动画/

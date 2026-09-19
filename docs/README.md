@@ -6,7 +6,11 @@
 | --- | --- |
 | [`PROJECT_CASE_STUDY.md`](PROJECT_CASE_STUDY.md) | 项目介绍、工程取舍、演示路线与简历表述 |
 | [`INTERVIEW_QA.md`](INTERVIEW_QA.md) | 面向 HR 和技术面试的口述问答 |
+| [`RELEASE_20260918.md`](RELEASE_20260918.md) | 本轮完整网站上线、发布兼容处理及 Git 状态 |
 | [`RELEASE_20260916.md`](RELEASE_20260916.md) | 当前线上源码的 GitHub 同步与验证记录 |
+| [`AI_MOTION_REDESIGN.md`](AI_MOTION_REDESIGN.md) | AI 定位、WSL 电商案例、生成素材与 16 项动效记录 |
+| [`UPDATE_20260917.md`](UPDATE_20260917.md) | 开发分支的 Notion 接入、内容扩充与首页动效更新 |
+| [`NOTION_PUBLIC_PAGES.md`](NOTION_PUBLIC_PAGES.md) | 获准公开的学习资料范围与实际权限进度 |
 | [`PRODUCT.md`](PRODUCT.md) | 网站定位、信息架构、内容边界和验收标准 |
 | [`DESIGN.md`](DESIGN.md) | 视觉系统、排版、动效、响应式与可访问性规范 |
 | [`CONTENT_GAPS.md`](CONTENT_GAPS.md) | 当前内容覆盖范围与后续维护事项 |

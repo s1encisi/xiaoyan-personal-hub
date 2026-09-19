@@ -1,3 +1,4 @@
+import { commerceProject } from "./commerce-project";
 import type { EducationRecord, ExperienceRecord, HonorRecord, ProjectRecord, PublicationRecord, SkillRecord } from "./content";
 
 /** Curated for the public portfolio from owner-provided material. Source ledger stays local. */
@@ -7,6 +8,7 @@ const steps = (items: [string, string][]) => items.map(([title, text], index) =>
 const facts = (items: [string, string][]) => items.map(([label, value]) => ({ label, value }));
 
 export const careerProjects: ProjectRecord[] = [
+  commerceProject,
   {
     slug: "copper-electrowinning-surrogate", index: "01", title: "铜电积过程的机器学习预测", englishTitle: "LEARNING THE ELECTROWINNING PROCESS", category: "工业预测 · 已发表研究", status: "verified",
     summary: "把企业生产数据转化为槽电压与出液铜浓度预测模型，比较 10 种算法，并用 SHAP 解释关键工艺变量的预测贡献。研究以第一作者发表于《有色金属（冶炼部分）》。",
@@ -25,7 +27,7 @@ export const careerProjects: ProjectRecord[] = [
     tags: ["ExtraTrees", "NSGA-II", "PPO-Lagrangian", "Pareto"],
     facts: facts([["项目背景", "国家重点研发计划 · 铜电解液净化"], ["研究规模", "1,978 条历史记录 · 3 类工况 · 9 个代理模型"], ["决策结构", "4 项优化目标 · 5 类工艺约束"], ["成果进展", "Journal of Cleaner Production · 修回中"]]),
     route: steps([["建立分工况代理环境", "对三类运行配置分别建模，预测出液铜浓度、出液砷浓度与系统电压，保留工况间的结构差异。"], ["定义目标与约束", "把铜、砷、能耗和净收益转化为可比较目标，将浓度、电流密度、电压与铜砷比等要求写入约束。"], ["学习偏好条件策略", "使用 PPO-Lagrangian 处理约束，以不同偏好权重搜索操作方案，输出可行的 Pareto 解集。"], ["比较决策价值", "与 NSGA-II 和历史操作比较，分析不同进液条件及能耗门槛下的资源效率与经济权衡。"]]),
-    evaluation: ["代理模型的留出测试 R²：铜浓度约 0.83、砷浓度约 0.84、电压约 0.90。", "工况 2、进液铜浓度 50—55 g/L 的代理环境比较中，相对所评估的 NSGA-II 配置，能耗降幅最高达到 43.1%。", "研究报告的 Pareto 候选解满足五类约束，并提供不同目标偏好的选择空间。"],
+    evaluation: ["代理模型的随机留出测试 R²：铜浓度约 0.83、砷浓度约 0.84、电压约 0.90。", "工况 2、进液铜浓度 50—55 g/L 的代理环境比较中，相对所评估的 NSGA-II 配置，能耗降幅最高达到 43.1%。", "研究报告的 Pareto 候选解满足五类约束，并提供不同目标偏好的选择空间。"],
     boundaries: ["优化结果来自历史数据支持的离线代理环境；上述降幅对应明确工况与比较配置。项目把候选方案交给工艺分析与人工审核流程。"],
     relatedSkills: ["multi-objective-optimization", "safe-reinforcement-learning", "industrial-process-modeling"],
   },
@@ -253,6 +255,6 @@ export const careerSkills: SkillRecord[] = [
   { slug: "multi-objective-optimization", index: "B", title: "多目标优化与方案选择", englishTitle: "MULTI-OBJECTIVE DECISION MAKING", summary: "将质量、能耗与经济目标组织为可计算问题，比较 Pareto 候选方案并检查工艺可行性。", principle: "把目标权衡转化为可以解释和选择的方案。", layers: [{ title: "问题定义", description: "目标函数、变量范围、工况与操作约束。" }, { title: "算法实现", description: "NSGA-II、代理模型优化与偏好条件策略。" }, { title: "结果比较", description: "非支配解集、间距、可行性及不同目标门槛。" }, { title: "交互与决策", description: "候选方案比较、解释与人工选择。" }], checks: ["明确基线和比较工况", "同时检查目标表现与约束满足", "保留目标偏好和方案选择依据"], relatedProjects: ["electrolyte-purification-optimization", "safe-reinforcement-learning", "culab-agent-workbench"] },
   { slug: "safe-reinforcement-learning", index: "C", title: "安全强化学习", englishTitle: "CONSTRAINED POLICY LEARNING", summary: "用 CMDP 和 PPO-Lagrangian 连接连续参数调整、多目标偏好与工艺约束。", principle: "将可行性与收益一起放入策略设计。", layers: [{ title: "过程建模", description: "状态、连续动作、奖励与约束成本。" }, { title: "代理环境", description: "分工况 ExtraTrees 预测器支持策略训练。" }, { title: "训练流程", description: "行为克隆预训练、Cost Critic 与拉格朗日更新。" }, { title: "策略分析", description: "Pareto 解集、基线比较和噪声条件分析。" }], checks: ["依据明确的工况比较策略", "分别呈现目标表现与约束结果", "说明代理环境下候选方案的使用方式"], relatedProjects: ["safe-reinforcement-learning", "electrolyte-purification-optimization"] },
   { slug: "explainable-causal-ml", index: "D", title: "可解释机器学习", englishTitle: "EXPLANATION & MODEL DIAGNOSTICS", summary: "将模型贡献和响应曲线转化为工程人员能够讨论的变量关系。", principle: "让模型结果可以被追问、比较与解释。", layers: [{ title: "贡献分析", description: "SHAP 全局与局部解释。" }, { title: "响应分析", description: "PDP、ICE 与不同目标之间的对照。" }, { title: "领域解释", description: "连接电流、时间、流量等变量与工艺语境。" }, { title: "研究延伸", description: "关注因果机器学习及干预效果的识别条件。" }], checks: ["先明确被解释的预测任务", "区分整体响应与样本差异", "模型关联与因果效应采用对应的证据"], relatedProjects: ["causal-explainable-industrial-ai", "copper-electrowinning-surrogate", "wastewater-energy-tabpfn"] },
-  { slug: "agent-engineering", index: "E", title: "AI Agent 与研究软件工程", englishTitle: "AGENT & SOFTWARE ENGINEERING", summary: "将算法工具、后端 API 和前端交互组织为运行可追溯的工作台。", principle: "让智能体调用真正的工具，并让判断有可回溯的依据。", layers: [{ title: "服务与界面", description: "FastAPI、React、TypeScript、Vite；亦有 Flask 与 WebSocket 实践。" }, { title: "工具调用", description: "结构化参数、数值诊断与结果校验。" }, { title: "流程编排", description: "研究过 LangGraph、RAG 与层级式 Agent 原型；在 CuLab 中实现运行诊断流程。" }, { title: "工程可观测性", description: "运行记录、证据编号、缓存、重试、token 与预算追踪。" }], checks: ["工具参数和结果进行结构化校验", "结论关联实际运行证据", "数据、模型版本与运行状态可以追溯"], relatedProjects: ["culab-agent-workbench"] },
+  { slug: "agent-engineering", index: "E", title: "AI Agent 与研究软件工程", englishTitle: "AGENT & SOFTWARE ENGINEERING", summary: "将工具、后端 API 和前端交互组织为可追溯系统，在电商售后与研究软件中落实审批、执行和结果校验。", principle: "让智能体调用真正的工具，并让判断有可回溯的依据。", layers: [{ title: "服务与界面", description: "FastAPI、React、TypeScript、Vite；亦有 Flask 与 WebSocket 实践。" }, { title: "工具调用", description: "结构化参数、数值诊断与结果校验。" }, { title: "流程编排", description: "使用 MAF/A2A 工作流开展电商售后升级；研究 LangGraph、RAG 与层级式 Agent，在 CuLab 中实现运行诊断流程。" }, { title: "工程可观测性", description: "运行记录、证据编号、缓存、重试、token 与预算追踪。" }], checks: ["工具参数和结果进行结构化校验", "结论关联实际运行证据", "数据、模型版本与运行状态可以追溯"], relatedProjects: ["reliable-commerce-agents", "culab-agent-workbench"] },
   { slug: "spatial-environmental-analysis", index: "F", title: "空间分析与环境研究", englishTitle: "SPATIAL ENVIRONMENTAL ANALYSIS", summary: "从区域统计和遥感样本出发，完成生态核算、土地利用分类与时空异质性分析。", principle: "把环境压力放回具体的地区、年份与人群视角。", layers: [{ title: "核算与数据", description: "生态足迹账户、跨省份与跨年份数据整理。" }, { title: "空间统计", description: "ArcGIS、核密度、标准差椭圆与 GTWR。" }, { title: "遥感分析", description: "Google Earth Engine、随机森林与地物样本核验。" }, { title: "成果表达", description: "研究报告、空间图表、答辩与公众传播。" }], checks: ["比较一致的统计口径", "区分空间关联与因果判断", "将方法与地区差异连接起来"], relatedProjects: ["urban-rural-ecological-footprint", "land-use-gee", "biochar-arsenic-adsorption"] },
 ];

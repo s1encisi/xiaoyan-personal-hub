@@ -6,14 +6,15 @@ import "./design-system.css";
 import "./universe-system.css";
 import "./portfolio.css";
 import "./field-notes.css";
+import "./_components/social-links.css";
 
 export const viewport: Viewport = {
   colorScheme: "light",
   themeColor: "#f4f7fb",
 };
 
-const homeTitle = "闫哲祯 Zhezhen Yan｜工业智能、机器学习与个人作品";
-const homeDescription = "闫哲祯的个人网站。同济大学资源与环境硕士，研究工业过程预测、安全强化学习与智能优化，展示论文、工程项目、教育实践、写作与生活。";
+const homeTitle = "闫哲祯 Zhezhen Yan｜机器学习、强化学习与智能体工程";
+const homeDescription = "闫哲祯的个人网站。同济大学资源与环境硕士，关注机器学习、强化学习、智能体工程与可靠执行，展示论文、工程项目、教育实践、写作与生活。";
 const homeMetadata = createFixedPageMetadata({
   path: "/",
   title: homeTitle,
@@ -44,8 +45,8 @@ const structuredData = JSON.stringify({
       alternateName: ["Zhezhen Yan", "小闫"],
       email: "2431509@tongji.edu.cn",
       url: SITE_ORIGIN,
-      description: "关注工业过程建模、多目标优化、安全强化学习与可信工业智能的硕士研究生。",
-      knowsAbout: ["铜电积", "电解液净化", "代理建模", "多目标优化", "安全强化学习", "可解释机器学习"],
+      description: "关注机器学习、强化学习、大模型与智能体工程的硕士研究生。",
+      knowsAbout: ["机器学习", "强化学习", "智能体工程", "大模型", "多目标优化", "可解释机器学习", "工业过程建模"],
     },
   ],
 }).replaceAll("<", "\\u003c");
