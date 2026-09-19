@@ -44,7 +44,7 @@ export default async function AnimationRecommendationYearPage({ params }: Recomm
             title={`${year} 年动画推荐`}
             description={record.summary}
             breadcrumbs={[{ label: "首页", href: "/" }, { label: "生活", href: "/life" }, { label: "动画观测站", href: "/life/animation" }, { label: "年度推荐", href: "/life/animation/recommendations" }, { label: year }]}
-            stats={[{ label: "收录条目", value: `${record.entries.length} 部` }, { label: "编排原则", value: "保留已有原稿" }, { label: "资料状态", value: "持续校订" }]}
+            stats={[{ label: "收录条目", value: `${record.entries.length} 部` }]}
           />
 
           {record.intro.length > 0 && (
@@ -54,8 +54,6 @@ export default async function AnimationRecommendationYearPage({ params }: Recomm
               ))}
             </section>
           )}
-
-          <p className="animation-source-note">{record.sourceNote}</p>
 
           <section className="animation-year-entries" aria-label={`${year} 年推荐作品`}>
             {record.entries.map((item, itemIndex) => (
@@ -71,7 +69,7 @@ export default async function AnimationRecommendationYearPage({ params }: Recomm
                   <div className="animation-year-entry-prose">
                     {item.note.map((paragraph, paragraphIndex) => <p key={`${item.title}-${paragraphIndex}`}>{paragraph}</p>)}
                   </div>
-                  {item.placeholder && <p className="animation-entry-placeholder">原始资料只有作品标题。完善条目需要提供推荐理由、观看感受，以及需要公开的评分或版本信息。</p>}
+                  {item.placeholder && <p className="animation-entry-placeholder">年度片单收录</p>}
                   {item.slug && (
                     <a href={`/life/animation/${item.slug}`} data-navigation="document">
                       阅读对应长评 <ArrowUpRight aria-hidden="true" />
@@ -81,6 +79,8 @@ export default async function AnimationRecommendationYearPage({ params }: Recomm
               </article>
             ))}
           </section>
+
+          <aside id="year-source-notes" className="animation-source-note" aria-label="编排与来源说明"><p>编排原则：保留已有原稿。资料状态：持续校订。</p><p>{record.sourceNote}</p></aside>
 
           <nav className="animation-year-adjacent" aria-label="相邻年度推荐">
             {older ? <a href={`/life/animation/recommendations/${older.year}`} data-navigation="document"><ArrowLeft aria-hidden="true" /><span><small>上一站</small>{older.year} 年</span></a> : <span />}

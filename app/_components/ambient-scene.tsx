@@ -48,7 +48,9 @@ export function AmbientScene({ kind = "cosmic" }: { kind?: SceneKind }) {
     }
     function schedule() {
       cancelAnimationFrame(frame);
-      if (enabled && !stopped && visible && !document.hidden) frame = requestAnimationFrame(loop);
+      const running = enabled && !stopped && visible && !document.hidden && document.documentElement.dataset.opening !== "playing";
+      canvas?.setAttribute("data-running", String(running));
+      if (running) frame = requestAnimationFrame(loop);
     }
     function resize() {
       if (!canvas) return;
@@ -73,12 +75,14 @@ export function AmbientScene({ kind = "cosmic" }: { kind?: SceneKind }) {
     if (fine && enabled) { surface.addEventListener("pointermove", move, { passive: true }); surface.addEventListener("pointerleave", leave); }
     document.addEventListener("visibilitychange", schedule);
     window.addEventListener("xiaoyan-motion-stop", stop);
+    window.addEventListener("xiaoyan-opening-change", schedule);
     resize(); schedule();
     return () => {
       cancelAnimationFrame(frame); resizeObserver.disconnect(); visibilityObserver.disconnect();
       surface.removeEventListener("pointermove", move); surface.removeEventListener("pointerleave", leave);
       surface.style.removeProperty("--pointer-x"); surface.style.removeProperty("--pointer-y");
       document.removeEventListener("visibilitychange", schedule); window.removeEventListener("xiaoyan-motion-stop", stop);
+      window.removeEventListener("xiaoyan-opening-change", schedule);
     };
   }, [enabled, kind]);
 

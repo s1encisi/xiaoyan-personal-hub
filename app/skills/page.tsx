@@ -1,42 +1,10 @@
 import { PageHero } from "../_components/page-hero";
+import { PortfolioSection } from "../_components/portfolio";
+import { skills, projects } from "../_data/content";
 import { createFixedPageMetadata } from "../_data/metadata";
-import { skills } from "../_data/content";
-
-export const metadata = createFixedPageMetadata({
-  path: "/skills",
-  title: "技术能力｜小闫",
-  description: "从问题定义、数据审查、建模优化到安全评估和结果解释的研究能力体系。",
-});
-
-export default function SkillsPage() {
-  return (
-    <main id="main-content" tabIndex={-1}>
-      <PageHero
-        code="R2"
-        eyebrow="CAPABILITIES"
-        breadcrumbs={[{ label: "首页", href: "/" }, { label: "研究中心", href: "/research" }, { label: "技术能力" }]}
-        title={<>技术能力不是清单，<br /><span>而是一条研究链路。</span></>}
-        description="我关注如何界定问题、审查数据、建立模型、开展优化、评估风险，并把结果解释清楚。以下描述研究方向，不使用未经证实的熟练度百分比。"
-        aside={<div className="capability-axis" aria-hidden="true"><span>问题</span><i /><span>模型</span><i /><span>决策</span></div>}
-      />
-
-      <section className="capability-map section-shell" aria-labelledby="capability-map-title">
-        <div className="section-kicker split-kicker">
-          <div><p className="micro-label">CAPABILITY MAP / 能力地图</p><h2 id="capability-map-title">四个方向，一条闭环</h2></div>
-          <p>从真实工业过程出发，经由建模与优化，最终回到风险、解释和决策责任。</p>
-        </div>
-        <div className="capability-matrix">
-          {skills.map((skill) => (
-            <a key={skill.slug} className="capability-cell" href={`/skills/${skill.slug}`}>
-              <span>{skill.index}</span>
-              <small>{skill.englishTitle}</small>
-              <h3>{skill.title}</h3>
-              <p>{skill.summary}</p>
-              <b aria-hidden="true">探索方向 ↗</b>
-            </a>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
-}
+export const metadata = createFixedPageMetadata({ path: "/skills", title: "技术能力｜闫哲祯", description: "通过真实项目了解闫哲祯的数据建模、优化、强化学习、解释分析、Agent 工程和空间研究能力。" });
+export default function SkillsPage() { return <main id="main-content" className="skills-index" tabIndex={-1}>
+  <PageHero code="R2" eyebrow="CAPABILITIES IN PRACTICE" breadcrumbs={[{ label: "首页", href: "/" }, { label: "研究", href: "/research" }, { label: "技术能力" }]} title={<>用得起来的技术，<br /><span>连得起来的能力。</span></>} description="以机器学习、强化学习和智能体工程为主线：训练预测器、比较策略与优化方案，组织工具、工作流与可追溯的软件系统。" tone="dark" />
+  <PortfolioSection id="ai-learning-practice" code="MODELS & TOOLS" title="大模型知识与开发实践"><div className="pf-prose"><p>熟练使用 Coze 进行智能体搭建，使用 Codex、Claude Code、OpenCode、Hermes 等工具完成开发协作与项目迭代。关注需求表达、上下文组织、工具调用、调试和结果验证。</p><p>持续关注大模型与智能体的发展，学习预训练、后训练、模型微调与 RLHF，理解不同阶段在模型能力形成与对齐中的作用。</p></div></PortfolioSection>
+  <PortfolioSection id="capability-map" code="SKILLS / PROJECTS" title="六个方向，一条从问题到交付的路径"><div className="capability-matrix"><div className="capability-matrix__labels" aria-hidden="true"><span>方法与能力</span><span>在这些工作中使用</span></div>{skills.map(skill => <article key={skill.slug}><div><small>{skill.index} / {skill.englishTitle}</small><h3><a href={"/skills/" + skill.slug}>{skill.title}</a></h3><p>{skill.summary}</p><a className="capability-detail-link" href={"/skills/" + skill.slug}>查看方法与项目 <span aria-hidden="true">↗</span></a></div><ul>{projects.filter(project => skill.relatedProjects.includes(project.slug)).map(project => <li key={project.slug}><a href={"/projects/" + project.slug}><span>{project.title}</span><span aria-hidden="true">↗</span></a></li>)}</ul></article>)}</div></PortfolioSection>
+</main>; }

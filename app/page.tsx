@@ -1,65 +1,31 @@
-/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- Native document navigation and optimized local assets. */
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element -- Native document navigation and local artwork. */
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { Viewport } from "next";
-import { AmbientScene } from "./_components/ambient-scene";
 import { SocialLinks } from "./_components/social-links";
-import { projects } from "./_data/content";
-import { animationReviews } from "./_data/animation/reviews";
-import { animationRecommendationYears } from "./_data/animation/recommendations";
+import { ToolLoop, CapabilitiesBento, MotionReveal, ProjectImageSwap } from "./_components/effects/ai-effects";
+import { P3RHero, AgentFeature } from "./_components/home/p3r-experience";
+import { featuredAIProjects } from "./_data/ai-practice";
+import { FieldHighlights } from "./_components/field-notes";
+import { getFieldNote } from "./_data/field-notes";
+import "./ai-home.css";
+import "./p3r-home.css";
 
-const researchTitles = ["代理建模", "多目标优化", "安全强化学习", "可解释与因果智能"];
-const researchLines = ["", "在相互牵制的目标之间，寻找可审阅的折中。", "将过程约束与风险，纳入序贯决策。", "区分预测关联与因果证据，理解决策依据。"];
-const recommendationCount = animationRecommendationYears.reduce((sum, year) => sum + year.entries.length, 0);
-
-export const viewport: Viewport = { colorScheme: "dark", themeColor: "#060c18" };
-
+const abstracts: Record<string, { src: string; alt: string }> = {
+  "reliable-commerce-agents": { src: "/images/home-p3r/commerce-abstract.webp", alt: "电商可靠执行图形摘要：申请、校验、人工审批、原子提交与业务回执，以及不确定结果的核实路径" },
+  "safe-reinforcement-learning": { src: "/images/home-p3r/policy-abstract.webp", alt: "约束策略学习图形摘要：状态与偏好输入策略，在代理环境中获得奖励与约束反馈" },
+  "wastewater-energy-tabpfn": { src: "/images/home-p3r/tabpfn-abstract.webp", alt: "TabPFN 图形摘要：表格数据经过模型分别预测总电耗和单位水量电耗，并进行评价" },
+  "culab-agent-workbench": { src: "/images/home-p3r/culab-abstract.webp", alt: "CuLab 图形摘要：组织建模、优化和诊断工具，通过运行记录连接输入与可追溯的结果" },
+};
+export const viewport: Viewport = { colorScheme: "dark", themeColor: "#0055ed" };
 export default function Home() {
-  return (
-    <main id="main-content" className="celestial-home" tabIndex={-1}>
-      <section className="celestial-hero" aria-labelledby="celestial-title">
-        <picture className="celestial-hero__media">
-          <source media="(max-width: 760px)" srcSet="/images/celestial/celestial-planet-768.webp" />
-          <img src="/images/celestial/celestial-planet.webp" width="1586" height="992" alt="深蓝星海中，一颗被青蓝与金色弧光照亮的暗色行星" fetchPriority="high" />
-        </picture>
-        <AmbientScene kind="cosmic" />
-        <div className="cosmic-orbit" aria-hidden="true"><svg viewBox="0 0 800 800"><ellipse cx="400" cy="400" rx="362" ry="167" transform="rotate(-24 400 400)" /><ellipse cx="400" cy="400" rx="350" ry="183" transform="rotate(-17 400 400)" /><circle cx="697" cy="220" r="3" /></svg></div>
-        <span className="shooting-star" aria-hidden="true" /><span className="shooting-star shooting-star--second" aria-hidden="true" />
-        <div className="celestial-hero__content">
-          <h1 id="celestial-title"><span>从复杂过程，</span><span>到可信决策。</span></h1>
-          <p className="celestial-hero__intro">我是小闫。研究工业过程，也认真收藏动画与日常。</p>
-          <div className="celestial-hero__actions">
-            <a className="universe-action" href="/research" data-navigation="document">探索研究 <ArrowRight aria-hidden="true" /></a>
-            <a className="universe-action universe-action--outline" href="/about/profile" data-navigation="document">认识我 <ArrowUpRight aria-hidden="true" /></a>
-          </div>
-        </div>
-        <div className="celestial-hero__bottom">
-          <SocialLinks />
-          <small className="celestial-hero__credit">天体场景 · AI 生成</small>
-          <a className="celestial-scroll" href="#research-agenda" aria-label="向下阅读研究议程"><span>继续探索</span><ArrowDown size={16} aria-hidden="true" /><i aria-hidden="true" /></a>
-        </div>
-      </section>
-      <section className="home-research section-shell" id="research-agenda" aria-labelledby="home-research-title">
-        <header className="universe-section-title u-reveal"><h2 id="home-research-title">研究议程</h2><p>围绕工业过程，探索可验证、可解释的决策方法。<br />这里记录研究问题与方法路径，成果随证据完善。</p></header>
-        <div className="research-feature u-reveal">
-          <figure>
-            <img src="/copper-electrowinning-hero.webp" srcSet="/copper-electrowinning-hero-768.webp 768w, /copper-electrowinning-hero-1200.webp 1200w, /copper-electrowinning-hero.webp 1568w" sizes="(max-width: 760px) 90vw, 48vw" width="1568" height="1003" loading="lazy" alt="铜电积槽中成列排列的铜阴极板与蓝绿色电解液" />
-            <figcaption>铜电积场景示意 · AI 生成图像，仅作场景表达</figcaption>
-          </figure>
-          <div className="research-feature__copy"><span>01 / 过程建模</span><h3>{researchTitles[0]}</h3><p className="research-question">从过程数据出发，<br />建立可用的代理模型。</p><p>面向铜电积与电解液净化，关注预测、约束与模型在真实工况中的适用范围。</p><a href={`/projects/${projects[0].slug}`} data-navigation="document">查看研究方向 <ArrowRight aria-hidden="true" /></a></div>
-        </div>
-        <div className="research-ledger u-reveal">{projects.slice(1).map((project,index) => <a href={`/projects/${project.slug}`} key={project.slug} data-navigation="document"><span>{project.index}</span><h3>{researchTitles[index+1]}</h3><p>{researchLines[index+1]}</p><ArrowRight aria-hidden="true" /></a>)}</div>
-        <nav className="research-next" aria-label="研究相关入口"><a href="/skills">技术能力地图 <ArrowUpRight size={17} aria-hidden="true" /></a><a href="/outputs">论文与成果 <ArrowUpRight size={17} aria-hidden="true" /></a><a href="/notes">方法与知识库 <ArrowUpRight size={17} aria-hidden="true" /></a></nav>
-      </section>
-      <section className="home-beyond" aria-labelledby="home-beyond-title"><div className="section-shell">
-        <header className="universe-section-title u-reveal"><h2 id="home-beyond-title">研究之外</h2><p>给故事留一点时间，也给日常留一点光。</p></header>
-        <a className="beyond-anime u-reveal" href="/life/animation" data-navigation="document">
-          <picture><source media="(max-width: 760px)" srcSet="/images/celestial/anime-coast-768.webp" /><img src="/images/celestial/anime-coast.webp" width="1600" height="916" loading="lazy" alt="原创动画风格的黄昏海岸、云层与远方高架列车" /></picture>
-          <div className="beyond-anime__copy"><span>动画专题</span><h3>让故事，在心里继续。</h3><p>{animationReviews.length} 篇影评与文章，{recommendationCount} 条年度推荐，留下每一次观看的回声。</p><b>进入动画专题 <ArrowRight aria-hidden="true" /></b></div>
-        </a>
-        <a className="beyond-life u-reveal" href="/life" data-navigation="document"><div><span>生活记录</span><h3>把日子，<br />过成具体的喜欢。</h3><p>味道、散步、咖啡与茶，<br />慢慢收集生活里的小事。</p><b>翻开生活记录 <ArrowRight aria-hidden="true" /></b></div><figure><picture><source media="(max-width: 760px)" srcSet="/images/celestial/life-window-768.webp" /><img src="/images/celestial/life-window.webp" width="1513" height="1040" loading="lazy" alt="自然光下的蓝釉咖啡杯、笔记本与枝叶光影" /></picture></figure></a>
-        <p className="image-provenance">海岸插画与窗边静物为 AI 生成的场景表达。</p>
-        <section className="home-social u-reveal" aria-labelledby="home-social-title"><h2 id="home-social-title">在别处找到我</h2><SocialLinks variant="editorial" /><nav className="home-more-links" aria-label="更多个人内容"><a href="/about">关于我</a><a href="/journey">教育与经历</a><a href="/thoughts">随想</a><a href="/contact">联系与合作</a></nav></section>
-      </div></section>
-    </main>
-  );
+  return <main id="main-content" className="celestial-home ai-home p3r-home" tabIndex={-1}>
+    <P3RHero />
+    <section id="ai-practice" className="ai-practice section-shell" aria-labelledby="ai-practice-title"><MotionReveal><div className="ai-section-heading"><h2 id="ai-practice-title">从模型理解，<br />到工程落地。</h2><p>研究如何学习，也关心如何行动。<br />用实际项目连接预测、决策与可靠执行。</p></div><CapabilitiesBento /></MotionReveal><div className="ai-tools-intro"><p>熟练使用的开发与智能体工具</p><span>需求梳理 · 工具编排 · 实现验证</span></div><ToolLoop /></section>
+    <section className="ai-projects section-shell" id="research-agenda" aria-labelledby="ai-projects-title"><MotionReveal><header className="ai-section-heading"><div><p className="p3r-section-label">SELECTED WORK</p><h2 id="ai-projects-title">研究与工程</h2></div><p>机器学习、强化学习与智能体，<br />在不同问题里形成具体工作。</p></header><div className="ai-project-grid">{featuredAIProjects.map(project => <a key={project.slug} className="ai-project-card" href={`/projects/${project.slug}`}><div className="ai-project-card__image"><img src={abstracts[project.slug].src} alt={abstracts[project.slug].alt} width={1672} height={941} loading="lazy" /></div><div><small>{project.type}</small><h3>{project.title}</h3><p>{project.description}</p><span>阅读案例 <ArrowUpRight size={19} aria-hidden="true" /></span></div></a>)}</div></MotionReveal><a className="ai-all-projects" href="/projects">全部项目与应用案例 <ArrowRight size={20} /></a></section>
+    <AgentFeature />
+    <section className="ai-commerce section-shell" aria-labelledby="commerce-title"><MotionReveal><div className="ai-section-heading"><h2 id="commerce-title">工具调用之后，<br />事情真的完成了吗？</h2><p>在开源电商多智能体平台中，<br />围绕退货申请补强审批、提交与结果确认。</p></div><ProjectImageSwap /><div className="ai-commerce__foot"><p>基于开源平台的可靠性升级，清楚保留上游与个人增量的边界。</p><a href="/projects/reliable-commerce-agents">了解完整工程案例 <ArrowUpRight size={19} /></a></div></MotionReveal></section>
+    <section className="ai-about-band section-shell"><div><h2>有方法，也有真实场景。</h2><p>环境工程与工业研究是我的专业起点。铜电积、污水能耗和电商售后，是检验模型与系统的不同场景。我的关注始终沿着机器学习、决策优化与智能体工程展开。</p></div><nav aria-label="个人背景与成果"><a href="/publications">论文与研究成果 <ArrowUpRight size={18} /></a><a href="/journey">教育与实践 <ArrowUpRight size={18} /></a><a href="/notes">知识库与持续学习 <ArrowUpRight size={18} /></a></nav></section>
+    <section className="ai-life section-shell" aria-labelledby="ai-life-title"><MotionReveal><header className="ai-section-heading"><h2 id="ai-life-title">对世界的好奇，<br />也留在生活里。</h2><p>动画、游戏、旅行、天文和音乐，<br />是研究之外同样具体的喜欢。</p></header><FieldHighlights notes={[getFieldNote("astronomy-and-dishui"),getFieldNote("wuthering-waves-live"),getFieldNote("hangzhou-weekend")]} /><nav className="ai-life-links" aria-label="生活与兴趣"><a href="/life/animation">动画与影评 <ArrowUpRight size={18} /></a><a href="/life/gaming">游戏足迹 <ArrowUpRight size={18} /></a><a href="/life/journal">日常图文 <ArrowUpRight size={18} /></a><a href="/life">更多生活记录 <ArrowUpRight size={18} /></a></nav></MotionReveal></section>
+    <section className="ai-connect section-shell" aria-labelledby="ai-connect-title"><h2 id="ai-connect-title">从一个问题，<br />开始新的交流。</h2><p>欢迎交流机器学习、强化学习、智能体工程与相关研究机会。</p><a className="ai-connect__mail" href="mailto:2431509@tongji.edu.cn">2431509@tongji.edu.cn <ArrowUpRight size={26} /></a><SocialLinks variant="editorial" /></section>
+  </main>;
 }

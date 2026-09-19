@@ -4,14 +4,17 @@ import { SiteHeader } from "./_components/site-header";
 import { createFixedPageMetadata, SITE_ORIGIN } from "./_data/metadata";
 import "./design-system.css";
 import "./universe-system.css";
+import "./portfolio.css";
+import "./field-notes.css";
+import "./_components/social-links.css";
 
 export const viewport: Viewport = {
   colorScheme: "light",
   themeColor: "#f4f7fb",
 };
 
-const homeTitle = "小闫｜工业智能、可信 AI 与个人研究档案";
-const homeDescription = "小闫的多页面个人网站：研究背景、研究专题、论文成果、技术能力、教育经历、知识整理与生活记录。";
+const homeTitle = "闫哲祯 Zhezhen Yan｜机器学习、强化学习与智能体工程";
+const homeDescription = "闫哲祯的个人网站。同济大学资源与环境硕士，关注机器学习、强化学习、智能体工程与可靠执行，展示论文、工程项目、教育实践、写作与生活。";
 const homeMetadata = createFixedPageMetadata({
   path: "/",
   title: homeTitle,
@@ -31,17 +34,19 @@ const structuredData = JSON.stringify({
       "@type": "WebSite",
       "@id": `${SITE_ORIGIN}/#website`,
       url: SITE_ORIGIN,
-      name: "小闫｜个人研究与生活档案",
+      name: "闫哲祯｜研究、工程与生活",
       inLanguage: "zh-CN",
       description: homeDescription,
     },
     {
       "@type": "Person",
       "@id": `${SITE_ORIGIN}/#person`,
-      name: "小闫",
+      name: "闫哲祯",
+      alternateName: ["Zhezhen Yan", "小闫"],
+      email: "2431509@tongji.edu.cn",
       url: SITE_ORIGIN,
-      description: "关注工业过程建模、多目标优化、安全强化学习与可信工业智能的硕士研究生。",
-      knowsAbout: ["铜电积", "电解液净化", "代理建模", "多目标优化", "安全强化学习", "可解释机器学习"],
+      description: "关注机器学习、强化学习、大模型与智能体工程的硕士研究生。",
+      knowsAbout: ["机器学习", "强化学习", "智能体工程", "大模型", "多目标优化", "可解释机器学习", "工业过程建模"],
     },
   ],
 }).replaceAll("<", "\\u003c");

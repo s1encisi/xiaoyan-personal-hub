@@ -1,60 +1,13 @@
 import { PageHero } from "../_components/page-hero";
-import { createFixedPageMetadata } from "../_data/metadata";
-import { ProjectRow } from "../_components/project-row";
+import { PortfolioSection, ProjectTiles, RecordLinks } from "../_components/portfolio";
 import { projects } from "../_data/content";
-
-export const metadata = createFixedPageMetadata({
-  path: "/projects",
-  title: "研究专题｜小闫",
-  description: "小闫围绕工业过程建模、多目标优化、安全强化学习与可信工业智能开展的研究主题。",
-});
-
-const systemSteps = [
-  ["01", "理解过程", "对象、变量、数据与约束"],
-  ["02", "建立模型", "预测、代理与不确定性"],
-  ["03", "搜索方案", "多目标、可行域与稳健性"],
-  ["04", "审查决策", "安全、解释与部署边界"],
-];
-
+import { createFixedPageMetadata } from "../_data/metadata";
+export const metadata = createFixedPageMetadata({ path: "/projects", title: "研究与项目｜闫哲祯", description: "电商智能体可靠性、强化学习与约束决策、机器学习建模和研究软件，连接多种实际应用。" });
 export default function ProjectsPage() {
-  return (
-    <main id="main-content" tabIndex={-1}>
-      <PageHero
-        code="R1"
-        eyebrow="RESEARCH AGENDAS"
-        breadcrumbs={[{ label: "首页", href: "/" }, { label: "研究中心", href: "/research" }, { label: "研究专题" }]}
-        title={<>围绕真实问题，<br /><span>建立可验证的研究链路。</span></>}
-        description="当前页面首先呈现我的研究主题。正式项目名称、时间、职责、数据来源和结果仅在核实后公开。"
-        tone="dark"
-        aside={<div className="hero-aside-count"><strong>{String(projects.length).padStart(2, "0")}</strong><span>RESEARCH<br />TOPICS</span></div>}
-      />
-
-      <section className="system-route section-shell" aria-labelledby="system-route-title">
-        <div className="section-kicker">
-          <p className="micro-label">RESEARCH SYSTEM / 研究路径</p>
-          <h2 id="system-route-title">从过程数据到可信决策</h2>
-        </div>
-        <ol className="system-route-track">
-          {systemSteps.map(([step, title, text]) => (
-            <li key={step}>
-              <span>{step}</span><strong>{title}</strong><p>{text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="project-index section-shell" aria-labelledby="project-index-title">
-        <div className="section-kicker split-kicker">
-          <div>
-            <p className="micro-label">INDEX / 研究专题</p>
-            <h2 id="project-index-title">{projects.length} 个相互连接的方向</h2>
-          </div>
-          <p>每个详情页都按“问题、方法、评价、边界”展开，避免只展示漂亮的结果。</p>
-        </div>
-        <div className="project-index-list">
-          {projects.map((project) => <ProjectRow key={project.slug} project={project} />)}
-        </div>
-      </section>
-    </main>
-  );
+  return <main id="main-content" className="projects-index" tabIndex={-1}>
+    <PageHero code="R1" eyebrow="RESEARCH & ENGINEERING" breadcrumbs={[{ label: "首页", href: "/" }, { label: "研究", href: "/research" }, { label: "研究与项目" }]} title={<>把智能方法，<br /><span>做成可运行的系统。</span></>} description="从机器学习预测到强化学习决策，再到智能体执行与研究软件。每个案例都呈现具体问题、个人工作和结果依据。" tone="dark" />
+    <PortfolioSection id="featured-projects" code="01 / SELECTED WORK" title="机器学习与智能体工程" intro="方法如何被实现、运行与验证，是这些项目共同的主线。"><ProjectTiles items={projects.filter(project => ["reliable-commerce-agents", "safe-reinforcement-learning", "culab-agent-workbench", "wastewater-energy-tabpfn"].includes(project.slug))} /></PortfolioSection>
+    <PortfolioSection id="method-studies" code="02 / METHODS" title="从方法进入应用场景" intro="铜电积与能耗研究为预测、约束优化和解释分析提供了具体的应用问题。"><ProjectTiles variant="rows" items={projects.filter(project => ["copper-electrowinning-surrogate", "electrolyte-purification-optimization", "causal-explainable-industrial-ai"].includes(project.slug))} /></PortfolioSection>
+    <PortfolioSection id="early-research" code="03 / FOUNDATION" title="本科研究与科研训练"><ProjectTiles variant="rows" items={projects.filter(project => ["urban-rural-ecological-footprint", "land-use-gee", "biochar-arsenic-adsorption"].includes(project.slug))} /><RecordLinks items={[{ label: "论文与报告", href: "/publications" }, { label: "技术能力", href: "/skills" }, { label: "科研与实践经历", href: "/experience" }]} /></PortfolioSection>
+  </main>;
 }

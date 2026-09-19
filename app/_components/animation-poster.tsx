@@ -12,7 +12,7 @@ type AnimationPosterProps = {
 
 const fallbackPoster: AnimationPosterAsset = {
   src: "/images/animation/cinematic-orbit-background.webp",
-  alt: "深蓝星海与铜色观看轨道；该作品需要提供官方海报或获授权图片",
+  alt: "深蓝星海与铜色轨道构成的作品文字封面",
   width: 1536,
   height: 1024,
 };
@@ -30,7 +30,7 @@ export function AnimationPoster({
   const primaryAsset = assets[0];
 
   return (
-    <figure className={`animation-poster${hasPoster ? "" : " is-placeholder"}${assets.length > 1 ? " is-collection" : ""}${className ? ` ${className}` : ""}`}>
+    <figure className={`animation-poster${hasPoster ? "" : " is-placeholder"}${assets.length > 1 ? " is-collection" : ""}${className ? ` ${className}` : ""}`} data-orientation={(primaryAsset.width ?? 460) > (primaryAsset.height ?? 650) ? "landscape" : "portrait"}>
       <div className={`animation-poster-image${assets.length > 1 ? " is-stack" : ""}`}>
         {assets.map((asset, index) => (
           <img
@@ -44,7 +44,7 @@ export function AnimationPoster({
             decoding="async"
           />
         ))}
-        {!hasPoster && <span>POSTER / 需要提供海报</span>}
+        {!hasPoster && <span>{title} / 文字封面</span>}
       </div>
       {showCredit && primaryAsset.sourceUrl && (
         <figcaption>

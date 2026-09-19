@@ -1,60 +1,11 @@
+/* eslint-disable @next/next/no-img-element, @next/next/no-html-link-for-pages -- Owner-provided portrait and native Vinext document navigation. */
 import { PageHero } from "../_components/page-hero";
-import { SectionHeading } from "../_components/section-heading";
+import { PortfolioSection, PortfolioStats, RecordLinks } from "../_components/portfolio";
 import { createFixedPageMetadata } from "../_data/metadata";
-
-const aboutQuestions = [
-  ["01", "过程里真正需要回答什么？", "先确定工艺对象、变量、时间尺度和决策场景。"],
-  ["02", "数据能够支持到哪里？", "检查采样、泄漏、漂移、边界工况与外推风险。"],
-  ["03", "方法为何适合这个问题？", "比较基线、复杂度、计算成本与可复现性。"],
-  ["04", "结论怎样进入真实决策？", "说明约束、风险、解释、回退和人工判断。"],
-];
-
-export const metadata = createFixedPageMetadata({
-  path: "/about",
-  title: "关于我｜小闫",
-  description: "了解小闫的研究命题、工作准则与当前关注方向。",
-});
-
-export default function AboutPage() {
-  return (
-    <main id="main-content" tabIndex={-1}>
-      <PageHero
-        code="01"
-        eyebrow="ABOUT"
-        breadcrumbs={[{ label: "首页", href: "/" }, { label: "关于我" }]}
-        title={<>我关注工业问题与<br /><span>可信智能的交叉。</span></>}
-        description="关注真实工业过程中的建模、优化与安全决策：既追求方法有效，也关心它为何有效、何时失效。"
-        aside={<div className="identity-panel"><span>研究命题</span><strong>可信决策</strong><small>真实过程 · 明确边界</small></div>}
-      />
-
-      <section className="about-facts section-shell" aria-labelledby="about-facts-title">
-        <SectionHeading id="about-facts-title" eyebrow="RESEARCH POSITION / 研究定位" title="一个研究命题，四个观察坐标" description={<p>从过程对象、建模任务、决策约束和证据边界理解我的研究关注。</p>} />
-        <dl className="profile-facts">
-          <div><dt>研究命题</dt><dd>理解复杂系统，构建可信决策</dd></div>
-          <div><dt>过程对象</dt><dd>铜电积 · 电解液净化</dd></div>
-          <div><dt>方法路径</dt><dd>代理建模 · 多目标优化 · 安全强化学习</dd></div>
-          <div><dt>判断标准</dt><dd>可解释 · 可验证 · 可复现</dd></div>
-        </dl>
-      </section>
-
-      <section className="about-question-field section-shell" aria-labelledby="about-question-title">
-        <SectionHeading id="about-question-title" eyebrow="HOW TO FRAME A PROBLEM / 问题框架" title="在选择算法之前，这一框架先追问四件事" description={<p>这些问题把研究从方法名称拉回证据链，也构成研究专题、方法和知识页面的共同结构。</p>} />
-        <ol>
-          {aboutQuestions.map(([index, title, text]) => <li key={index}><span>{index}</span><h3>{title}</h3><p>{text}</p></li>)}
-        </ol>
-      </section>
-
-      <section className="section-actions section-shell" aria-label="关于栏目子页面">
-        <div>
-          <p className="micro-label">EXPLORE / 继续了解</p>
-          <h2>继续查看个人档案、研究准则与合作方向</h2>
-        </div>
-        <div>
-          <a className="primary-action" href="/about/profile">查看研究定位与准则 <span>→</span></a>
-          <a className="text-link" href="/contact">前往联系与合作 <span>↗</span></a>
-        </div>
-      </section>
-
-    </main>
-  );
-}
+export const metadata = createFixedPageMetadata({ path: "/about", title: "关于闫哲祯｜Zhezhen Yan", description: "同济大学资源与环境硕士，以环境工程为基础，研究工业预测、智能优化与 AI Agent 工程。" });
+export default function AboutPage() { return <main id="main-content" className="about-index" tabIndex={-1}>
+  <PageHero code="A1" eyebrow="ZHEZHEN YAN" breadcrumbs={[{ label: "首页", href: "/" }, { label: "关于" }]} title={<>你好，我是闫哲祯。<br /><span>研究工业过程，也认真生活。</span></>} description="同济大学资源与环境硕士，预计 2027 年毕业。以环境工程为基础，将机器学习、约束优化与软件工程用于具体的工业和环境问题。" tone="dark" />
+  <PortfolioSection id="introduction" code="ABOUT ME" title="研究智能方法，也建设可运行的系统"><div className="pf-portrait-layout"><div className="pf-prose"><p>本科就读于大连理工大学环境工程专业，我从生态足迹核算、空间统计和遥感研究中建立数据分析基础。来到同济后，我参与国家重点研发计划，把关注转向铜电积过程的预测、约束优化与数字化决策。</p><p>我的工作围绕机器学习、强化学习与智能体展开：开发预测和优化方法，建设 CuLab 研究工作台，也在开源电商智能体项目上补强审批与可靠执行。铜电积与污水能耗是方法落地的应用场景。</p><p>我熟练使用 Coze、Codex、Claude Code、OpenCode、Hermes 等工具，持续学习大模型预训练、后训练、微调与 RLHF，关注机器学习、强化学习和智能体工程方向的工作与研究机会。</p><RecordLinks items={[{ label: "完整个人介绍", href: "/about/profile" }, { label: "研究与项目", href: "/projects" }, { label: "联系我", href: "/contact" }]} /></div><figure><img src="/images/profile/zhezhen-yan.webp" alt="闫哲祯的个人照片" width="640" height="893" loading="lazy" /><figcaption>闫哲祯 · Zhezhen Yan</figcaption></figure></div></PortfolioSection>
+  <PortfolioSection id="at-a-glance" code="AT A GLANCE" title="当前阶段"><PortfolioStats items={[{ value: "2027 届", label: "同济大学资源与环境硕士" }, { value: "4.66 / 5", label: "硕士 GPA" }, { value: "1 + 2", label: "第一作者论文：已发表 1 篇，修回或在审 2 篇" }, { value: "2020—2024", label: "大连理工大学环境工程本科" }]} /></PortfolioSection>
+  <PortfolioSection id="more-about-me" code="BEYOND THE CV" title="研究之外的我"><div className="pf-reading-links"><a href="/experience"><small>协作与表达</small><h3>组织活动，也组织信息</h3><p>校园融媒体、社团管理、图书馆服务和机关实习，训练我的沟通与交付能力。</p><b>阅读实践经历 ↗</b></a><a href="/life/running-outdoors"><small>运动与户外</small><h3>把注意力交给眼前的路</h3><p>喜欢长跑，曾入选大连理工大学定向越野校队，也喜欢乒乓球。</p><b>长跑与户外 ↗</b></a><a href="/life/animation"><small>阅读与观看</small><h3>长期保留自己的感受</h3><p>科幻读书分享、动画推荐与独立影评，记录我的好奇心与审美。</p><b>进入动画观测站 ↗</b></a></div></PortfolioSection>
+</main>; }

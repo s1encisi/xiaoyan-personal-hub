@@ -48,6 +48,9 @@ yarn-error.log*
 *.tsbuildinfo
 
 # Private source material: keep locally, never include in GitHub snapshots.
+/University/
+/Postgraduate 1/
+/postgraduate1/
 /app/_data/animation/source-content.json
 /.impeccable/
 /.claude/
@@ -108,3 +111,7 @@ secrets*.json
 **/*身份证*
 **/*护照*
 **/*合同*
+
+# Original user-supplied media/reference projects; optimized site assets live in public/.
+/photo/
+/P3RE官网开场动画/
