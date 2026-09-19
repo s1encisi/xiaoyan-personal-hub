@@ -85,7 +85,7 @@ export function StoryDepthCarousel({ items }: { items: GalleryItem[] }) {
   const [index, setIndex] = useState(0);
   const change = useCallback((next: number) => setIndex(next), []);
   const fallback = <div className="effect-gallery-static">{items.map(item => <a key={item.href} href={item.href}><img src={item.image} alt={item.title} width={400} height={570} loading="lazy" /><span>{item.title}</span></a>)}</div>;
-  return <div ref={ref} className="story-depth" data-effect="Depth Carousel" data-effect-active={active}>{active ? <SafeEffect fallback={fallback}><div className="story-depth__stage"><DepthCarousel items={items.map(item => ({ image: item.image, alt: item.title }))} cardWidth={240} cardHeight={342} depth={130} spread={220} tilt={-9} blur={0} autoplay={false} onChange={change} showControls showIndicators /></div><a className="story-depth__link" href={items[index].href}>阅读《{items[index].title}》<ArrowUpRight size={18} /></a></SafeEffect> : fallback}</div>;
+  return <div ref={ref} className="story-depth" data-effect="Depth Carousel" data-effect-active={active}>{active ? <SafeEffect fallback={fallback}><div className="story-depth__stage"><DepthCarousel items={items.map(item => ({ image: item.image, alt: item.title }))} cardWidth={240} cardHeight={342} depth={130} spread={220} tilt={-9} blur={0} autoplay={false} onChange={change} showControls showIndicators /></div></SafeEffect> : fallback}<a className="story-depth__link" href={items[index].href}>阅读《{items[index].title}》<ArrowUpRight size={18} /></a></div>;
 }
 export function LifeDriftWall({ items }: { items: GalleryItem[] }) {
   const { ref, active } = useEffectSurface();
