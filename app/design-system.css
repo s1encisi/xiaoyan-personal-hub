@@ -1035,7 +1035,7 @@ p, li, dd { overflow-wrap: anywhere; }
   position: absolute;
   top: 34px;
   right: max(var(--gutter), calc((100% - var(--max)) / 2));
-  color: rgba(20, 87, 217, .09);
+  color: rgb(20, 87, 217);
   font-family: var(--font-display);
   font-size: clamp(86px, 12vw, 154px);
   font-weight: var(--weight-display);
@@ -1068,7 +1068,7 @@ p, li, dd { overflow-wrap: anywhere; }
   color: var(--white);
 }
 .page-hero-dark::after { background: linear-gradient(90deg, #3b78f1, var(--teal-light)); }
-.page-hero-dark .page-chapter-code { color: rgba(255, 255, 255, .07); }
+.page-hero-dark .page-chapter-code { color: rgb(255, 255, 255); }
 .page-hero-dark .breadcrumbs, .page-hero-dark .page-hero-description, .page-hero-dark .page-hero-aside { color: #c3cedd; }
 .page-hero-dark .page-hero-eyebrow, .page-hero-dark h1 span { color: #79d6cd; }
 .page-hero-dark .page-hero-aside { border-left-color: #40516d; }
