@@ -34,7 +34,7 @@ body:has(.p3r-home) .header-cosmic .motion-toggle{border-radius:0;border-color:#
 .p3r-hero__controls{display:flex;align-items:center;gap:30px}
 .p3r-hero__controls>a,.p3r-replay{font-size:13px;display:inline-flex;gap:12px;align-items:center;min-height:44px;color:white;text-decoration:none;background:transparent;border:0;padding:0;cursor:pointer;letter-spacing:.03em}
 .p3r-replay:disabled{opacity:.6;cursor:default}
-.p3r-credit{position:absolute;right:5%;bottom:11px;font-size:11px;color:#d4eeff;text-decoration:none}
+.p3r-credit{position:absolute;right:5%;bottom:11px;font-size:var(--step-2xs);color:#d4eeff;text-decoration:none}
 .p3r-home a:focus-visible,.p3r-home button:focus-visible,.p3r-opening button:focus-visible{outline:3px solid #ffef85;outline-offset:5px}
 .p3r-home>.section-shell{width:100%;max-width:none;padding:90px max(5vw,calc((100% - 1280px)/2));margin:0}
 .p3r-home section[id]{scroll-margin-top:90px}
@@ -141,7 +141,7 @@ html[data-motion=off] .p3r-agent-feature .scroll-expand__overlay{opacity:1;trans
  .p3r-directions{margin-top:29px}.p3r-directions__buttons{gap:7px}.p3r-directions__buttons button{font-size:12px}.p3r-directions__buttons button>span{font-size:18px}.p3r-directions__detail p{font-size:13px}
  .p3r-hero__rail{left:24px;right:24px;bottom:43px;display:block}
  .p3r-hero__rail .social-links{justify-content:space-between;padding:10px 0;background:transparent;border-bottom:1px solid #74bbf277;font-size:13px;gap:12px}
- .p3r-hero__controls{justify-content:space-between;margin-top:8px}.p3r-credit{font-size:10px;left:24px;right:auto;bottom:15px}
+ .p3r-hero__controls{justify-content:space-between;margin-top:8px}.p3r-credit{font-size:var(--step-2xs);left:24px;right:auto;bottom:15px}
  .p3r-home>.section-shell{padding:62px 24px}.p3r-home .ai-section-heading{margin-bottom:30px}.p3r-home .ai-section-heading>p{margin-top:20px;font-size:16px}
  .p3r-home .ai-bento .magic-bento-card{padding:24px;min-height:200px}.p3r-home .ai-project-grid{gap:36px}.p3r-home .ai-project-card h3{font-size:25px}.p3r-section-label{font-size:15px}
  .p3r-agent-feature .scroll-expand__track,.p3r-agent-feature .scroll-expand__stage{height:auto!important;min-height:0}
