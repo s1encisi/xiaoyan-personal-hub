@@ -471,6 +471,14 @@ p, li, dd { overflow-wrap: anywhere; }
 .mega-navigation-close:hover { background: var(--ink); color: var(--white); }
 
 /* Shared layout */
+.case-detail:not(:has(> .section-shell)),
+.method-detail:not(:has(> .section-shell)),
+.method-notes-page:not(:has(> .section-shell)) {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.page-hero-meta { max-width: 100%; }
 .section-shell {
   width: min(var(--max), calc(100% - 2 * var(--gutter)));
   margin-right: auto;

@@ -785,3 +785,5 @@ body:has(.animation-site-shell) .footer-meta { padding-top: 18px; border-top: 0;
 .animation-section-stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .animation-source-note>p+p{margin-top:10px}
 @media(hover:none),(pointer:coarse){.animation-review-ledger article:hover img,.animation-review-horizon-track>a:hover img,.beyond-anime:hover img,.beyond-life:hover img{transform:none}}
+html[data-motion=off] .animation-review-horizon-track > a:hover img,
+html[data-motion=off] .animation-review-ledger article:hover img{transform:none}
