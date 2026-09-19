@@ -1460,6 +1460,14 @@ a.portal-card:hover, a.portal-card:focus-visible, .portal-card:has(> a:hover) { 
 .case-content > .requirement-notice { width: auto; margin-top: 70px; padding-right: 28px; padding-left: 28px; }
 .case-content > .requirement-notice .requirement-groups article { grid-column: span 4; }
 
+/* Honors */
+.pf-awards {
+  table-layout: fixed;
+}
+.pf-awards th:nth-child(1) { width: 24%; }
+.pf-awards th:nth-child(2) { width: 58%; }
+.pf-awards th:nth-child(3) { width: 18%; }
+
 /* Skills */
 .capability-matrix {
   display: grid;
