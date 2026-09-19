@@ -1472,6 +1472,12 @@ a.portal-card:hover, a.portal-card:focus-visible, .portal-card:has(> a:hover) { 
 .pf-awards th:nth-child(1) { width: 24%; }
 .pf-awards th:nth-child(2) { width: 58%; }
 .pf-awards th:nth-child(3) { width: 18%; }
+.pf-awards td a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+}
 
 /* Skills */
 .capability-matrix {

@@ -164,6 +164,6 @@ html[data-motion="on"] .life-hero img { animation:daylight-drift 22s ease-in-out
 .bangumi-observation dt a { display:flex; align-items:center; min-height:44px; }
 .bangumi-observation dd { margin-top:10px; font-size:35px; color:#e5dbff; font-family:var(--font-display); }
 .bangumi-observation .bangumi-source { grid-column:1 / -1; font-size:12px; margin:0; }
-.bangumi-source a { text-decoration:underline; text-underline-offset:4px; }
+.bangumi-source a { display:inline-flex; align-items:center; min-width:24px; min-height:24px; text-decoration:underline; text-underline-offset:4px; }
 .anime-hero > .breadcrumbs,.life-hero > .breadcrumbs { max-width:1280px; margin-inline:auto; position:relative; z-index:2; }
 .anime-hero .breadcrumbs { color:#d3def0; }
