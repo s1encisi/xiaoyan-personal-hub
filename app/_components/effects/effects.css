@@ -11,4 +11,4 @@
 
 .knowledge-wheel-static a{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none}.ai-home .ai-star-link{border-radius:6px}.ai-home .ai-star-link .inner-content{border-radius:5px;font-family:var(--font-sans)}
 
-.ai-tools-loop{min-height:80px}.ai-tool-static{flex-wrap:nowrap;overflow-x:auto;align-items:center;min-height:50px;scrollbar-width:thin}.ai-tool-static li{flex:none;white-space:nowrap}.story-depth{min-height:540px}@media(max-width:600px){.story-depth{min-height:540px}}
+.ai-tools-loop{min-height:80px}.ai-tool-static{flex-wrap:nowrap;overflow-x:auto;align-items:center;min-height:50px;scrollbar-width:thin}.ai-tool-static li{flex:none;white-space:nowrap}.story-depth{min-height:540px}@media(max-width:600px){.story-depth{min-height:510px}}
