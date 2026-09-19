@@ -19,7 +19,7 @@ a,button { -webkit-tap-highlight-color:transparent; }
 .desktop-navigation { margin-left:auto; }
 .site-brand { gap:11px; min-width:144px; }
 .brand-symbol { width:29px; height:29px; border:1px solid currentColor; border-radius:50%; font-size:0; transform:rotate(-28deg); }
-.brand-symbol::before { width:43px; height:12px; position:absolute; content:""; border:1px solid currentColor; border-radius:50%; left:-8px; top:7px; }
+.brand-symbol::before { width:100%; height:14px; box-sizing:border-box; position:absolute; content:""; border:1px solid currentColor; border-radius:50%; left:0; top:50%; transform:translateY(-50%); }
 .brand-symbol i,.brand-symbol::after { display:none; }
 .brand-copy strong { font-size:23px; letter-spacing:.03em; }
 .brand-copy small { text-transform:none; font-size:12px; letter-spacing:.035em; }

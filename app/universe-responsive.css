@@ -1,6 +1,6 @@
 @media (min-width:1600px) { .celestial-hero__content,.celestial-hero__bottom { max-width:1440px; } }
 @media (max-width:1200px) {
-  .header-inner { gap:14px; } .site-brand { min-width:122px; } .brand-symbol { display:none; }
+  .header-inner { gap:14px; } .site-brand { min-width:122px; }
   .desktop-nav-group > a,.desktop-home-link { font-size:14px; }
   .motion-toggle span { display:none; } .motion-toggle { width:44px; }
   .anime-frame-stack a { width:160px; } .anime-frame-stack a:nth-child(2) { left:135px; }
@@ -34,7 +34,7 @@
 @media (max-width:760px) {
   :root { --gutter:22px; --header-height:68px; }
   .header-inner { gap:10px; } .brand-copy strong { font-size:21px; } .brand-copy small { font-size:12px; }
-  .brand-symbol { width:24px; height:24px; } .brand-symbol::before { width:36px; height:10px; left:-7px; top:6px; }
+  .brand-symbol { width:24px; height:24px; } .brand-symbol::before { height:10px; }
   .celestial-hero { min-height:max(715px,100svh); max-height:none; padding:172px 23px 24px; }
   .celestial-hero__media img { object-position:66% top; opacity:.75; }
   .celestial-hero::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgb(3 10 23 / 66%),rgb(3 10 23 / 20%)); }

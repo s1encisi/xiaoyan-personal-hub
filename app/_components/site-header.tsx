@@ -220,7 +220,7 @@ export function SiteHeader() {
             setMobileOpen(false);
           }}
         >
-          <span className="brand-symbol" aria-hidden="true"><i />Y</span>
+          <span className="brand-symbol" aria-hidden="true" />
           <span className="brand-copy">
             <strong>{siteInfo.name}</strong>
             <small>Zhezhen Yan</small>
