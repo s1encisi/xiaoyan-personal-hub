@@ -1480,9 +1480,8 @@ a.portal-card:hover, a.portal-card:focus-visible, .portal-card:has(> a:hover) { 
 /* Skills */
 .capability-matrix {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   border-top: 1px solid var(--line-strong);
-  border-left: 1px solid var(--line);
 }
 .capability-axis {
   min-height: 74px;
@@ -2667,7 +2666,7 @@ a.portal-card:hover, a.portal-card:focus-visible, .portal-card:has(> a:hover) { 
   .home-archive-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-archive-facts > div:nth-child(2) { border-right: 0; }
   .home-archive-facts > div:nth-child(n + 3) { border-top: 1px solid var(--line); }
-  .research-method-track, .capability-matrix { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .research-method-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .research-method-track li:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
   .page-hero { grid-template-columns: minmax(0, 1fr) minmax(190px, .3fr); gap: 44px; }
   .case-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 52px; }
