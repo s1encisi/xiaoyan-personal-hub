@@ -227,9 +227,7 @@ a:active, button:active { opacity: .78; }
 
 /* 深底浅字反过来适用灰度抗锯齿：能压掉次像素渲染在浅色笔画上留下的彩边，
    边缘更干净。与 body 上的取舍正好互补。 */
-.page-hero-dark, .case-hero, .skill-detail-hero, .note-detail-hero,
-.note-body, .magazine-feature, .animation-site-shell,
-.detail-publication .detail-shell-hero, .detail-experience .detail-shell-hero {
+.page-hero-dark, .animation-site-shell {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
