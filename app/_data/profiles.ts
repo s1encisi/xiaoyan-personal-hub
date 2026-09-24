@@ -24,8 +24,8 @@ export const publicProfiles = [
   { id: "bangumi", name: "Bangumi", handle: "水无灯里（遥かなる苍）", href: "https://bgm.tv/user/s1encisi", description: "动画收藏与观看记录", source: "Bangumi 公开时光机", verifiedAt: "2026-09-08" },
   { id: "steam", name: "Steam", handle: "水无灯里", href: "https://steamcommunity.com/profiles/76561198817662858/", description: "游戏收藏、游玩与成就记录", source: "本人提供；已核实公开主页", verifiedAt: "2026-09-17" },
   { id: "douyin", name: "抖音", handle: "闫哲祯", href: "https://www.douyin.com/user/MS4wLjABAAAAWZujBJd_opt8w_n_PRs2c_8Fqr41sQNg1ANtqttAwjH09VPv7sJSpz0tg-0RaV6Z", description: "雀魂、鸣潮与兴趣短视频", source: "本人分享链接解析；已核实主页与作品标题", verifiedAt: "2026-09-17" },
-  { id: "xiaohongshu", name: "小红书", handle: "水无灯里", href: "https://www.xiaohongshu.com/user/profile/65f73295000000000600c869", description: "展览、演出与生活记录；笔记需登录", source: "本人提供；已核实主页简介与笔记标题", verifiedAt: "2026-09-17" },
-  { id: "maimai", name: "脉脉", handle: "", href: "https://maimai.cn/profile/detail?dstu=248600540", description: "职业主页与交流；需登录平台", source: "本人提供；访客访问要求登录，未读取履历", verifiedAt: null },
+  { id: "xiaohongshu", name: "小红书", handle: "水无灯里", href: "https://www.xiaohongshu.com/user/profile/65f73295000000000600c869", description: "展览、演出与生活记录", source: "本人提供；已核实主页简介与笔记标题", verifiedAt: "2026-09-17" },
+  { id: "maimai", name: "脉脉", handle: "", href: "https://maimai.cn/profile/detail?dstu=248600540", description: "职业经历与同行交流", source: "本人提供；访客访问要求登录，未读取履历", verifiedAt: null },
 ] as const;
 
 export const featuredProfileIds: ReadonlySet<string> = new Set(["bilibili", "github", "bangumi"]);

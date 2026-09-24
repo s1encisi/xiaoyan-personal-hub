@@ -115,3 +115,7 @@ secrets*.json
 # Original user-supplied media/reference projects; optimized site assets live in public/.
 /photo/
 /P3RE官网开场动画/
+
+# Local source archives are not public assets. Only the inventory is tracked.
+/_archive/*
+!/_archive/README.md

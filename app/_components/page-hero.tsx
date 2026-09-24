@@ -19,7 +19,7 @@ type PageHeroProps = {
 export function PageHero({ code, eyebrow, title, description, breadcrumbs, aside, tone = "light", density = "portal", meta }: PageHeroProps) {
   return (
     <section className={`page-hero page-hero-${tone}`} data-module={code.charAt(0)} data-density={density}>
-      <div className="module-atmosphere" aria-hidden="true">{code.startsWith("L") ? <AmbientScene kind="life" /> : <TopicStrands />}<span /><span /><span /></div>
+      <div className="module-atmosphere" aria-hidden="true">{code.startsWith("L") ? <AmbientScene kind="life" /> : <TopicStrands />}</div>
       <span className="page-chapter-code" aria-hidden="true">{code}</span>
       <MotionReveal className="page-hero-main">
         <Breadcrumbs items={breadcrumbs} />

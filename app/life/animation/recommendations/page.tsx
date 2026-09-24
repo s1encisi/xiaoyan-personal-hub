@@ -21,7 +21,7 @@ export default function AnimationRecommendationsPage() {
       <AnimationSectionHero
         code="01 / EDITORS’ PICKS"
         title="年度推荐"
-        description="不是试图说服所有人的客观榜单，而是每一年真实留下的观看切片。原稿记录了几部，这里就完整保留几部。"
+        description="每一年的私人片单与观看感想。从当季新作到旧作重逢，记录那些留下印象的故事。"
         breadcrumbs={[{ label: "首页", href: "/" }, { label: "生活", href: "/life" }, { label: "动画观测站", href: "/life/animation" }, { label: "年度推荐" }]}
         stats={[{ label: "时间范围", value: animationRecommendationPeriod }, { label: "年度档案", value: `${animationRecommendationYears.length} 组` }, { label: "当前收录", value: `${total} 条` }]}
       />

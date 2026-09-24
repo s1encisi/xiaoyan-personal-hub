@@ -163,20 +163,20 @@ const DepthCarousel = ({
         if (d > n / 2) d -= n;
       }
 
-      const back = Math.max(0, d);
       const az = Math.abs(d);
+      const back = az;
       const shown = az <= cfg.visibleCards + 0.5;
 
-      const tz = -cfg.depth * d;
+      const tz = -cfg.depth * az;
       const tx = dir * cfg.spread * d;
-      const ry = dir * cfg.tilt * clamp(d, 0, 1);
+      const ry = dir * cfg.tilt * clamp(d, -1, 1);
 
-      let opacity = d < 0 ? Math.max(0, 1 + d) : 1;
+      let opacity = Math.max(0, 1 - az * 0.16);
       if (!shown) opacity = 0;
 
       const brightness = Math.max(0.15, 1 - back * cfg.falloff);
       const blurPx = cfg.blur > 0 ? Math.min(cfg.blur, (back / Math.max(1, cfg.visibleCards)) * cfg.blur) : 0;
-      const zi = Math.round(2000 - d * 20);
+      const zi = Math.round(2000 - az * 20);
 
       el.style.transform = `translate(-50%, -50%) scale(${sc}) translateX(${tx.toFixed(2)}px) translateZ(${tz.toFixed(2)}px) rotateY(${ry.toFixed(3)}deg)`;
       el.style.opacity = opacity.toFixed(3);
@@ -213,7 +213,7 @@ const DepthCarousel = ({
         },
         onComplete: () => {
           const n = cfg.count;
-          if (n > 0) posRef.current = ((posRef.current % n) + n) % n;
+          if (n > 0) posRef.current = cfg.loop ? ((posRef.current % n) + n) % n : clamp(posRef.current, 0, n - 1);
           layout(posRef.current);
         }
       });
@@ -260,25 +260,37 @@ const DepthCarousel = ({
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
+    let accumulated = 0;
+    let lastAdvance = 0;
     const onWheel = (e: WheelEvent) => {
       const cfg = cfgRef.current;
-      if (cfg.count < 2) return;
-      e.preventDefault();
-      tweenRef.current?.kill();
+      if (cfg.count < 2 || e.ctrlKey) return;
       const raw = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      const delta = e.deltaMode === 1 ? raw * 24 : raw;
-      const step = clamp(delta / (cfg.cardWidth * 0.9), -0.6, 0.6);
-      posRef.current += step;
-      layout(posRef.current);
+      const delta = raw * (e.deltaMode === 1 ? 24 : e.deltaMode === 2 ? el.clientHeight : 1);
+      if (!delta) return;
+      const direction = Math.sign(delta);
+      if (!cfg.loop && ((direction < 0 && focusRef.current === 0) || (direction > 0 && focusRef.current === cfg.count - 1))) {
+        accumulated = 0;
+        return;
+      }
+      e.preventDefault();
+      if (Math.sign(accumulated) !== direction) accumulated = 0;
+      accumulated += delta;
       if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
-      wheelTimerRef.current = setTimeout(() => setFocus(Math.round(posRef.current), true), 130);
+      wheelTimerRef.current = setTimeout(() => { accumulated = 0; }, 180);
+      const now = performance.now();
+      if (Math.abs(accumulated) >= 60 && now - lastAdvance >= 180) {
+        accumulated = 0;
+        lastAdvance = now;
+        setFocus(focusRef.current + direction, true);
+      }
     };
     el.addEventListener('wheel', onWheel, { passive: false });
     return () => {
       el.removeEventListener('wheel', onWheel);
       if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
     };
-  }, [layout, setFocus]);
+  }, [setFocus]);
 
   const onPointerDown = useCallback((e: ReactPointerEvent<HTMLDivElement>) => {
     const cfg = cfgRef.current;

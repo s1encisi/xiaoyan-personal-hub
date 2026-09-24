@@ -1,0 +1,52 @@
+/* Shared P3R skin. The entire animation archive keeps its cinema theme. */
+html:not(:has(.animation-site-shell)){color-scheme:light;scrollbar-color:#0757dd #f0f7fc;background:#f0f7fc}
+body:not(:has(.animation-site-shell)){--p3-blue:#0055ed;--p3-ink:#061e58;--p3-cyan:#66ecff;--p3-paper:#f0f7fc;--paper:var(--p3-paper);--ink:var(--p3-ink);--blue:var(--p3-blue);--line:#b6cfee;--radius-xs:0;--radius-sm:0;--radius-md:0;--radius-lg:0;background:var(--p3-paper);color:var(--p3-ink)}
+/* Inline radii belong to shared effect components; constrain them only in this skin. */
+body:not(:has(.animation-site-shell)) main,body:not(:has(.animation-site-shell)) main *,body:not(:has(.animation-site-shell)) main *::before,body:not(:has(.animation-site-shell)) main *::after{border-radius:0!important}
+body:not(:has(.animation-site-shell)) :is(.global-header,.global-footer) :is(button,.header-contact,.mobile-navigation,.mega-navigation){border-radius:0}
+body:not(:has(.animation-site-shell)) .global-header{background:#034eb9;color:#fff;border-bottom:1px solid #6dcdfc80;backdrop-filter:none}
+body:not(:has(.animation-site-shell)) .global-header :is(.site-brand,.brand-copy strong,.desktop-navigation>a,.desktop-nav-group>a,.desktop-nav-group>button,.motion-toggle){color:#fff}
+body:not(:has(.animation-site-shell)) .global-header .brand-copy small{color:#c9efff}
+body:not(:has(.animation-site-shell)) .global-header .header-contact{background:#fff;color:#084bae;border-color:#fff;box-shadow:3px 3px 0 #66ecff}
+body:not(:has(.animation-site-shell)) .global-header .motion-toggle,body:not(:has(.animation-site-shell)) .global-header .menu-toggle{border-color:#abdfff;color:#fff;background:transparent}
+body:not(:has(.animation-site-shell)) .global-header .menu-toggle span{background:currentColor}
+/* The light disclosure panel must not inherit the blue header's white text. */
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation{background:#f7fbff;color:#061e58;border-bottom:3px solid #66ecff}
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation :is(.mega-navigation-intro>a,.mega-navigation-links>a){color:#061e58}
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation-links>a{background:#f7fbff;transition:background var(--motion-fast),color var(--motion-fast)}
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation :is(.mega-navigation-intro strong,.mega-navigation-links strong){color:inherit;opacity:1}
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation-links>a:is(:hover,:focus-visible,[aria-current]){background:#dceeff;color:#0049bd}
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation a:focus-visible{outline:3px solid #0055ed;outline-offset:-3px}
+body:not(:has(.animation-site-shell)) .global-header .mega-navigation :is(.mega-navigation-intro span,.mega-navigation-links small){color:#405878}
+body:not(:has(.animation-site-shell)) main:not(.p3r-home){background:var(--p3-paper);color:var(--p3-ink)}
+body:not(:has(.animation-site-shell)) main:not(.p3r-home)>section{border-top:8px solid var(--p3-cyan)}
+body:not(:has(.animation-site-shell)) :is(.page-hero,.case-hero,.detail-shell-hero,.skill-detail-hero,.note-detail-hero,.life-hero){background:linear-gradient(112deg,#0055ed 76%,#0875e9 76%,#0875e9 87%,#66ecff 87%,#66ecff 88%,#0055ed 88%);color:#fff;border-bottom:0}
+body:not(:has(.animation-site-shell)) :is(.page-hero,.case-hero,.detail-shell-hero,.skill-detail-hero,.note-detail-hero,.life-hero) :is(h1,h1 span,.breadcrumbs,.breadcrumbs a,.micro-label,.page-hero-eyebrow){color:#fff}
+body:not(:has(.animation-site-shell)) :is(.page-hero-description,.life-hero__copy>p,.life-hero__caption){color:#d9f2ff}
+body:not(:has(.animation-site-shell)) .page-hero-eyebrow{font-style:italic;font-weight:800;letter-spacing:.09em;color:#b2f7ff}
+body:not(:has(.animation-site-shell)) :is(.page-hero h1,.pf-section-heading h2,.pf-project h3){font-family:var(--font-display)}
+body:not(:has(.animation-site-shell)) .page-chapter-code{color:#66ecff;opacity:.18;font-style:italic;font-weight:800}
+body:not(:has(.animation-site-shell)) :is(.pf-section-heading,.section-heading,.section-kicker) :is(.micro-label,small){color:#0757dd;font-style:italic;font-weight:800;letter-spacing:.09em}
+body:not(:has(.animation-site-shell)) :is(.pf-project,.pf-reading-links>a,.public-identity,.capability-matrix>article,.field-highlight,.journal-card,.gaming-card){background:#fff;border:1px solid #a9ccee;border-top:5px solid #0757dd;padding:24px;box-shadow:5px 5px 0 #b7eefa}
+body:not(:has(.animation-site-shell)) .pf-project-grid{gap:28px}
+body:not(:has(.animation-site-shell)) :is(.status-badge,.pf-tags span){background:#e0f4ff;color:#0644a0;border:1px solid #a9ccee}
+body:not(:has(.animation-site-shell)) :is(.universe-action,.button-primary,.pf-contact-email){border:1px solid #0757dd;background:#fff;color:#06378d;box-shadow:5px 5px 0 #66ecff}
+body:not(:has(.animation-site-shell)) :is(.universe-action,.button-primary){backdrop-filter:none}
+body:not(:has(.animation-site-shell)) .pf-contact-email{display:inline-flex;max-width:100%;padding:14px 18px;line-height:1.5;font-size:clamp(18px,2.8vw,34px);overflow-wrap:anywhere}
+body:not(:has(.animation-site-shell)) .knowledge-wheel{background:#063b97;border:1px solid #9aceed;border-top:8px solid #66ecff;box-shadow:5px 5px 0 #b7eefa}
+body:not(:has(.animation-site-shell)) .knowledge-wheel-static a{background:#0a4aaa;border-color:#89c8f6}
+body:not(:has(.animation-site-shell)) :is(.pf-project,.pf-reading-links>a){transition:transform var(--motion-fast),box-shadow var(--motion-fast)}
+body:not(:has(.animation-site-shell)) :is(.pf-project,.pf-reading-links>a):hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #b7eefa}
+@media(max-width:760px){body:not(:has(.animation-site-shell)) :is(.pf-project,.pf-reading-links>a,.public-identity,.capability-matrix>article,.field-highlight,.journal-card,.gaming-card){padding:20px}body:not(:has(.animation-site-shell)) .pf-project-grid{gap:24px}}
+body:not(:has(.animation-site-shell)) .global-footer{background:#0646b3;color:#fff;border-top:8px solid #66ecff}
+body:not(:has(.animation-site-shell)) .footer-wordmark{font-style:italic;font-weight:800}
+body:not(:has(.animation-site-shell)) .footer-wordmark span,body:not(:has(.animation-site-shell)) .footer-brand-block p{color:#d8eeff}
+body:not(:has(.animation-site-shell)) .footer-brand-block h2{font-family:var(--font-display);font-weight:800}
+body:not(:has(.animation-site-shell)) .footer-contact-link{background:#fff;color:#06378d;padding:12px 20px;border:1px solid #fff;border-radius:0;box-shadow:5px 5px 0 #66ecff}
+body:not(:has(.animation-site-shell)) .footer-group-link{border-bottom:2px solid #83d8ff;color:#fff}
+body:not(:has(.animation-site-shell)) .footer-group-link small{color:#9df7ff}
+body:not(:has(.animation-site-shell)) .global-footer .footer-sitemap-group>div>a{color:#e0efff}
+body:not(:has(.animation-site-shell)) .footer-meta{border-top:1px solid #81bfff;background:transparent;color:#d8eeff}
+body:not(:has(.animation-site-shell)) .footer-meta a,body:not(:has(.animation-site-shell)) .footer-social a{color:#fff}
+body:not(:has(.animation-site-shell)) .global-footer a:hover{color:#b2f7ff}
+body:not(:has(.animation-site-shell)) .global-footer .footer-contact-link:hover{color:#06378d;box-shadow:2px 2px 0 #66ecff;transform:translate(2px,2px)}

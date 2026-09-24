@@ -2,9 +2,9 @@
   --hue: 27;
   --sat: 69%;
   --white: hsl(0, 0%, 100%);
-  --purple-primary: rgba(132, 0, 255, 1);
-  --purple-glow: rgba(132, 0, 255, 0.2);
-  --purple-border: rgba(132, 0, 255, 0.8);
+  --brand-primary: rgba(var(--glow-color, 104, 179, 224), 1);
+  --brand-glow: rgba(var(--glow-color, 104, 179, 224), 0.2);
+  --brand-border: rgba(var(--glow-color, 104, 179, 224), 0.8);
   --border-color: #2F293A;
   --background-dark: #120F17;
 }
@@ -32,7 +32,7 @@
   background: var(--background-dark);
   font-weight: 300;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform var(--motion-base) var(--ease-out), box-shadow var(--motion-base) var(--ease-out), border-color var(--motion-base) var(--ease-out);
 
   --glow-x: 50%;
   --glow-y: 50%;
@@ -150,8 +150,8 @@
   padding: 6px;
   background: radial-gradient(
     var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.8)) 0%,
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.4)) 30%,
+    rgba(var(--glow-color, 104, 179, 224), calc(var(--glow-intensity) * 0.8)) 0%,
+    rgba(var(--glow-color, 104, 179, 224), calc(var(--glow-intensity) * 0.4)) 30%,
     transparent 60%
   );
   border-radius: inherit;
@@ -175,8 +175,8 @@
 
 .magic-bento-card--border-glow:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.4),
-    0 0 30px var(--purple-glow);
+    0 4px 20px rgba(6, 30, 88, 0.4),
+    0 0 30px var(--brand-glow);
 }
 
 .particle-container {
@@ -191,15 +191,15 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: rgba(132, 0, 255, 0.2);
+  background: rgba(var(--glow-color, 104, 179, 224), 0.2);
   border-radius: 50%;
   z-index: -1;
 }
 
 .particle-container:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.2),
-    0 0 30px var(--purple-glow);
+    0 4px 20px rgba(6, 30, 88, 0.2),
+    0 0 30px var(--brand-glow);
 }
 
 /* Global spotlight styles */

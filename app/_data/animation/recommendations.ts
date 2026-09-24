@@ -35,14 +35,14 @@ function summarizeAnnualEntries(entries: AnnualEntries) {
 
 // 摘要中的作品数量一律按当前条目计算，避免与 public-content.json 脱节。
 function yearSummary(year: string, entries: AnnualEntries): string {
-  const { total, writtenCount, titleOnlyCount, categoryCount } = summarizeAnnualEntries(entries);
+  const { total, writtenCount, categoryCount } = summarizeAnnualEntries(entries);
   switch (year) {
     case "2022":
-      return `年度 Top ${categoryCount("ranked-top-10")}、${categoryCount("honorable-mention")} 部提名与 ${categoryCount("back-catalog-recommendation")} 部当年补完旧作，共 ${total} 条；其中 ${writtenCount} 条保留了评价文字，${titleOnlyCount} 条目前仅有作品名。`;
+      return `年度 Top ${categoryCount("ranked-top-10")}、${categoryCount("honorable-mention")} 部提名与 ${categoryCount("back-catalog-recommendation")} 部当年补完旧作，共 ${total} 部作品，其中 ${writtenCount} 部附有观看感想。`;
     case "2024":
-      return `${total} 条年度片单记录，重看、系列补完与当年新作并行；原始资料仅列出作品名称。`;
+      return `${total} 部年度片单，重看、系列补完与当年新作并行。`;
     case "2025":
-      return `${total} 条年度推荐记录中，${writtenCount} 条保留了推荐文字，${titleOnlyCount} 条目前仅有作品名。`;
+      return `${total} 部年度推荐作品，其中 ${writtenCount} 部附有观看感想。`;
     default:
       return yearPresentation[year]?.summary ?? "";
   }
@@ -85,7 +85,7 @@ function toRecommendation(entry: (typeof sourceContent.annualRecommendations)[ke
     note,
     poster: findPoster(entry.title, entry.aliases),
     placeholder: entry.placeholder,
-    sourceNote: entry.provenance === "user-original" ? "原稿全文" : "原始片单仅列出标题；需要提供推荐理由与观看感受",
+    sourceNote: entry.provenance === "user-original" ? "原稿全文" : "年度片单收录",
   };
 }
 

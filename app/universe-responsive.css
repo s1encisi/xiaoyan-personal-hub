@@ -172,7 +172,7 @@
 }
 html[data-motion="off"] .cosmic-orbit,html[data-motion="off"] .shooting-star,html[data-motion="off"] .anime-frame-stack a,html[data-motion="off"] .life-hero img,html[data-motion="off"] .module-atmosphere > span { animation:none !important; }
 html[data-motion="off"] .celestial-hero__media img,html[data-motion="off"] .anime-hero__backdrop img { transform:none; }
-html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+html[data-motion="off"],html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
 @media (prefers-reduced-motion:reduce) {
   .u-reveal,.universe-action,.research-ledger a,.beyond-anime img,.beyond-life img,.anime-frame-stack a { transition:none !important; }
   .celestial-hero *,.anime-hero *,.life-hero *,.module-atmosphere * { animation:none !important; transform:none !important; translate:none !important; }

@@ -95,11 +95,6 @@ export default async function AnimationReviewPage({ params }: DetailProps) {
                 </div>
               </section>
             ))}
-
-            <aside className="animation-review-source-boundary">
-              <strong>来源与公开边界</strong>
-              <p>{record.sourceNote}</p>
-            </aside>
           </div>
         </div>
 

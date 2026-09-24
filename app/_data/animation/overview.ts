@@ -37,7 +37,7 @@ export const animationOverview = {
     "把喜欢，写成可以回看的文字与时间索引。",
   ],
   period: `${Math.min(animationEarliestRecommendationYear, animationEarliestArchiveYear)}—${Math.max(animationLatestRecommendationYear, animationLatestArchiveYear)}`,
-  archiveNote: "年度推荐、影评文章与番剧总表均来自保存的资料；每篇文章标明原稿、定稿或编辑整理方式，公开页面只做必要的断句、错字与结构整理。",
+  archiveNote: "从年度片单到长篇影评，按作品与年份回顾观看经历。",
 } as const;
 
 export const animationTimeline = [
@@ -93,7 +93,7 @@ export const animationTimeline = [
   {
     year: "2024",
     title: "重看、补完与新的日常",
-    description: "这一年的片单条目里，重看、系列补完与当年新作共同构成观看重心；原始资料未附逐条评价。",
+    description: "重看、系列补完与当年新作，共同构成这一年的观看重心。",
     href: "/life/animation/recommendations/2024",
     works: ["葬送的芙莉莲", "攻壳机动队 S.A.C.", "败犬女主太多了！"],
   },

@@ -4,6 +4,7 @@ import { Component, lazy, Suspense, useState, useCallback, type ReactNode } from
 import { motion } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useEffectSurface, useFinePointer } from "./use-effect-surface";
+import { useMotionTiming } from "./use-motion-timing";
 import { aiCapabilities, aiToolNames } from "../../_data/ai-practice";
 import type { NotionChapter } from "../../_data/notion-library";
 import "./effects.css";
@@ -51,7 +52,8 @@ export function OpeningParticleName({ text }: { text: string }) {
 }
 export function MotionReveal({ children, className = "" }: { children: ReactNode; className?: string }) {
   const { ref, enabled, active } = useEffectSurface();
-  return <motion.div ref={ref} className={className} initial={false} animate={{ opacity: enabled && !active ? 0.72 : 1, y: enabled && !active ? 14 : 0 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>;
+  const timing = useMotionTiming();
+  return <motion.div ref={ref} className={className} initial={false} animate={{ opacity: enabled && !active ? 0.72 : 1, y: enabled && !active ? 14 : 0 }} transition={{ duration: enabled ? timing.slow * 1.25 : 0, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>;
 }
 export function ToolLoop() {
   const { ref, active } = useEffectSurface();
@@ -69,11 +71,12 @@ export function ResearchExpand() {
 }
 export function ProjectImageSwap() {
   const { ref, active } = useEffectSurface();
+  const timing = useMotionTiming();
   const [showResult, setShowResult] = useState(false);
   const first = <img src="/images/projects/commerce-pending.webp" width={1280} height={720} alt="电商合成演示：退货申请等待审批" loading="lazy" />;
   const second = <img src="/images/projects/commerce-completed.webp" width={1280} height={720} alt="电商合成演示：已确认的订单与退货回执" loading="lazy" />;
   const button = <button type="button" aria-pressed={showResult} onClick={() => setShowResult(v => !v)}>{showResult ? "查看等待审批" : "查看确认回执"}<ArrowRight size={18} /></button>;
-  return <div ref={ref} className="project-image-swap" data-effect="Pixel Swap" data-effect-active={active}>{active ? <SafeEffect fallback={showResult ? second : first}><PixelSwap firstContent={first} secondContent={second} trigger="manual" active={showResult} pattern="left-to-right" pixelSize={64} duration={0.65} pixelDuration={0.3} aspectRatio="16 / 9" /></SafeEffect> : <div className="project-image-swap__static">{showResult ? second : first}</div>}<div className="project-image-swap__action" data-effect="Click Spark" data-effect-active={active}>{active ? <SafeEffect fallback={button}><ClickSpark sparkColor="#60a8d3" sparkCount={7} sparkRadius={20} duration={360}>{button}</ClickSpark></SafeEffect> : button}<p>{showResult ? "确认后显示业务回执" : "审批发生在业务写入之前"} · 本地合成演示</p></div></div>;
+  return <div ref={ref} className="project-image-swap" data-effect="Pixel Swap" data-effect-active={active}>{active ? <SafeEffect fallback={showResult ? second : first}><PixelSwap firstContent={first} secondContent={second} trigger="manual" active={showResult} pattern="left-to-right" pixelSize={64} duration={timing.slow * 1.25} pixelDuration={timing.base * (15 / 14)} aspectRatio="16 / 9" /></SafeEffect> : <div className="project-image-swap__static">{showResult ? second : first}</div>}<div className="project-image-swap__action" data-effect="Click Spark" data-effect-active={active}>{active ? <SafeEffect fallback={button}><ClickSpark sparkColor="#60a8d3" sparkCount={7} sparkRadius={20} duration={timing.fast * 2250}>{button}</ClickSpark></SafeEffect> : button}<p>{showResult ? "确认后显示业务回执" : "审批发生在业务写入之前"} · 功能演示（合成数据）</p></div></div>;
 }
 export function TopicStrands() {
   const { ref, active } = useEffectSurface();

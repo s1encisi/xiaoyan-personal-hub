@@ -17,7 +17,7 @@ export default function AnimationTimelinePage() {
       <AnimationSectionHero
         code="04 / VIEWING TIMELINE"
         title="观看时间线"
-        description="星点按年份固定排列，阶段标题与说明根据现存片单和原稿整理：从入坑、补番、重看到年度推荐与写作。"
+        description="从最初入坑、持续补完，到重看与写作，沿着年份回顾我和动画相伴的经历。"
         breadcrumbs={[{ label: "首页", href: "/" }, { label: "生活", href: "/life" }, { label: "动画观测站", href: "/life/animation" }, { label: "观看时间线" }]}
         stats={[{ label: "起点", value: "2017-04-12" }, { label: "推荐时间线", value: animationRecommendationPeriod }, { label: "总表覆盖", value: `至 ${animationLatestArchiveYear}` }]}
       />

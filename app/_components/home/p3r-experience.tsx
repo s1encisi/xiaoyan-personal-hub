@@ -118,7 +118,7 @@ export function P3RHero() {
 export function AgentFeature() {
   const { ref, enabled } = useEffectSurface();
   return <section ref={ref} className="p3r-agent-feature" aria-labelledby="agent-feature-title" data-effect="Scroll Expand" data-effect-active={enabled}>
-    <ScrollExpand src="/images/home-p3r/agent-stargazing.jpg" imageWidth={1024} imageHeight={683} alt="繁星下仰望天空的人，图片保留视觉中国来源水印" enabled={enabled} useWindowScroll startWidth={92} startHeight={100} startRadius={0} endRadius={0} mediaZoom={1} scrollDistance={0.3} holdDistance={0} overlayScrim={0.08}>
+    <ScrollExpand src="/images/home-p3r/stargazing-generated.png" imageWidth={1672} imageHeight={941} alt="深蓝星空下，一位站在草坡上的人抬手指向星光" enabled={enabled} useWindowScroll startWidth={92} startHeight={100} startRadius={0} endRadius={0} mediaZoom={1} scrollDistance={0.3} holdDistance={0} overlayScrim={0.08}>
       <div className="p3r-agent-feature__copy"><p>AGENT ENGINEERING / 智能体工程</p><h2 id="agent-feature-title">从一个想法，<br />走向真实的行动。</h2><p>让模型理解任务，让工具承担执行，<br />让每一次结果都可以核实。</p><a className="p3r-button" href="/projects/reliable-commerce-agents">探索智能体工程 <ArrowUpRight size={18} /></a></div>
     </ScrollExpand>
   </section>;

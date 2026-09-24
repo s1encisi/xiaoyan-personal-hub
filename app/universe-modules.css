@@ -9,14 +9,6 @@
 .page-hero-main,.page-hero-aside { position:relative; z-index:2; }
 .page-chapter-code { opacity:.15; font-family:var(--font-display); font-weight:500; right:8%; }
 .module-atmosphere { position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; opacity:.65; }
-.module-atmosphere > span { display:block; position:absolute; width:650px; height:650px; right:-200px; top:-250px; border:1px solid rgb(67 135 181 / 28%); border-radius:50%; transform:rotateX(52deg) rotate(-30deg); }
-.module-atmosphere > span:nth-of-type(2) { width:850px; height:850px; top:-350px; right:-290px; }
-.module-atmosphere > span:nth-of-type(3) { width:1050px; height:1050px; top:-450px; right:-380px; }
-html[data-motion="on"] .module-atmosphere > span { animation:module-breathe 11s ease-in-out infinite alternate; }
-.page-hero[data-module="J"] .module-atmosphere > span { border-radius:0; transform:rotate(-25deg); }
-.page-hero[data-module="I"] .module-atmosphere > span { border-radius:0; height:220px; transform:rotate(-12deg); }
-.page-hero[data-module="O"] .module-atmosphere > span { border-radius:24%; transform:rotate(40deg); }
-@keyframes module-breathe { to { translate:-24px 12px; opacity:.4; } }
 .section-kicker h2,.section-heading h2 { letter-spacing:-.015em; line-height:1.4; }
 .status-badge { border-radius:20px; }
 .case-hero,.detail-shell-hero,.skill-detail-hero,.note-detail-hero { background-image:radial-gradient(ellipse at 95% 20%,rgb(64 124 169 / 10%),transparent 55%); }

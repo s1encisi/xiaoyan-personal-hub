@@ -43,10 +43,10 @@ function assertLocalPoster(tag, context, expectedLoading = "lazy") {
 }
 
 const animationModuleRoutes = [
-  ["/life/animation/recommendations", /原稿记录了几部，这里就完整保留几部/],
-  ["/life/animation/reviews", /每篇文章都标明来源边界/],
-  ["/life/animation/archive", /长期总表按年份重新建立索引/],
-  ["/life/animation/timeline", /阶段标题与说明根据现存片单和原稿整理/],
+  ["/life/animation/recommendations", /每一年的私人片单与观看感想/],
+  ["/life/animation/reviews", /长评、短评与重看笔记/],
+  ["/life/animation/archive", /按年份浏览观看片单/],
+  ["/life/animation/timeline", /从最初入坑、持续补完，到重看与写作/],
 ];
 
 const legacyAnimationReviewRoutes = [
@@ -227,7 +227,7 @@ test("home server-renders the official-site navigation hierarchy", async () => {
   for (const abstract of ["commerce", "policy", "tabpfn", "culab"]) {
     assert.match(html, new RegExp(`images/home-p3r/${abstract}-abstract\\.webp`));
   }
-  assert.match(html, /images\/home-p3r\/agent-stargazing\.jpg/);
+  assert.match(html, /images\/home-p3r\/stargazing-generated\.png/);
   assert.doesNotMatch(html, /copper-electrowinning-hero/);
   assert.match(html, /研究与工程/);
   assert.equal(
@@ -340,15 +340,14 @@ test("animation summaries preserve source boundaries and derive their visible pe
   const recommendationIndex = await (await render("/life/animation/recommendations")).text();
   assert.match(recommendationIndex, new RegExp(expectedPeriod), "recommendation period comes from source years");
   assert.match(recommendationIndex, /年度推荐与片单/, "mixed recommendation and title-only records are labeled accurately");
-  assert.match(recommendationIndex, /26 条；其中 15 条保留了评价文字，11 条目前仅有作品名/, "2022 written and title-only counts remain explicit");
-  assert.match(recommendationIndex, /11 条年度片单记录/, "2024 title-only list is not presented as complete reviews");
+  assert.match(recommendationIndex, /26 部作品，其中 15 部附有观看感想/, "2022 written and title-only counts remain explicit");
+  assert.match(recommendationIndex, /11 部年度片单/, "2024 title-only list is not presented as complete reviews");
   assert.doesNotMatch(recommendationIndex, /11 部完整记录/, "2024 title-only list avoids an unsupported completeness claim");
-  assert.match(recommendationIndex, /10 条年度推荐记录中，9 条保留了推荐文字，1 条目前仅有作品名/, "2025 written and title-only counts remain explicit");
+  assert.match(recommendationIndex, /10 部年度推荐作品，其中 9 部附有观看感想/, "2025 written and title-only counts remain explicit");
 
   const archiveIndex = await (await render("/life/animation/archive")).text();
-  assert.match(archiveIndex, /包含 1,451 条记录，其中有重复文本/, "supplemental count is presented as records rather than unique titles");
-  assert.match(archiveIndex, /与主表大量重合/, "supplemental records disclose overlap");
-  assert.match(archiveIndex, /单独统计、不与主表相加/, "supplemental records are not presented as additive");
+  assert.match(archiveIndex, /2,276/, "public archive count is preserved");
+  assert.doesNotMatch(archiveIndex, /1,451|3,727/, "unpublished supplemental records are not presented as public or added to the archive");
   assert.doesNotMatch(archiveIndex, /早期原始观看笔记/, "supplemental records avoid an unsupported age claim");
 });
 
@@ -555,7 +554,8 @@ test("all rendered website routes omit internal user and placeholder phrasing", 
     const response = await render(path);
     assert.equal(response.status, 200, path);
     const html = await response.text();
-    assert.doesNotMatch(html, /用户原稿|用户提供|待本人|本人确认|由本人补充|由用户|占位内容|占位信息/, path);
+    const publicText = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
+    assert.doesNotMatch(publicText, /登录|登入|登陆|用户原稿|用户提供|待本人|本人确认|由本人补充|由用户|占位内容|占位信息|需要提供|请补充|编排原则|资料状态|持续校订|来源与公开边界|来源边界|整理边界|公开整理|公开定稿|资料待完善/, path);
   }
 });
 
@@ -606,15 +606,16 @@ test("detail routes expose both current page and parent location", async () => {
   const animationHtml = await (await render("/life/animation/hibike-euphonium-rewatch")).text();
   assert.match(animationHtml, /href="\/life"[^>]+aria-current="location"/, "animation life parent location");
   assert.match(animationHtml, /href="\/life\/animation"[^>]+aria-current="location"/, "animation section location");
-  assert.match(animationHtml, /来源与公开边界/, "animation review source boundary heading");
-  assert.match(animationHtml, /页面保留原文措辞与观点/, "animation review source boundary copy");
+  assert.doesNotMatch(animationHtml, /来源与公开边界|页面保留原文措辞与观点/, "editorial notes stay out of the public article");
+  assert.match(animationHtml, /观看感想/, "public review content remains available");
 
   const hathawayHtml = await (await render("/life/animation/mobile-suit-gundam-hathaway-rewatch")).text();
-  assert.match(hathawayHtml, /采用《2025推荐动画》中的定稿/, "Hathaway public-source boundary");
-  assert.match(hathawayHtml, /采用年度推荐定稿/, "Hathaway uses the final recommendation text");
+  assert.match(hathawayHtml, /政治结构与理想主义/, "Hathaway presents its reading theme");
+  assert.doesNotMatch(hathawayHtml, /文本版本|采用年度推荐定稿/, "editorial version labels are not public copy");
 
   const evaHtml = await (await render("/life/animation/evangelion-thrice-upon-a-time")).text();
-  assert.match(evaHtml, /2021 年首段在源文件中本就未写完/, "EVA incomplete-source disclosure");
+  assert.match(evaHtml, /2021 年 BD 初看/, "EVA viewing chronology remains intact");
+  assert.doesNotMatch(evaHtml, /源文件中本就未写完/, "source-file instructions are not public copy");
 });
 
 test("unknown detail routes return the custom 404", async () => {

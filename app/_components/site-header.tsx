@@ -144,7 +144,7 @@ export function SiteHeader() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    const desktopQuery = window.matchMedia("(min-width: 1021px)");
+    const desktopQuery = window.matchMedia("(width > 1020px)");
     const handleBreakpointChange = (event: MediaQueryListEvent) => {
       const activeElement = document.activeElement;
       const focusMovesToDesktop = event.matches && (

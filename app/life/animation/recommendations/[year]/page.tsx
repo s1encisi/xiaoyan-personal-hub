@@ -80,8 +80,6 @@ export default async function AnimationRecommendationYearPage({ params }: Recomm
             ))}
           </section>
 
-          <aside id="year-source-notes" className="animation-source-note" aria-label="编排与来源说明"><p>编排原则：保留已有原稿。资料状态：持续校订。</p><p>{record.sourceNote}</p></aside>
-
           <nav className="animation-year-adjacent" aria-label="相邻年度推荐">
             {older ? <a href={`/life/animation/recommendations/${older.year}`} data-navigation="document"><ArrowLeft aria-hidden="true" /><span><small>上一站</small>{older.year} 年</span></a> : <span />}
             {newer ? <a href={`/life/animation/recommendations/${newer.year}`} data-navigation="document"><span><small>下一站</small>{newer.year} 年</span><ArrowRight aria-hidden="true" /></a> : <a href="/life/animation/recommendations" data-navigation="document"><span><small>返回</small>年度索引</span><ArrowRight aria-hidden="true" /></a>}

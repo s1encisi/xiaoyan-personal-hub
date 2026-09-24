@@ -10,7 +10,7 @@ import { createFixedPageMetadata } from "../../../_data/metadata";
 export const metadata = createFixedPageMetadata({
   path: "/life/animation/reviews",
   title: "影评档案｜动画观测站｜小闫",
-  description: "EVA 终、闪光的哈撒韦、年度推荐与番剧评价中的影评和相关文章，并逐篇标明整理边界。",
+  description: "从 EVA 终、闪光的哈撒韦到年度动画回顾，记录人物、叙事与演出带来的感受。",
 });
 
 export default function AnimationReviewsPage() {
@@ -26,9 +26,9 @@ export default function AnimationReviewsPage() {
       <AnimationSectionHero
         code="02 / REVIEW ARCHIVE"
         title="影评档案"
-        description="长评、短评、二刷与多年后重访。每篇文章都标明来源边界，只保留原稿中已经写下的判断。"
+        description="长评、短评与重看笔记，记录人物、叙事和演出带来的感受，以及多年后再次相遇时的理解。"
         breadcrumbs={[{ label: "首页", href: "/" }, { label: "生活", href: "/life" }, { label: "动画观测站", href: "/life/animation" }, { label: "影评档案" }]}
-        stats={[{ label: "已整理文章", value: `${animationReviews.length} 篇` }, { label: "记录年份", value: `${years.size} 组` }, { label: "原稿未标注年份", value: `${unlabeledCount} 篇` }]}
+        stats={[{ label: "影评文章", value: `${animationReviews.length} 篇` }, { label: "记录年份", value: `${years.size} 组` }, { label: "未署年文章", value: `${unlabeledCount} 篇` }]}
       />
 
       <section className="animation-review-ledger" aria-label="全部动画影评">

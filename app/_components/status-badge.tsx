@@ -33,5 +33,6 @@ const tones: Record<Status, "verified" | "topic" | "placeholder"> = {
 };
 
 export function StatusBadge({ status }: { status: Status }) {
+  if (["verified", "已确认", "placeholder", "资料待完善", "暂不公开"].includes(status)) return null;
   return <span className={`status-badge status-${tones[status]}`}>{labels[status]}</span>;
 }

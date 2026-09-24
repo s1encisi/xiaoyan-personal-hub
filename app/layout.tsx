@@ -7,6 +7,7 @@ import "./universe-system.css";
 import "./portfolio.css";
 import "./field-notes.css";
 import "./_components/social-links.css";
+import "./p3r-pages.css";
 
 export const viewport: Viewport = {
   colorScheme: "light",

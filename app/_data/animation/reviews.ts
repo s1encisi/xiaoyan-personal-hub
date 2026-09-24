@@ -57,7 +57,7 @@ const titleBySourceId: Record<string, string> = {
 };
 
 function firstSubstantiveParagraph(paragraphs: string[]) {
-  const paragraph = paragraphs.find((item) => item.replace(/[—\-：:]/g, "").trim().length > 42) ?? paragraphs[0] ?? "动画观看原稿。";
+  const paragraph = paragraphs.find((item) => item.replace(/[—\-：:]/g, "").trim().length > 42) ?? paragraphs[0] ?? "动画观看随笔。";
   return paragraph.length > 118 ? `${paragraph.slice(0, 118)}……` : paragraph;
 }
 
@@ -89,12 +89,12 @@ function sourceReviewSections(sourceId: string, paragraphs: string[]): Animation
       })),
     ];
   }
-  return [{ title: "原文影评", paragraphs }];
+  return [{ title: "观看感想", paragraphs }];
 }
 
 const extractedReviews: AnimationReview[] = sourceContent.reviews.map((review, index) => {
   const slug = slugBySourceId[review.id] ?? review.id;
-  const title = titleBySourceId[review.id] ?? `《${review.title}》：原文影评`;
+  const title = titleBySourceId[review.id] ?? `《${review.title}》：观影随笔`;
   const posters = findReviewPosters(review.id, review.title, review.aliases);
   return {
     slug,
@@ -102,18 +102,17 @@ const extractedReviews: AnimationReview[] = sourceContent.reviews.map((review, i
     title,
     workTitle: review.id === "evangelion-rebuild-four-films" ? sourceContent.evaFinal.title : review.title,
     englishTitle: review.aliases[0]?.toUpperCase() ?? review.id.toUpperCase(),
-    year: yearBySourceId[review.id] ?? "原稿未标注",
-    lens: lensBySourceId[review.id] ?? "原稿观看记录",
+    year: yearBySourceId[review.id] ?? "未署年",
+    lens: lensBySourceId[review.id] ?? "观看记录",
     summary: firstSubstantiveParagraph(review.paragraphs),
     poster: posters[0],
     posters: posters.length > 1 ? posters : undefined,
     facts: [
-      { label: "内容类型", value: "原稿影评" },
-      { label: "原始来源", value: "《番剧评价》" },
-      { label: "公开整理", value: "保留原文，仅调整页面分段" },
+      { label: "内容类型", value: "观影随笔" },
+      { label: "阅读主题", value: lensBySourceId[review.id] ?? "人物与故事" },
     ],
     sections: sourceReviewSections(review.id, review.paragraphs),
-    tags: [lensBySourceId[review.id] ?? "个人影评", "原稿全文", "观看记录"],
+    tags: [lensBySourceId[review.id] ?? "个人影评", "个人影评", "观看记录"],
     sourceNote: review.id === "evangelion-rebuild-four-films"
       ? "合并呈现《番剧评价》中对 EVA 新剧场版四部的原文，以及《EVA终》文档中两个观看时点的原文；其中 2021 年首段在源文件中本就未写完，页面保持原状。"
       : "来自《番剧评价》原稿。页面保留原文措辞与观点，只按阅读需要恢复段落结构。",
@@ -133,11 +132,10 @@ const hathawayReview: AnimationReview = {
   summary: firstSubstantiveParagraph(sourceContent.hathaway.paragraphs),
   poster: findPoster(sourceContent.hathaway.title, sourceContent.hathaway.aliases),
   facts: [
-    { label: "内容类型", value: "二刷影评定稿" },
-    { label: "原始来源", value: "《2025推荐动画》" },
-    { label: "文本版本", value: "采用年度推荐定稿" },
+    { label: "内容类型", value: "二刷影评" },
+    { label: "阅读主题", value: "政治结构与理想主义" },
   ],
-  sections: [{ title: "公开定稿", paragraphs: sourceContent.hathaway.paragraphs }],
+  sections: [{ title: "理想主义者的选择", paragraphs: sourceContent.hathaway.paragraphs }],
   tags: ["高达", "政治结构", "理想主义"],
   sourceNote: "本文采用《2025推荐动画》中的定稿。",
   status: "已确认",

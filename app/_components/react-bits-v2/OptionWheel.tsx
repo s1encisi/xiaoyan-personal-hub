@@ -225,9 +225,15 @@ const OptionWheel = ({
     const el = rootRef.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
-      e.preventDefault();
       const cfg = cfgRef.current;
-      const delta = e.deltaMode === 1 ? e.deltaY * 24 : e.deltaY;
+      if (cfg.count < 2 || e.ctrlKey) return;
+      // Ordinary vertical scrolling belongs to the page; horizontal gestures
+      // (or Shift + wheel) explicitly operate the focused topic wheel.
+      if (!e.shiftKey && Math.abs(e.deltaY) >= Math.abs(e.deltaX)) return;
+      const raw = e.shiftKey && !e.deltaX ? e.deltaY : e.deltaX;
+      const delta = raw * (e.deltaMode === 1 ? 24 : e.deltaMode === 2 ? el.clientHeight : 1);
+      if (!delta || (!cfg.loop && ((delta < 0 && targetRef.current <= 0) || (delta > 0 && targetRef.current >= cfg.count - 1)))) return;
+      e.preventDefault();
       // Cap each event at one step so notchy mouse wheels move exactly one
       // option per click, while touchpads still scroll continuously.
       const step = Math.max(-1, Math.min(1, delta / cfg.rowH));
@@ -243,7 +249,7 @@ const OptionWheel = ({
   }, [applyTarget]);
 
   const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-    if (!cfgRef.current.draggable) return;
+    if (!cfgRef.current.draggable || e.pointerType === 'touch') return;
     dragRef.current = { y: e.clientY, start: targetRef.current, id: e.pointerId };
     dragMovedRef.current = false;
     setIsDragging(true);

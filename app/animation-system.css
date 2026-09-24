@@ -493,7 +493,7 @@ body:has(.animation-site-shell) .footer-meta { padding-top: 18px; border-top: 0;
   }
   .animation-review-horizon-track > a:hover img,
   .animation-review-ledger article:hover img { transform: scale(1.025); }
-  .animation-poster img { transition: transform 520ms var(--ease-out); }
+  .animation-poster img { transition: transform var(--motion-slow) var(--ease-out); }
 }
 
 @media (max-width: 1100px) {

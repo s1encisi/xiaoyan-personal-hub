@@ -2,7 +2,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { AnimationModuleLinks } from "../../../_components/animation-module-links";
 import { AnimationSectionHero } from "../../../_components/animation-section-hero";
-import { animationArchiveCount, animationArchiveYears, animationSupplementalCount } from "../../../_data/animation/archive";
+import { animationArchiveCount, animationArchiveYears } from "../../../_data/animation/archive";
 import { animationArchivePeriod } from "../../../_data/animation/overview";
 import { createFixedPageMetadata } from "../../../_data/metadata";
 
@@ -18,9 +18,9 @@ export default function AnimationArchivePage() {
       <AnimationSectionHero
         code="03 / ANIME INDEX"
         title="番剧总表"
-        description={`长期总表按年份重新建立索引。总览只负责分流，完整条目、二刷和原始备注都放在对应年份页面；另一份观看记录包含 ${animationSupplementalCount.toLocaleString("zh-CN")} 条记录，其中有重复文本，并与主表大量重合，因此单独统计、不与主表相加，目前尚未逐条公开。`}
+        description="按年份浏览观看片单，回顾当季作品、系列补完与二刷记录。"
         breadcrumbs={[{ label: "首页", href: "/" }, { label: "生活", href: "/life" }, { label: "动画观测站", href: "/life/animation" }, { label: "番剧总表" }]}
-        stats={[{ label: "时间范围", value: animationArchivePeriod }, { label: "主表收录", value: `${animationArchiveCount.toLocaleString("zh-CN")} 条` }, { label: "另一份记录（单独统计）", value: `${animationSupplementalCount.toLocaleString("zh-CN")} 条` }]}
+        stats={[{ label: "时间范围", value: animationArchivePeriod }, { label: "收录条目", value: `${animationArchiveCount.toLocaleString("zh-CN")} 条` }]}
       />
 
       <section className="animation-archive-index" aria-label="番剧总表年份索引">

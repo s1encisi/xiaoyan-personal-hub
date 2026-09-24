@@ -16,7 +16,7 @@ const abstracts: Record<string, { src: string; alt: string }> = {
   "wastewater-energy-tabpfn": { src: "/images/home-p3r/tabpfn-abstract.webp", alt: "TabPFN 图形摘要：表格数据经过模型分别预测总电耗和单位水量电耗，并进行评价" },
   "culab-agent-workbench": { src: "/images/home-p3r/culab-abstract.webp", alt: "CuLab 图形摘要：组织建模、优化和诊断工具，通过运行记录连接输入与可追溯的结果" },
 };
-export const viewport: Viewport = { colorScheme: "dark", themeColor: "#0055ed" };
+export const viewport: Viewport = { colorScheme: "light", themeColor: "#0055ed" };
 export default function Home() {
   return <main id="main-content" className="celestial-home ai-home p3r-home" tabIndex={-1}>
     <P3RHero />
@@ -26,6 +26,6 @@ export default function Home() {
     <section className="ai-commerce section-shell" aria-labelledby="commerce-title"><MotionReveal><div className="ai-section-heading"><h2 id="commerce-title">工具调用之后，<br />事情真的完成了吗？</h2><p>在开源电商多智能体平台中，<br />围绕退货申请补强审批、提交与结果确认。</p></div><ProjectImageSwap /><div className="ai-commerce__foot"><p>基于开源平台的可靠性升级，清楚保留上游与个人增量的边界。</p><a href="/projects/reliable-commerce-agents">了解完整工程案例 <ArrowUpRight size={19} /></a></div></MotionReveal></section>
     <section className="ai-about-band section-shell"><div><h2>有方法，也有真实场景。</h2><p>环境工程与工业研究是我的专业起点。铜电积、污水能耗和电商售后，是检验模型与系统的不同场景。我的关注始终沿着机器学习、决策优化与智能体工程展开。</p></div><nav aria-label="个人背景与成果"><a href="/publications">论文与研究成果 <ArrowUpRight size={18} /></a><a href="/journey">教育与实践 <ArrowUpRight size={18} /></a><a href="/notes">知识库与持续学习 <ArrowUpRight size={18} /></a></nav></section>
     <section className="ai-life section-shell" aria-labelledby="ai-life-title"><MotionReveal><header className="ai-section-heading"><h2 id="ai-life-title">对世界的好奇，<br />也留在生活里。</h2><p>动画、游戏、旅行、天文和音乐，<br />是研究之外同样具体的喜欢。</p></header><FieldHighlights notes={[getFieldNote("astronomy-and-dishui"),getFieldNote("wuthering-waves-live"),getFieldNote("hangzhou-weekend")]} /><nav className="ai-life-links" aria-label="生活与兴趣"><a href="/life/animation">动画与影评 <ArrowUpRight size={18} /></a><a href="/life/gaming">游戏足迹 <ArrowUpRight size={18} /></a><a href="/life/journal">日常图文 <ArrowUpRight size={18} /></a><a href="/life">更多生活记录 <ArrowUpRight size={18} /></a></nav></MotionReveal></section>
-    <section className="ai-connect section-shell" aria-labelledby="ai-connect-title"><h2 id="ai-connect-title">从一个问题，<br />开始新的交流。</h2><p>欢迎交流机器学习、强化学习、智能体工程与相关研究机会。</p><a className="ai-connect__mail" href="mailto:2431509@tongji.edu.cn">2431509@tongji.edu.cn <ArrowUpRight size={26} /></a><SocialLinks variant="editorial" /></section>
+    <section className="ai-connect section-shell" aria-labelledby="ai-connect-title"><p className="p3r-section-label">LET US CONNECT</p><h2 id="ai-connect-title">从一个问题，<br />开始新的交流。</h2><p>欢迎交流机器学习、强化学习、智能体工程与相关研究机会。</p><a className="ai-connect__mail" href="mailto:2431509@tongji.edu.cn">2431509@tongji.edu.cn <ArrowUpRight size={26} /></a><SocialLinks variant="editorial" /></section>
   </main>;
 }
